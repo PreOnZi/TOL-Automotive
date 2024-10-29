@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Powertrain selection - BLINK |TOL Automotive</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logoFav.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="1homepage.html">
+            <img src="logoFav.png" alt="logo" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li id="config"><a href="2configurator.html">Configure</a></li>
+            <li id="owners"><a href="owners.html">Owners</a></li>
+            <li id="about"><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="info">
+      <div class="info-text">
+        <h2>Powertrain selection</h2>
+        <p>
+          Tailor the performance and range to your needs
+        </p>
+      </div>
+    </section>
+
+    <div class="configurator">
+      <div class="confgallery">
+        <img src="lot.jpeg" alt="Image 1" class="gallery-img active" />
+        <img src="char.webp" alt="Image 2" class="gallery-img" />
+        <img src="lot1.jpg" alt="Image 3" class="gallery-img" />
+    </div>
+    
+    
+    
+
+      <div class="confSelector">
+        <ul>
+          <li onclick="showImage(0)">
+            <b><h3>Trail | all the necessities</h3></b>
+        
+            <br />
+
+            <p>
+              Single-motor | 220hp <br />
+              65kWh battery and WLTP range of 300miles
+              <br>
+              <br>
+              <b><i>RRP: from £38,370</i></b>
+            </p>
+          </li>
+          <li onclick="showImage(1)">
+            <b><h3>Tall | the most range</h3></b>
+        
+            <br />
+
+            <p>
+              Single-motor | 220hp <br />
+              90kWh battery and WLTP range of 410miles
+              <br>
+              <br>
+              <b><i>RRP: from £42,370</i></b>
+            </p>
+          </li>
+          <li onclick="showImage(2)">
+            <b><h3>Truck | more power, all the whistles</h3></b>
+            
+            <br />
+
+            <p>
+              Dual-motor | 520hp <br />
+              90kWh battery and WLTP range of 380miles
+              <br>
+              <br>
+              <b><i>RRP: from £46,370</i></b>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="4.1colour.html" class="next-button">Colour selection</a>
+    <div class="price-button" id="priceDisplay" style="display: none;">
+        <span>Selected vehicle price: £<span id="priceValue">0</span></span>
+      </div>
+      
+
+    <script src="script.js"></script>
+    <!-- <script>
+        let totalPrice = 0; // Global variable to track the total price
+
+function showImage(index) {
+  const images = document.querySelectorAll('.confgallery img');
+  const listItems = document.querySelectorAll('.confSelector ul li');
+
+  // Hide all images
+  images.forEach((img) => {
+    img.classList.remove('active');
+  });
+
+  // Show the selected image
+  images[index].classList.add('active');
+
+  // Remove 'selected' class from all list items
+  listItems.forEach((item) => {
+    item.classList.remove('selected');
+  });
+
+  // Add 'selected' class to the clicked item
+  listItems[index].classList.add('selected');
+
+  // Show the price button once a selection is made
+  const priceButton = document.getElementById('priceDisplay');
+  priceButton.style.display = 'flex'; // Make it visible
+
+  // Extract the price from the selected item
+  const priceText = listItems[index].querySelector('i').textContent;
+  const priceMatch = priceText.match(/£([\d,]+)/);
+  if (priceMatch) {
+    const price = parseInt(priceMatch[1].replace(/,/g, '')); // Convert to number
+    updatePrice(price); // Update total price
+  }
+}
+
+function updatePrice(newPrice) {
+  totalPrice = newPrice; // Replace with the new price
+  document.getElementById('priceValue').textContent = totalPrice.toLocaleString(); // Update the displayed price
+
+  // Save the total price to localStorage
+  localStorage.setItem('totalPrice', totalPrice);
+}
+
+// Retrieve and display the price from localStorage when the page loads
+window.onload = function() {
+  const storedPrice = localStorage.getItem('totalPrice');
+  if (storedPrice) {
+    totalPrice = parseInt(storedPrice);
+    document.getElementById('priceValue').textContent = totalPrice.toLocaleString();
+    
+    // Ensure the price button is visible if a price is stored
+    document.getElementById('priceDisplay').style.display = 'flex';
+  }
+};
+
+    </script> -->
+    <footer class="footer">
+      <p>© 2024 TOL Automotive UK. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

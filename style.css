@@ -1,0 +1,594 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit; /* Use the parent's font color */
+  text-decoration: none; /* Remove the underline */
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 50;
+  background-color: #f4f4f4;
+  align-items: center;
+}
+h1,
+h2,
+h3,
+p,
+a {
+  font-family: "Montserrat", sans-serif;
+}
+header {
+  background-color: #000;
+}
+.header-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 80; /* Thin version */
+}
+
+.subheader-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 80; /* Slightly thicker thin version */
+}
+.top-bar {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  padding: 10px 50px;
+  height: 70px;
+  background-color: #dedede;
+  align-items: center; /* Vertically center the content in the bar */
+  padding: 0 20px;
+  position: relative; /* Allow the nav to be positioned in the middle */
+}
+
+.logo img {
+  max-width: 50px; /* Limit the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo {
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.top-bar nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Center the nav by adjusting position */
+}
+
+.top-bar nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-bar nav ul li {
+  margin-right: 20px;
+}
+
+.top-bar nav ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.main-content {
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.image-boxes {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.image-boxes .box {
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-boxes .box img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+.image-boxes .box p {
+  padding-top: 10px;
+}
+
+/*INFO CONFIGURATION*/
+.info1 {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f4f4f4; /* Set the background color for the entire block */
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.info1 h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.info1 p {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  color: #666;
+  max-width: 650px; /* Set the maximum width */
+  margin: 20px auto; /* Center the div horizontally with space above */
+  padding: 20px; /* Optional: Add some padding for better spacing */
+}
+
+
+/* INFO - OTHER PAGES */
+.info {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.info h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.info p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/*SPECS TABLE*/
+.table-container {
+  display: table;
+  width: 40%; /* Table width */
+  border-collapse: collapse;
+  border: 15px;
+  border-color: #e6b400;
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(15, 15, 14, 0.1);
+  margin: 0 auto; /* Center the table horizontally */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.table-row {
+  display: table-row;
+}
+
+.icon-cell,
+.text-cell {
+  display: table-cell;
+  padding: 20px;
+  vertical-align: middle;
+  align-content: center;
+}
+
+.icon-cell {
+  width: 50px; /* Width for icon column */
+  text-align: center; /* Center icon */
+}
+
+.icon {
+  max-width: 40px; /* Make icon responsive */
+  height: auto;
+  margin-left: 50px;
+}
+
+.divider {
+  width: 2px; /* Width of the vertical line */
+  background-color: #ccc; /* Color of the vertical line */
+  display: inline-block; /* Make it an inline-block element */
+  height: 70px; /* Adjust the height to match the content */
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.text-cell {
+  padding-left: 20px; /* Space between the divider and text */
+}
+
+.text-cell p {
+  margin: 0; /* Remove default margins */
+  font-size: 1rem; /* Set font size */
+  color: #333; /* Text color */
+}
+
+/*CONFIGURE BUTTON8*/
+.configure-button {
+  display: inline-block;
+  padding: 12px 24px; /* Padding for the button */
+  background-color: #007bff; /* Primary color */
+  color: white; /* Text color */
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Font weight */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  margin-top: 10px;
+}
+
+.configure-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+/*GALLERY*/
+.confgallery {
+  position: relative;
+  width: 500px; /* Adjust width as needed */
+  margin: auto; /* Center the gallery */
+}
+
+.gallery-img {
+  display: none; /* Hide all images initially */
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.gallery-img.active {
+  display: block; /* Show only the active image */
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10; /* Ensure buttons are on top */
+  padding: 10px; /* Add some padding for better click area */
+}
+
+.left {
+  left: 10px; /* Position left button */
+}
+
+.right {
+  right: 10px; /* Position right button */
+}
+
+/*CONFIGURATOR*/
+
+.configurator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.confgallery {
+  width: 60%; /* Gallery width */
+  position: relative;
+}
+
+.confgallery img {
+  width: 100%;
+  height: auto;
+  display: none; /* Hide all images initially */
+}
+
+.confgallery img.active {
+  display: block; /* Show the active image */
+}
+
+.confSelector {
+  width: 35%; /* List width */
+}
+
+.confSelector ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.confSelector ul li {
+  padding: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 2px solid white; /* Thin white border */
+}
+
+.confSelector ul li:hover {
+  background-color: #ddd;
+}
+
+/*NEXT BUTTON*/
+.next-button {
+  position: fixed; /* Or use absolute if it should scroll with the page */
+  right: 20px; /* Distance from the right edge */
+  bottom: 20px; /* Distance from the bottom edge */
+  padding: 12px 24px;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Hover lift effect */
+}
+
+.confSelector ul li.selected {
+  background-color: #ddd; /* Same as hover background color */
+}
+
+/*PRICE BUTTON*/
+.price-button {
+  position: fixed;
+  right: 240px; /* Adjust this value based on your layout */
+  bottom: 20px;
+  background-color: #ddd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+/*COLOUR SELECTION*/
+.swatch1{
+    background-color: #8e0000;
+    width:300px;
+    height: 60px;
+    border-radius: 50px;
+ 
+    border: 3px solid white;
+}
+
+.swatch2{
+    background-color: #949494;
+    width: 350px;
+    height: 60px;
+    border-radius: 50px;
+
+    border: 3px solid white;
+}
+
+.swatch3{
+    background-color: #aeffc0;
+    width: 400px;
+    height: 60px;
+    border-radius: 50px;
+  
+    border: 3px solid white;
+}
+
+
+/*WHEEL1*/
+/* Cube container for perspective */
+.cube-container {
+    perspective: 600px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+  
+  /* Cube styling */
+  .cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(15deg); /* Slight angle for a 3D look */
+  }
+  
+  /* Face styling */
+  .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black; /* Default black color for all sides */
+    border: 1px solid #000;
+  }
+  
+  /* Front face with pattern */
+  .cube-container .front {
+    background-image: url('pattern1.avif'); /* Replace with your pattern image URL */
+    background-size: cover;
+    transform: translateZ(50px);
+  }
+  
+  /* Positioning other faces */
+  .back   { transform: rotateY(180deg) translateZ(50px); }
+  .left   { transform: rotateY(-90deg) translateZ(50px); }
+  .right  { transform: rotateY(90deg) translateZ(50px); }
+  .top    { transform: rotateX(90deg) translateZ(50px); }
+  .bottom { transform: rotateX(-90deg) translateZ(50px); }
+  
+  /*WHEEL2*/
+  /* Cube container for perspective */
+.cube-container1 {
+    perspective: 600px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+  
+  /* Cube styling */
+  .cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(15deg); /* Slight angle for a 3D look */
+  }
+  
+  /* Face styling */
+  .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black; /* Default black color for all sides */
+    border: 1px solid #000;
+  }
+  
+  /* Front face with pattern */
+  .cube-container1 .front {
+    background-image: url('pattern2.png'); /* Replace with your pattern image URL */
+    background-size: cover;
+    transform: translateZ(50px);
+  }
+  
+  /* Positioning other faces */
+  .back   { transform: rotateY(180deg) translateZ(50px); }
+  .left   { transform: rotateY(-90deg) translateZ(50px); }
+  .right  { transform: rotateY(90deg) translateZ(50px); }
+  .top    { transform: rotateX(90deg) translateZ(50px); }
+  .bottom { transform: rotateX(-90deg) translateZ(50px); }
+  
+  /*WHEEL 3*/
+  /* Cube container for perspective */
+.cube-container2 {
+    perspective: 600px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+  
+  /* Cube styling */
+  .cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(15deg); /* Slight angle for a 3D look */
+  }
+  
+  /* Face styling */
+  .cube-container2 .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black; /* Default black color for all sides */
+    border: 1px solid #000;
+  }
+  
+  /* Front face with pattern */
+  .front {
+    background-image: url('pattern3.jpg'); /* Replace with your pattern image URL */
+    background-size: cover;
+    transform: translateZ(50px);
+  }
+  
+  /* Positioning other faces */
+  .back   { transform: rotateY(180deg) translateZ(50px); }
+  .left   { transform: rotateY(-90deg) translateZ(50px); }
+  .right  { transform: rotateY(90deg) translateZ(50px); }
+  .top    { transform: rotateX(90deg) translateZ(50px); }
+  .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+
+
+  /*INTERIOR*/
+.interior1{
+    background-color: #4a4a4a;
+    width:60px;
+    height: 60px;
+    border-radius: 50px;
+ 
+    border: 3px solid white;
+}
+
+.interior2{
+    background-color: #101010;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+
+    border: 3px solid white;
+}
+
+.interior3{
+    background-color: #e2e4cc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+  
+    border: 3px solid white;
+}
+  
+/*INFO ICON*/
+.infoIcon {
+    width: 20px;
+}
+/*INFORMATION POPUP CLOSE BUTTON*/
+.closePopup{
+padding: 12px 24px; /* Padding for the button */
+  background-color: #007bff; /* Primary color */
+  color: white; /* Text color */
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Font weight */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+}
+.closePopup:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+
+/*FOOTER*/
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #dedede;
+  color: #333;
+  font-size: 0.9rem;
+}

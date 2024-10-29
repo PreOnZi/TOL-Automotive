@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance - BLINK | TOL Automotive</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logoFav.png" type="image/png" />
+    <style>
+      .finance-section {
+        display: flex;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .image-container {
+        flex: 1;
+        display: flex;
+        padding-left: 100px;
+      }
+
+      .image-container img {
+        width: 500px;
+        height: auto;
+        border: 3px solid white;
+      }
+
+      .item-list {
+        flex: 2;
+        text-align: left;
+      }
+
+      .item-list ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .item-list li {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        font-size: 1.2rem;
+      }
+      #selectionList {
+        font-size: 30px;
+        text-align: left;
+        line-height: 1.6;
+      }
+      #listItems {
+        list-style-type: none;
+        padding-left: 200px;
+        font-size: 30px;
+        line-height: 1.6;
+        color: rgb(130, 130, 130);
+      }
+      #nolist {
+        list-style-type: none;
+        text-align: left;
+      }
+      .total-price {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      #priceValue{
+        font-size: 30px;
+      }
+      .vertical-line {
+        width: 2px; /* Thickness of the line */
+        height: 280px; /* Height of the line, adjust as needed */
+        background-color: #000; /* Line color */
+      }
+      .info-text{
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="1homepage.html">
+            <img src="logoFav.png" alt="logo" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li id="config"><a href="2configurator.html">Configure</a></li>
+            <li id="owners"><a href="owners.html">Owners</a></li>
+            <li id="about"><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="main-content">
+      <section class="info">
+        <div class="info-text">
+          <h2>Financing options</h2>
+          <p>Pay cash or in installments.</p>
+        </div>
+      </section>
+
+      <!-- New section with image and item list -->
+
+      <section class="finance-section">
+        <div class="image-container">
+          <img src="lot.jpeg" alt="Product Image" />
+        </div>
+        <div id="listItems">
+          <ul id="nolist">
+            <li>Powertrain</li>
+            <li>Colour</li>
+            <li>Wheels</li>
+            <li>Interior</li>
+            <li>Advertising</li>
+            <li>Optional equipment</li>
+          </ul>
+        </div>
+        <div class="vertical-line"></div>
+        <div id="selectionList"></div>
+        <div class="item-list">
+          <ul id="price-list"></ul>
+          <div class="total-price"></div>
+        </div>
+      </section>
+      <section class="main-content">
+        <section class="info">
+          <div class="info-text">
+            <strong>Total Price: £<span id="priceValue">0</span></strong>
+          </div>
+        </section>
+  
+    </section>
+    <button onclick="clearLocalData()">Clear All Data</button>
+    <footer class="footer">
+        <p>© 2024 TOL Automotive UK. All rights reserved.</p>
+      </footer>
+    <script src="script.js"></script>
+  </body>
+  <script>
+    window.onload = function () {
+      // Retrieve total price from localStorage
+      const storedPrice = localStorage.getItem("totalPrice");
+      if (storedPrice) {
+        totalPrice = parseInt(storedPrice);
+        document.getElementById("priceValue").textContent =
+          totalPrice.toLocaleString();
+        document.getElementById("priceDisplay").style.display = "flex";
+      }
+
+      // Retrieve item selections from localStorage and populate the list
+      const storedSelections =
+        JSON.parse(localStorage.getItem("selections")) || [];
+      const priceList = document.getElementById("price-list");
+
+      storedSelections.forEach((selection) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${
+          selection.name
+        } - £${selection.price.toLocaleString()}`;
+        priceList.appendChild(listItem);
+      });
+    };
+  </script>
+</html>

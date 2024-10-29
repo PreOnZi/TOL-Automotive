@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advertising options - BLINK | TOL Automotive</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logoFav.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="logo">
+          <a href="1homepage.html">
+            <img src="logoFav.png" alt="logo" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li id="config"><a href="2configurator.html">Configure</a></li>
+            <li id="owners"><a href="owners.html">Owners</a></li>
+            <li id="about"><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="info">
+      <div class="info-text">
+        <h2>Extras: Advertising</h2>
+        <p>
+          TOL is happy to be the first brand in the UK to allow you to <b>lower</b> your new vehicle's price.
+        </p>
+      </div>
+    </section>
+
+    <div class="configurator">
+      <div class="confgallery">
+        <img src="lot.jpeg" alt="Hero Image" class="gallery-img active" />
+        <img src="char.webp" alt="Hero Image" class="gallery-img" />
+        <img src="lot1.jpg" alt="Hero Image" class="gallery-img" />
+      </div>
+
+      <div class="confSelector">
+        <ul>
+          <li onclick="showImage(0)">
+            <b><h3>No Advertising | Default</h3></b>
+
+            <br />
+            <p>
+              Your car will have no advertising features implemented in its
+              infotainment system.
+            </p>
+            <br />
+            <b><i> £0</i></b>
+          </li>
+          <li onclick="showImage(1)">
+            <b><h3>Level One | Low Personalisation</h3></b>
+
+            <br />
+            <p>
+              Level One Advertising offers a moderate number of advertisements
+              implemented into the infotainment system of the vehicle. This
+              includes non-intrusive visual advertising and audio-only
+              advertising.
+            </p>
+            <br />
+
+            <br />
+            <b><i>- £4,670</i></b>
+            <a href="#" onclick="openPopup()">
+              <img src="info.png" alt="Information Icon" class="infoIcon" />
+            </a>
+          </li>
+          <div
+            id="popup"
+            style="
+              display: none;
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 700px;
+              background-color: white;
+              padding: 20px;
+              border: 1px solid black;
+              box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+              z-index: 1000;
+            "
+          >
+            <h1>Infotainment Advertising</h1>
+            <br />
+            <h3>Terms & Conditions</h3>
+            <br />
+            <p>
+              <b>Level One Advertising</b>
+              <br />
+              Level One offers a moderate level of advertising implementation
+              into the car's system. This includes the infotainment screen and
+              the car's audio system. The displayed advertisements will never
+              be in the driver's way of operating the vehicle safely.
+              Additionally, as the level One offers low personalisation, only
+              selected data will be shared with TOL and advertisers. This will
+              result in less relevant advertising being shown. TOL will collect
+              and share driving habits and most common routes; GPS information.
+              <br />
+              <br />
+
+              <b>Level Two Advertising</b>
+              <br />
+              Level Two offers more advertising within the system compared to
+              Level One. It again uses both the infotainment system screen and
+              the vehicle's audio system. Additionally, a small portion of the
+              driver's gauge cluster is reserved for advertising purposes. As
+              Level Two operates with higher personalisation, in addition to GPS
+              data, TOL will utilise the vehicle's microphones to gauge topics of
+              interest from the cabin. This function can be temporarily disabled
+              in the car's settings, however it will turn on automatically after
+              five minutes and on start. None of the advertising
+              features will prevent the driver from safe operation of the vehicle.
+
+              <br />
+              <br />
+
+              <b>General</b>
+              <br />
+              By selecting one of the options above the customer agrees to
+              keeping and using the vehicle for at least four (4) years with
+              minimum 5000 miles driven annually. The customer has the option to
+              op-out of either selected advertising levels within the first two
+              months of purchase by paying the difference to RRP.
+              <br>
+              Please feel free to reach out to any dealership or the customer service for more information.
+            </p>
+            <br />
+            <br />
+            <button class="closePopup" onclick="closePopup()">Close</button>
+          </div>
+          <li onclick="showImage(2)">
+            <b><h3>Level Two | High Personalisation</h3></b>
+
+            <br />
+            <p>
+                Level Two Advertising offers a higher number of advertisements
+                implemented into the infotainment system of the vehicle. This
+                includes non-intrusive visual advertising and audio-only
+                advertising. Additionally advertising in the gauge cluster, with more personalisation.
+              </p>
+            <br />
+
+            <br />
+            <b><i>- £6,670</i></b>
+            <a href="#" onclick="openPopup()">
+              <img src="info.png" alt="Information Icon" class="infoIcon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="7addons.html" class="next-button">Optional equipment</a>
+    <div class="price-button" id="priceDisplay" style="display: none">
+      <span>Selected vehicle price: £<span id="priceValue">0</span></span>
+    </div>
+    <script src="script.js"></script>
+    <!-- <script>
+      //PRICE TRACKING
+      let totalPrice = parseInt(localStorage.getItem("totalPrice")) || 0;
+      let previousPrice = 0; // Variable to track the price of the previously selected item
+
+      // Display the current total price on page load
+      document.getElementById("priceValue").textContent =
+        totalPrice.toLocaleString();
+
+      // Function to show the image and update the price
+      function showImage(index) {
+        const images = document.querySelectorAll(".confgallery img");
+        const listItems = document.querySelectorAll(".confSelector ul li");
+
+        // Hide all images
+        images.forEach((img) => {
+          img.classList.remove("active");
+        });
+
+        // Show the selected image
+        images[index].classList.add("active");
+
+        // Remove 'selected' class from all list items
+        listItems.forEach((item) => {
+          item.classList.remove("selected");
+        });
+
+        // Add 'selected' class to the clicked item
+        listItems[index].classList.add("selected");
+
+        // Show the price button once a selection is made
+        const priceButton = document.getElementById("priceDisplay");
+        priceButton.style.display = "flex"; // Make it visible
+
+        // Extract the price from the selected item
+        const priceText = listItems[index].querySelector("i").textContent;
+        const priceMatch = priceText.match(/£([\d,]+)/);
+
+        if (priceMatch) {
+          const newPrice = parseInt(priceMatch[1].replace(/,/g, "")); // Convert to number
+          updatePrice(newPrice); // Update the total price with the new selection
+        }
+      }
+      //PRICE UPDATER
+      function updatePrice(newPrice) {
+        // Determine if the new price is negative
+        const isNegative = document
+          .querySelector(".confSelector ul li.selected i")
+          .textContent.includes("-");
+
+        // Subtract the previously selected item's price from the total
+        totalPrice -= previousPrice;
+
+        // If the new price is negative, deduct from totalPrice; otherwise, add
+        totalPrice += isNegative ? -newPrice : newPrice;
+
+        // Update the displayed price
+        document.getElementById("priceValue").textContent =
+          totalPrice.toLocaleString();
+
+        // Save the updated total price to localStorage
+        localStorage.setItem("totalPrice", totalPrice);
+
+        // Update previousPrice with the new price's absolute value (for future selections)
+        previousPrice = isNegative ? -newPrice : newPrice;
+      }
+
+      // Clear price when needed (optional)
+      function resetPrice() {
+        totalPrice = 0;
+        previousPrice = 0;
+        localStorage.setItem("totalPrice", totalPrice);
+        document.getElementById("priceValue").textContent = totalPrice;
+      }
+    -->
+   
+  <script>
+      //INFO POPUP
+
+      function openPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+
+<footer class="footer">
+  <p>© 2024 TOL Automotive UK. All rights reserved.</p>
+</footer>
+  </body>
+</html>
