@@ -18,7 +18,7 @@
       <div class="top-bar">
         <div class="logo">
           <a href="1homepage.html">
-            <img src="logoFav.png" alt="logo" />
+            <img src="Assets/logoFav.png" alt="logo" />
           </a>
         </div>
         <nav>
@@ -41,9 +41,9 @@
 
     <div class="configurator">
       <div class="confgallery">
-        <img src="lot.jpeg" alt="Image 1" class="gallery-img active" />
-        <img src="char.webp" alt="Image 2" class="gallery-img" />
-        <img src="lot1.jpg" alt="Image 3" class="gallery-img" />
+        <img src="Assets/lot.jpeg" alt="Image 1" class="gallery-img active" />
+        <img src="Assets/char.webp" alt="Image 2" class="gallery-img" />
+        <img src="Assets/lot1.jpg" alt="Image 3" class="gallery-img" />
     </div>
       <div class="confSelector">
         <ul>
@@ -63,7 +63,7 @@
           </div>
           
         <br>
-              <b><i>+ £670</i></b>
+              <b><i>+ £0</i></b>
             
           </li>
           <li onclick="showImage(1)">
@@ -114,90 +114,6 @@
         <span>Selected vehicle price: £<span id="priceValue">0</span></span>
       </div>
     <script src="script.js"></script>
-    <!-- <script>
-  let totalPrice = parseInt(localStorage.getItem('totalPrice')) || 0;
-let previousPrice = 0; // Variable to track the price of the previously selected item
-
-// Display the current total price on page load
-document.getElementById('priceValue').textContent = totalPrice.toLocaleString();
-
-// Function to show the image and update the price
-function showImage(index) {
-  const images = document.querySelectorAll('.confgallery img');
-  const listItems = document.querySelectorAll('.confSelector ul li');
-  
-  // Hide all images
-  images.forEach((img) => {
-    img.classList.remove('active');
-  });
-  
-  // Show the selected image
-  images[index].classList.add('active');
-
-  // Remove 'selected' class from all list items
-  listItems.forEach((item) => {
-    item.classList.remove('selected');
-  });
-  
-  // Add 'selected' class to the clicked item
-  listItems[index].classList.add('selected');
-  
-  // Show the price button once a selection is made
-  const priceButton = document.getElementById('priceDisplay');
-  priceButton.style.display = 'flex'; // Make it visible
-  
-  // Extract the price from the selected item
-  const priceText = listItems[index].querySelector('i').textContent;
-  const priceMatch = priceText.match(/£([\d,]+)/);
-  
-  if (priceMatch) {
-    const newPrice = parseInt(priceMatch[1].replace(/,/g, '')); // Convert to number
-    updatePrice(newPrice); // Update the total price with the new selection
-  }
-}
-
-function updatePrice(newPrice) {
-  // Subtract the previously selected item's price from the total
-  totalPrice -= previousPrice;
-
-  // Add the new price to the total
-  totalPrice += newPrice;
-
-  // Update the displayed price
-  document.getElementById('priceValue').textContent = totalPrice.toLocaleString();
-
-  // Save the updated total price to localStorage
-  localStorage.setItem('totalPrice', totalPrice);
-
-  // Update the previous price with the new one (for future selections)
-  previousPrice = newPrice;
-}
-
-// Clear price when needed (optional)
-function resetPrice() {
-  totalPrice = 0;
-  previousPrice = 0;
-  localStorage.setItem('totalPrice', totalPrice);
-  document.getElementById('priceValue').textContent = totalPrice; 
-}
-
-
-
-//ADDITIONAL SELECTON
-// Example: when a user selects a new color option
-function selectColorOption(priceChange) {
-  // If the price change is positive, add to total price
-  if (priceChange > 0) {
-    updatePrice(priceChange);
-  } else {
-    // If the price change is negative, deduct from total price
-    deductPrice(Math.abs(priceChange));
-  }
-}
-
-
-    </script> -->
-
     <footer class="footer">
       <p>© 2024 Modern Minimalist Site. All rights reserved.</p>
     </footer>
