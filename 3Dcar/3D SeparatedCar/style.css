@@ -1,0 +1,572 @@
+body {
+  background: #0f141a;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: "impact";
+  font-size: 30px;
+  color: #ffffff;
+}
+
+div.simpleRoad .day {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #63d9fd;
+  animation: SR-timeCycle 15s ease infinite alternate;
+  will-change: opacity;
+}
+
+div.simpleRoad .speed {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 1s ease, color 1s ease;
+  will-change: opacity;
+}
+
+div.simpleRoad .speed:hover {
+  opacity: 0.5;
+  color: #ff8400;
+}
+
+div.simpleRoad .wrapper3d {
+  width: 400px;
+  max-width: 100vw;
+  height: 400px;
+  max-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.simpleRoad .wrapper3d::after {
+  content: "hover the enter the cockpit";
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 110%;
+  transition: opacity 0.5s ease 1s;
+  will-change: opacity;
+}
+
+div.simpleRoad .wrapper3d:hover::after {
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+
+/** 3D scaler
+   *
+   * This div is used only to rescale, move arround, etc. the entire world in order to keep perspective
+   *
+   */
+
+div.simpleRoad .scaler {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  perspective: 800px;
+  transform: scale3d(1, 1, 1);
+  animation: SR-scaleIn 0.5s ease;
+}
+
+/** 3D world main node
+   *
+   * This main node is the center of everything in the 3D world (pos : 0 0 0) everything you'll going to build in will at least start from this node
+   * Animating this node can be usefull to showcase the 3D world, it is used here in order to get to the "3rd" person view
+   *
+   */
+
+div.simpleRoad .mainNode {
+  transform: rotateX(-25deg) rotateY(55deg) translate3d(0, 0, 0);
+  transition: transform 1s ease;
+  will-change: transform;
+}
+
+/* div.simpleRoad .wrapper3d:hover .mainNode {
+    transform: rotateX(-8deg) rotateY(178.5deg) translate3d(0, -95px, -735px);
+  } */
+
+/* Initially hide the PNG image */
+div.simpleRoad .png-image {
+  display: none; /* Keep it hidden initially */
+  position: absolute;
+  top: 50%; /* Adjust these values for proper positioning */
+  left: 50%;
+  width: 250px;
+  transform: translate(-50%, -50%) /* Center the image if needed */
+    translateZ(-155px) translateY(-20px);
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* When hovering over .wrapper3d, show the PNG */
+div.simpleRoad .wrapper3d:hover .png-image {
+  display: block; /* Show the image on hover */
+}
+
+div.simpleRoad .node {
+  transform-style: preserve-3d;
+}
+
+div.simpleRoad .item {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+}
+
+/* Creating the cube... */
+
+div.simpleRoad .item.index1 {
+  transform: translateZ(50px);
+}
+
+div.simpleRoad .item.index2 {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+div.simpleRoad .item.index3 {
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+div.simpleRoad .item.index4 {
+  transform: rotateY(270deg) translateZ(50px);
+}
+
+div.simpleRoad .item.index5 {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+div.simpleRoad .item.index6 {
+  transform: rotateX(270deg) translateZ(50px);
+}
+
+/************************************
+   *              Car
+   ***********************************/
+
+/* Group in order to grab all element from the car */
+div.simpleRoad .carGroup {
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+
+/* .roadToggle is used in order to give user the ability to drive car left/right */
+div.simpleRoad .roadToggle {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  transform: translate3d(50px, -100px, -150px) rotateY(180deg);
+}
+
+div.simpleRoad .roadToggle:hover + .carGroup {
+  transform: translateX(40px);
+}
+
+/* Here really start the construction of the car */
+div.simpleRoad .carBodyNode {
+  transform: translate3d(-21px, -5px, -50px);
+  animation: SR-drive 5s linear infinite 1.5s;
+  will-change: transform;
+}
+
+div.simpleRoad .carBodyBlock {
+  transform: translateY(-5px) scale3d(0.3, 0.1, 0.6);
+}
+
+div.simpleRoad .wheelNode1 {
+  transform: translate3d(-15px, -2px, 18px);
+}
+
+div.simpleRoad .wheelNode2 {
+  transform: translate3d(15px, -2px, 18px);
+}
+
+div.simpleRoad .wheelNode3 {
+  transform: translate3d(15px, -2px, -18px);
+}
+
+div.simpleRoad .wheelNode4 {
+  transform: translate3d(-15px, -2px, -18px);
+}
+
+div.simpleRoad [class^="wheelBlock"] {
+  transform: scale3d(0.05, 0.1, 0.1);
+  animation: SR-wheel 1s linear infinite 1.5s;
+  will-change: transform;
+}
+
+/* Car cockpit */
+
+div.simpleRoad [class^="cockpitNode"] {
+  transform: translate3d(0px, -15px, 0);
+}
+
+div.simpleRoad .cockpitBlock1 {
+  transform: rotateY(90deg) scale3d(0.3, 0.1, 0.3) skewX(-10deg);
+}
+
+div.simpleRoad .cockpitBlock2 {
+  transform: translateZ(-5px) rotateY(90deg) scale3d(0.3, 0.1, 0.3) skewX(10deg);
+}
+
+/* -------------- Dashboard Styling -------------- */
+
+div.simpleRoad .carGroup .dashboardNode {
+  /* Position the dashboard within the car */
+  position: absolute;
+  top: -15px; /* Adjust as needed */
+  left: 0;
+  transform: translateX(0%) translateZ(80px); /* Adjust Z to move it forward/back */
+}
+
+div.simpleRoad .carGroup .dashboardBlock {
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  transform: rotateX(90deg); /* Tilt the dashboard for a realistic view */
+}
+
+div.simpleRoad .carGroup .dashboardBlock .item {
+  width: 30px;
+  height: 25px;
+  position: absolute;
+
+  /* Assign positions for each face */
+}
+
+/* Dashboard Faces */
+div.simpleRoad .carGroup .dashboardFace1 {
+  /* top */
+  transform: translateZ(20px) translateY(2px) translateX(35px);
+  background: #7d7c7c; /* Dark dashboard color */
+}
+
+div.simpleRoad .carGroup .dashboardFace2 {
+  /* bottom */
+  width: 45px;
+  transform: rotateX(90deg) translateZ(15px) translateY(12.5px) translateX(35px)
+    scale(0.66);
+  background: #616363;
+}
+
+div.simpleRoad .carGroup .dashboardFace3 {
+  /* steering whee1 */
+  transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+    scale(0.09);
+  border-radius: 50%;
+
+  border: 20px solid #000000; /* Outer ring */
+  background-color: transparent;
+  animation: turnBackAndForth 10s ease-in-out infinite;
+}
+div.simpleRoad .carGroup .dashboardFace4 {
+  /* steering wheel2 */
+  transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+    scale(0.075);
+  border-radius: 50%;
+
+  border: 20px solid #353535; /* Outer ring */
+  background-color: transparent;
+  animation: turnBackAndForth 10s ease-in-out infinite;
+}
+div.simpleRoad .carGroup .dashboardFace6 {
+  /* steering wheel3 */
+  transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+    scale(0.04);
+  border-radius: 50%;
+
+  border: 20px solid #333232; /* Outer ring */
+  background-color: transparent;
+  animation: turnBackAndForth 10s ease-in-out infinite;
+}
+
+div.simpleRoad .carGroup .dashboardFace5 {
+  /* large screen borders */
+  transform: rotateX(50deg) translateZ(25px) translateY(3.5px) translateX(40px)
+    scale(0.2);
+  background: #272727;
+}
+div.simpleRoad .carGroup .dashboardFace7 {
+  /* large screen*/
+  transform: rotateX(50deg) translateZ(25px) translateY(3.5px) translateX(40px)
+    scale(0.19);
+  background: #59a6b8;
+  border-radius: 5%;
+}
+div.simpleRoad .carGroup .dashboardFace8 {
+  /* small screen border */
+  transform: rotateX(50deg) translateZ(25px) translateY(4.5px)
+    translateX(29.75px) scale(0.1);
+  background: #0f0f0f;
+}
+
+div.simpleRoad .carGroup .dashboardFace9 {
+  /* small screen */
+  transform: rotateX(50deg) translateZ(25px) translateY(4.5px)
+    translateX(29.75px) scale(0.08);
+  background: #59a6b8;
+  border-radius: 10%;
+}
+
+/* -------------- Steering Wheel Styling -------------- */
+
+div.simpleRoad .carGroup .steeringWheelNode {
+  /* Position the steering wheel within the car */
+  position: absolute;
+  top: -100px; /* Adjust as needed */
+  left: 0;
+  height: 200%;
+  width: 200%;
+  transform: translateX(-10px) translateZ(-5px) translateY(75px) rotateX(50deg); /* Adjust Z to move it forward/back */
+}
+
+div.simpleRoad .carGroup .steeringWheelBlock {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transform: rotateX(90deg); /* Tilt the steering wheel for a realistic view */
+}
+
+div.simpleRoad .carGroup .steeringWheelBlock .item {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  /* Assign positions for each face */
+}
+
+/* Optional: Adding textures or details */
+
+/* Example: Adding a knob to the steering wheel front */
+div.simpleRoad .carGroup .steeringWheelNode .steeringWheelBlock::before {
+  content: "";
+  position: absolute;
+}
+
+/* Example: Adding buttons to the dashboard */
+div.simpleRoad .carGroup .dashboardBlock::before,
+div.simpleRoad .carGroup .dashboardBlock::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+div.simpleRoad .carGroup .dashboardBlock::before {
+  top: 10px;
+  left: 10px;
+}
+
+div.simpleRoad .carGroup .dashboardBlock::after {
+  top: 10px;
+  right: 10px;
+}
+
+/** Texturing
+   *
+   * Here are all the css used to texture all the block we've just created
+   *
+   */
+
+/* Terrain */
+
+div.simpleRoad .terrainBlock1 .item.xFaces {
+  background: #123707;
+}
+div.simpleRoad .terrainBlock1 .item.yFaces {
+  background: #448d37;
+}
+div.simpleRoad .terrainBlock1 .item.zFaces {
+  background: #346c1a;
+}
+
+div.simpleRoad .terrainBlock2 .item.xFaces {
+  background: #3a5121;
+}
+div.simpleRoad .terrainBlock2 .item.yFaces {
+  background: #719f51;
+}
+div.simpleRoad .terrainBlock2 .item.zFaces {
+  background: #87a749;
+}
+
+div.simpleRoad .terrainBlock3 .item.xFaces {
+  background: #403318;
+}
+div.simpleRoad .terrainBlock3 .item.yFaces {
+  background: #7c6941;
+}
+div.simpleRoad .terrainBlock3 .item.zFaces {
+  background: #8e6834;
+}
+
+div.simpleRoad .terrainBlock4 .item.xFaces {
+  background: #1c0c04;
+}
+div.simpleRoad .terrainBlock4 .item.yFaces {
+  background: #3e2921;
+}
+div.simpleRoad .terrainBlock4 .item.zFaces {
+  background: #421e0d;
+}
+
+/* Car */
+
+div.simpleRoad .carBodyBlock .item.xFaces {
+  background: #7d7c7c;
+}
+/* div.simpleRoad .carBodyBlock .item.yFaces {
+  background: #002c93;
+} */
+div.simpleRoad .carBodyBlock .item.zFaces {
+  background: #7d7c7c;
+}
+
+/* In order to simulate cockpit frames and windows we're using css border */
+div.simpleRoad [class^="cockpitNode"] .item:not(.yFaces) {
+  width: 92px;
+  height: 92px;
+  border: 4px solid #701601;
+  background: rgba(172, 255, 255, 0.5);
+}
+div.simpleRoad [class^="cockpitNode"] .item.yFaces {
+  background: #7d7c7c;
+}
+
+div.simpleRoad [class^="wheelBlock"] .item.xFaces {
+  background: #141817;
+}
+div.simpleRoad [class^="wheelBlock"] .item.yFaces {
+  background: #313a3d;
+}
+div.simpleRoad [class^="wheelBlock"] .item.zFaces {
+  background: #262822;
+}
+
+/** Animation
+   *
+   * Here are all the animation of the 3D world
+   * Animation name are prefixed with SR for simple road in order to prevent conflict if used with other thing
+   *
+   */
+
+/* Used once just after loading the page to make the 3D world appear*/
+@keyframes SR-scaleIn {
+  0% {
+    transform: scale3d(0, 0, 0);
+  }
+}
+
+/* Used once just after loading the page to make the 3D world appear*/
+@keyframes SR-comeIn {
+  0% {
+    transform: translateY(500px);
+    visibility: hidden;
+  }
+}
+
+/* Used to cycle from bright to dark background */
+@keyframes SR-timeCycle {
+  0% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Used to make the wheel spin */
+@keyframes SR-wheel {
+  0% {
+    transform: rotateX(0deg) scale3d(0.05, 0.1, 0.1);
+  }
+  100% {
+    transform: rotateX(-360deg) scale3d(0.05, 0.1, 0.1);
+  }
+}
+
+/* Used to simulate the pitch of the car while driving */
+@keyframes SR-drive {
+  20% {
+    transform: translate3d(-18px, -5px, -50px);
+  }
+  80% {
+    transform: translate3d(-22px, -5px, -50px);
+  }
+}
+
+/* Used to make road element (tree, road ligh and wind turbine) pop-in  and pop-out the terrain */
+@keyframes SR-roadElem {
+  0% {
+    transform: translateZ(0px) scale3d(0, 0, 0);
+  }
+  5% {
+    transform: translateZ(-30px) scale3d(1, 1, 1);
+  }
+  45% {
+    transform: translateZ(-270px) scale3d(1, 1, 1);
+  }
+  50%,
+  100% {
+    transform: translateZ(-300px) scale3d(0, 0, 0);
+  }
+}
+
+/* Steering wheel turning */
+@keyframes turnBackAndForth {
+  0% {
+    transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+      scale(0.08) rotate(0deg);
+  }
+  50% {
+    transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+      scale(0.08) rotate(30deg);
+  }
+  100% {
+    transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+      scale(0.08) rotate(0deg);
+  }
+}
+
+/* When you hover the .speed div it change animaiton speed of each element that need it to do so in order to simulate a higher speed */
+
+div.simpleRoad .speed:hover ~ div.wrapper3d .stripes,
+div.simpleRoad .speed:hover ~ div.wrapper3d [class^="wheelBlock"] {
+  animation-duration: 0.1s;
+}
+
+div.simpleRoad .speed:hover ~ div.wrapper3d .carBodyNode {
+  animation-duration: 1s;
+}
+
+div.simpleRoad .speed:hover ~ div.wrapper3d [class^="spruceGroup"],
+div.simpleRoad .speed:hover ~ div.wrapper3d [class^="lightGroup"],
+div.simpleRoad .speed:hover ~ div.wrapper3d [class^="windPropNode"],
+div.simpleRoad .speed:hover ~ div.wrapper3d .turbineGroup1 {
+  animation-duration: 0.3s;
+}
+
+div.simpleRoad .speed:hover + .day,
+div.simpleRoad .speed:hover ~ div.wrapper3d .lightBulbBlock2 .item {
+  animation-duration: 1s;
+}
