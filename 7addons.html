@@ -126,61 +126,6 @@
    
 
     <script src="script.js"></script>
-    <!-- <script>
-      // JavaScript to handle price updates and popup display as before
-      let totalPrice = parseInt(localStorage.getItem("totalPrice")) || 0;
-      let previousPrice = 0;
-
-      document.getElementById("priceValue").textContent =
-        totalPrice.toLocaleString();
-
-      function showImage(index) {
-        const listItems = document.querySelectorAll(".confSelector ul li");
-
-        // Remove 'selected' class from all list items
-        listItems.forEach((item) => {
-          item.classList.remove("selected");
-        });
-
-        // Add 'selected' class to the clicked item
-        listItems[index].classList.add("selected");
-
-        // Show the price button once a selection is made
-        const priceButton = document.getElementById("priceDisplay");
-        priceButton.style.display = "flex"; // Make it visible
-
-        // Extract the price from the selected item
-        const priceText = listItems[index].querySelector("i").textContent;
-        const priceMatch = priceText.match(/£([\d,]+)/);
-
-        if (priceMatch) {
-          const newPrice = parseInt(priceMatch[1].replace(/,/g, ""));
-          updatePrice(newPrice);
-        }
-      }
-
-      function updatePrice(newPrice) {
-        const isNegative = document
-          .querySelector(".confSelector ul li.selected i")
-          .textContent.includes("-");
-
-        totalPrice -= previousPrice;
-        totalPrice += isNegative ? -newPrice : newPrice;
-        document.getElementById("priceValue").textContent =
-          totalPrice.toLocaleString();
-        localStorage.setItem("totalPrice", totalPrice);
-        previousPrice = isNegative ? -newPrice : newPrice;
-      }
-
-      function openPopup() {
-        document.getElementById("popup").style.display = "block";
-      }
-
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
-    </script> -->
-
     <footer class="footer">
       <p>© 2024 TOL Automotive UK. All rights reserved.</p>
     </footer>
