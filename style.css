@@ -316,6 +316,12 @@ header {
   display: block; /* Show the active image */
 }
 
+.configurator-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .confSelector {
   width: 35%; /* List width */
 }

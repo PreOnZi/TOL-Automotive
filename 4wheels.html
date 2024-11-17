@@ -10,15 +10,13 @@
       rel="stylesheet"
     />
     <link rel="icon" href="logoFav.png" type="image/png" />
-
-   
   </head>
   <body>
     <header>
       <div class="top-bar">
         <div class="logo">
           <a href="1homepage.html">
-            <img src="Assets/logoFav.png" alt="logo" />
+            <img src="assets/logoFav.png" alt="logo" />
           </a>
         </div>
         <nav>
@@ -39,81 +37,83 @@
       </div>
     </section>
 
-    <div class="configurator">
-      <div class="confgallery">
-        <img src="Assets/lot.jpeg" alt="Image 1" class="gallery-img active" />
-        <img src="Assets/char.webp" alt="Image 2" class="gallery-img" />
-        <img src="Assets/lot1.jpg" alt="Image 3" class="gallery-img" />
-    </div>
+    <div class="img-container">
+      <div class="img-inner-container">
+        <img
+          src="assets/lot.jpeg"
+          id="car-wheels-image"
+          alt="Image 1"
+          class="configurator-img"
+        />
+      </div>
       <div class="confSelector">
         <ul>
-          <li onclick="showImage(0)">
+          <li onclick="changeImgOnClick(event)">
             <b><h3>Diamond on the rise</h3></b>
-        
-        <br>
-        <div class="cube-container">
-            <div class="cube">
-              <div class="face front"></div>
-              <div class="face back">Back</div>
-              <div class="face left">Left</div>
-              <div class="face right">Right</div>
-              <div class="face top">Top</div>
-              <div class="face bottom">Bottom</div>
+
+            <br />
+            <div class="cube-container">
+              <div class="cube">
+                <div class="face front"></div>
+                <div class="face back">Back</div>
+                <div class="face left">Left</div>
+                <div class="face right">Right</div>
+                <div class="face top">Top</div>
+                <div class="face bottom">Bottom</div>
+              </div>
             </div>
-          </div>
-          
-        <br>
-              <b><i>+ £0</i></b>
-            
+
+            <br />
+            <b><i>+ £0</i></b>
           </li>
-          <li onclick="showImage(1)">
+          <li onclick="changeImgOnClick(event)">
             <b><h3>Square targets</h3></b>
-        
+
             <br />
 
-            <br>
+            <br />
             <div class="cube-container1">
-                <div class="cube">
-                  <div class="face front"></div>
-                  <div class="face back">Back</div>
-                  <div class="face left">Left</div>
-                  <div class="face right">Right</div>
-                  <div class="face top">Top</div>
-                  <div class="face bottom">Bottom</div>
-                </div>
+              <div class="cube">
+                <div class="face front"></div>
+                <div class="face back">Back</div>
+                <div class="face left">Left</div>
+                <div class="face right">Right</div>
+                <div class="face top">Top</div>
+                <div class="face bottom">Bottom</div>
               </div>
-            <br>
-              <b><i>+ £670</i></b>
-        
+            </div>
+            <br />
+            <b><i>+ £670</i></b>
           </li>
-          <li onclick="showImage(2)">
+          <li onclick="changeImgOnClick(event)">
             <b><h3>Dark circular</h3></b>
-            
+
             <br />
 
-            <br>
+            <br />
             <div class="cube-container2">
-                <div class="cube">
-                  <div class="face front"></div>
-                  <div class="face back">Back</div>
-                  <div class="face left">Left</div>
-                  <div class="face right">Right</div>
-                  <div class="face top">Top</div>
-                  <div class="face bottom">Bottom</div>
-                </div>
+              <div class="cube">
+                <div class="face front"></div>
+                <div class="face back">Back</div>
+                <div class="face left">Left</div>
+                <div class="face right">Right</div>
+                <div class="face top">Top</div>
+                <div class="face bottom">Bottom</div>
               </div>
-            <br>
-              <b><i>+ £870</i></b>
-        
+            </div>
+            <br />
+            <b><i>+ £870</i></b>
           </li>
         </ul>
       </div>
     </div>
     <a href="5interior.html" class="next-button">Interior</a>
-    <div class="price-button" id="priceDisplay" style="display: none;">
-        <span>Selected vehicle price: £<span id="priceValue">0</span></span>
-      </div>
-    <script src="script.js"></script>
+    <div class="price-button" id="priceDisplay" style="display: none">
+      <span>Selected vehicle price: £<span id="priceValue">0</span></span>
+    </div>
+    <script src="price.js"></script>
+    <script src="wheelsPageScript.js"></script>
+
     <footer class="footer">
       <p>© 2024 Modern Minimalist Site. All rights reserved.</p>
     </footer>
