@@ -10,15 +10,13 @@
       rel="stylesheet"
     />
     <link rel="icon" href="logoFav.png" type="image/png" />
-
-   
   </head>
   <body>
     <header>
       <div class="top-bar">
         <div class="logo">
           <a href="1homepage.html">
-            <img src="Assets/logoFav.png" alt="logo" />
+            <img src="assets/logoFav.png" alt="logo" />
           </a>
         </div>
         <nav>
@@ -33,63 +31,57 @@
     <section class="info">
       <div class="info-text">
         <h2>Interior</h2>
-        <p>
-         Classy colours and responsibly sourced materials.
-        </p>
+        <p>Classy colours and responsibly sourced materials.</p>
       </div>
     </section>
 
     <div class="configurator">
       <div class="confgallery">
-        <img src="Assets/lot.jpeg" alt="Image 1" class="gallery-img active" />
-        <img src="Assets/char.webp" alt="Image 2" class="gallery-img" />
-        <img src="Assets/lot1.jpg" alt="Image 3" class="gallery-img" />
-    </div>
+        <img src="assets/lot.jpeg" alt="Image 1" class="gallery-img active" />
+        <img src="assets/char.webp" alt="Image 2" class="gallery-img" />
+        <img src="assets/lot1.jpg" alt="Image 3" class="gallery-img" />
+      </div>
 
       <div class="confSelector">
         <ul>
           <li onclick="showImage(0)">
             <b><h3>Recycled textiles | black</h3></b>
-        
-        <br>
-        <div class="interior1">
-        </div>
-        <br>
-              <b><i>+ £0</i></b>
-            
+
+            <br />
+            <div class="interior1"></div>
+            <br />
+            <b><i>+ £0</i></b>
           </li>
           <li onclick="showImage(1)">
             <b><h3>Vegan leather | black</h3></b>
-        
+
             <br />
 
-            <br>
-            <div class="interior2">
-            </div>
-            <br>
-              <b><i>+ £3,670</i></b>
-        
+            <br />
+            <div class="interior2"></div>
+            <br />
+            <b><i>+ £3,670</i></b>
           </li>
           <li onclick="showImage(2)">
             <b><h3>Vegan leather | cream</h3></b>
-            
+
             <br />
 
-            <br>
-            <div class="interior3">
-            </div>
-            <br>
-              <b><i>+ £3,670</i></b>
-        
+            <br />
+            <div class="interior3"></div>
+            <br />
+            <b><i>+ £3,670</i></b>
           </li>
         </ul>
       </div>
     </div>
     <a href="6ads.html" class="next-button">Extras</a>
-    <div class="price-button" id="priceDisplay" style="display: none;">
-        <span>Selected vehicle price: £<span id="priceValue">0</span></span>
-      </div>
-    <script src="script.js"></script>
+    <div class="price-button" id="priceDisplay" style="display: none">
+      <span>Selected vehicle price: £<span id="priceValue">0</span></span>
+    </div>
+    <script src="price.js"></script>
+    <script src="gallery.js"></script>
+
     <footer class="footer">
       <p>© 2024 TOL Automotive UK. All rights reserved.</p>
     </footer>
