@@ -38,9 +38,30 @@ function updatePrice(newPrice = 0, itemName = "Unknown Item") {
   }
 
   // Track the current selection for this page
+  const pages = {
+    Powertrain: "/3powertrain.html",
+    Colour: "/4.1colour.html",
+    Wheels: "/4wheels.html",
+    Interior: "/5interior.html",
+    Advertising: "/6ads.html",
+    Optional: "/7addons.html",
+  };
+
   const currentPage = window.location.pathname;
+
+  // Find the category key corresponding to the current page
+  const category = Object.keys(pages).find((key) => pages[key] === currentPage);
+
+  // Update selections with the new item
   selections = selections.filter((selection) => selection.page !== currentPage); // Remove previous selection for the page
-  selections.push({ name: itemName, price: newPrice, page: currentPage });
+
+  selections.push({
+    name: itemName,
+    price: newPrice,
+    page: currentPage,
+    category: category || "Unknown", // Add category; default to "Unknown" if not found
+  });
+
   localStorage.setItem("selections", JSON.stringify(selections));
 
   // Update selection list display
