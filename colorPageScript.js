@@ -5,6 +5,13 @@ if (carColorImage) {
     const target = e.target.closest("li");
     if (!target) return;
 
+    const configItems = document.querySelectorAll(".confSelector ul li");
+    configItems.forEach((item) => {
+      item.style.backgroundColor = "";
+    });
+
+    target.style.backgroundColor = "#ddd";
+
     const targetId = target.id;
     let newSrc = null;
     let priceChange = 0;
