@@ -1,3 +1,7 @@
+:root {
+  --default-car: #7d7c7c;
+}
+
 body {
   background: #0f141a;
   width: 100vw;
@@ -241,25 +245,26 @@ div.simpleRoad .carGroup .dashboardBlock {
 
 div.simpleRoad .carGroup .dashboardBlock .item {
   width: 30px;
-  height: 25px;
+  height: 10px;
   position: absolute;
-
-  /* Assign positions for each face */
 }
 
 /* Dashboard Faces */
 div.simpleRoad .carGroup .dashboardFace1 {
   /* top */
-  transform: translateZ(20px) translateY(2px) translateX(35px);
-  background: #7d7c7c; /* Dark dashboard color */
+  width: 35px;
+
+  transform: translateZ(20px) translateX(35px) translateY(5px);
+  background: var(--default-car); /* Dark dashboard color */
 }
 
 div.simpleRoad .carGroup .dashboardFace2 {
-  /* bottom */
-  width: 45px;
-  transform: rotateX(90deg) translateZ(15px) translateY(12.5px) translateX(35px)
-    scale(0.66);
+  /* Bottom of the dashboard */
+  transform: rotateX(90deg) translateZ(-4px) translateY(14px) translateX(33px)
+    scale(0.75);
   background: #616363;
+  width: 30px; /* Ensure consistent width */
+  height: 5px; /* Adjust height to fit */
 }
 
 div.simpleRoad .carGroup .dashboardFace3 {
@@ -274,7 +279,7 @@ div.simpleRoad .carGroup .dashboardFace3 {
 }
 div.simpleRoad .carGroup .dashboardFace4 {
   /* steering wheel2 */
-  transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+  transform: rotateX(50deg) translateZ(20px) translateY(-8px) translateX(10px)
     scale(0.075);
   border-radius: 50%;
 
@@ -284,7 +289,7 @@ div.simpleRoad .carGroup .dashboardFace4 {
 }
 div.simpleRoad .carGroup .dashboardFace6 {
   /* steering wheel3 */
-  transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
+  transform: rotateX(50deg) translateZ(4px) translateY(-8px) translateX(10px)
     scale(0.04);
   border-radius: 50%;
 
@@ -295,30 +300,54 @@ div.simpleRoad .carGroup .dashboardFace6 {
 
 div.simpleRoad .carGroup .dashboardFace5 {
   /* large screen borders */
-  transform: rotateX(50deg) translateZ(25px) translateY(3.5px) translateX(40px)
+  transform: rotateX(50deg) translateZ(4px) translateY(3.5px) translateX(40px)
     scale(0.2);
   background: #272727;
 }
 div.simpleRoad .carGroup .dashboardFace7 {
   /* large screen*/
-  transform: rotateX(50deg) translateZ(25px) translateY(3.5px) translateX(40px)
+  transform: rotateX(50deg) translateZ(5px) translateY(3.5px) translateX(40px)
     scale(0.19);
   background: #59a6b8;
   border-radius: 5%;
 }
 div.simpleRoad .carGroup .dashboardFace8 {
   /* small screen border */
-  transform: rotateX(50deg) translateZ(25px) translateY(4.5px)
+  transform: rotateX(50deg) translateZ(5px) translateY(4.5px)
     translateX(29.75px) scale(0.1);
   background: #0f0f0f;
 }
 
 div.simpleRoad .carGroup .dashboardFace9 {
   /* small screen */
-  transform: rotateX(50deg) translateZ(25px) translateY(4.5px)
+  transform: rotateX(50deg) translateZ(5px) translateY(4.5px)
     translateX(29.75px) scale(0.08);
   background: #59a6b8;
   border-radius: 10%;
+}
+
+#dashboard2 {
+  width: 35px;
+}
+/* External trunk top */
+div.simpleRoad .trunkExternal {
+  position: absolute;
+  width: 100px;
+  height: 28px;
+  background: var(--default-car, gray);
+  transform: translateY(-5px) translateZ(-35px) rotateX(90deg);
+  transform-origin: center;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+div.simpleRoad .carBodyBlock .item.outerFrontTop {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: var(--default-car, #7d7c7c);
+  transform: translateY(-15px) translateZ(50px) rotateX(90deg);
+  transform-origin: center;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
 }
 
 /* -------------- Steering Wheel Styling -------------- */
@@ -362,7 +391,6 @@ div.simpleRoad .carGroup .dashboardBlock::after {
   position: absolute;
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
 }
 
@@ -427,24 +455,30 @@ div.simpleRoad .terrainBlock4 .item.zFaces {
 /* Car */
 
 div.simpleRoad .carBodyBlock .item.xFaces {
-  background: #7d7c7c;
+  background: var(--default-car);
 }
 /* div.simpleRoad .carBodyBlock .item.yFaces {
-  background: #002c93;
+  background: var(--default-car);
 } */
+
 div.simpleRoad .carBodyBlock .item.zFaces {
-  background: #7d7c7c;
+  background: var(--default-car);
+}
+
+div.simpleRoad .carBodyBlock .item.index5 {
+  transform: translateY(-50px) rotateX(90deg); /* Adjust height and rotation */
+  background: var(--default-car, #7d7c7c); /* Match car color */
 }
 
 /* In order to simulate cockpit frames and windows we're using css border */
 div.simpleRoad [class^="cockpitNode"] .item:not(.yFaces) {
   width: 92px;
   height: 92px;
-  border: 4px solid #701601;
+  border: 4px solid #5b5b5b;
   background: rgba(172, 255, 255, 0.5);
 }
 div.simpleRoad [class^="cockpitNode"] .item.yFaces {
-  background: #7d7c7c;
+  background: var(--default-car);
 }
 
 div.simpleRoad [class^="wheelBlock"] .item.xFaces {

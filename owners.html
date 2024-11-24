@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Trying out animation</h2>
+
+    <div
+      style="
+        width: 600px;
+        max-width: 600px;
+        height: 600px;
+        overflow: hidden;
+        position: relative;
+      "
+    >
+      <iframe
+        id="animationFrame"
+        src="http://127.0.0.1:5500/3Dcar/3DSeparatedCar/index.html"
+        width="600"
+        height="600"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: scale(3) translate(-50%, -50%);
+          transform-origin: 0 0;
+          border: none;
+        "
+      ></iframe>
+    </div>
+    <script src="3dcarScript.js"></script>
+  </body>
+</html>
