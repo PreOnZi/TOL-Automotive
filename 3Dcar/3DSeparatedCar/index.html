@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View from car</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="aniamted-container">
+      <div class="simpleRoad">
+        <div class="speed">speed up</div>
+        <div class="day"></div>
+        <div class="wrapper3d">
+          <div class="scaler">
+            <div class="node mainNode">
+              <!-- /.terrainNode1 node -->
+
+              <!--/.roadNode node-->
+              <div class="roadToggle"></div>
+              <div class="carGroup node">
+                <div class="carBodyNode node">
+                  <!-- New Dashboard -->
+                  <div class="dashboardNode node">
+                    <div class="dashboardBlock node">
+                      <div class="item dashboardFace1"></div>
+                      <div class="item dashboardFace2" id="dashboard2"></div>
+                      <div class="item dashboardFace3"></div>
+                      <div class="item dashboardFace4"></div>
+                      <div class="item dashboardFace5"></div>
+                      <div class="item dashboardFace6"></div>
+                      <div class="item dashboardFace7"></div>
+                      <div class="item dashboardFace8"></div>
+                      <div class="item dashboardFace9"></div>
+                      <div class="item dashboardFace10"></div>
+                    </div>
+                  </div>
+
+                  <!-- New Steering Wheel -->
+                  <div class="steeringWheelNode node">
+                    <div class="steeringWheelBlock node">
+                      <div class="item steeringFace1"></div>
+                      <div class="item steeringFace2"></div>
+                      <div class="item steeringFace3"></div>
+                      <div class="item steeringFace4"></div>
+                      <div class="item steeringFace5"></div>
+                      <div class="item steeringFace6"></div>
+                    </div>
+                  </div>
+                  <!-- Car body block -->
+                  <div class="carBodyBlock node">
+                    <!-- Front and side parts of the car body -->
+                    <div class="item index1 zFaces"></div>
+                    <div class="item index2 xFaces"></div>
+                    <div class="item index3 zFaces"></div>
+                    <div class="item index4 xFaces"></div>
+
+                    <!-- Top of the car (front part) -->
+                    <div class="item outerFrontTop yFaces"></div>
+
+                    <!-- Top of the car body (trunk top) -->
+                    <div class="item trunkExternal yFaces"></div>
+                    <!-- <div class="item index5 yFaces"></div> -->
+                  </div>
+
+                  <div class="wheelNode1 node">
+                    <div class="wheelBlock1 node">
+                      <div class="item index1 zFaces"></div>
+                      <div class="item index2 xFaces"></div>
+                      <div class="item index3 zFaces"></div>
+                      <div class="item index4 xFaces"></div>
+                      <div class="item index5 yFaces"></div>
+                      <div class="item index6 yFaces"></div>
+                    </div>
+                  </div>
+                  <div class="wheelNode2 node">
+                    <div class="wheelBlock2 node">
+                      <div class="item index1 zFaces"></div>
+                      <div class="item index2 xFaces"></div>
+                      <div class="item index3 zFaces"></div>
+                      <div class="item index4 xFaces"></div>
+                      <div class="item index5 yFaces"></div>
+                      <div class="item index6 yFaces"></div>
+                    </div>
+                  </div>
+                  <div class="wheelNode3 node">
+                    <div class="wheelBlock3 node">
+                      <div class="item index1 zFaces"></div>
+                      <div class="item index2 xFaces"></div>
+                      <div class="item index3 zFaces"></div>
+                      <div class="item index4 xFaces"></div>
+                      <div class="item index5 yFaces"></div>
+                      <div class="item index6 yFaces"></div>
+                    </div>
+                  </div>
+                  <div class="wheelNode4 node">
+                    <div class="wheelBlock4 node">
+                      <div class="item index1 zFaces"></div>
+                      <div class="item index2 xFaces"></div>
+                      <div class="item index3 zFaces"></div>
+                      <div class="item index4 xFaces"></div>
+                      <div class="item index5 yFaces"></div>
+                      <div class="item index6 yFaces"></div>
+                    </div>
+                  </div>
+                  <div class="cockpitNode1 node">
+                    <div class="cockpitBlock1 node">
+                      <div class="item index1 xFaces"></div>
+                      <div class="item index3 xFaces"></div>
+                      <div class="item index4 zFaces"></div>
+                      <div class="item index5 yFaces"></div>
+                    </div>
+                  </div>
+                  <div class="cockpitNode2 node">
+                    <div class="cockpitBlock2 node">
+                      <div class="item index1 xFaces"></div>
+                      <div class="item index2 zFaces"></div>
+                      <div class="item index3 xFaces"></div>
+                      <div class="item index5 yFaces"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--/.carBodyNode node-->
+              </div>
+              <!--/.carGroup node-->
+
+              <!-- /.node mainNode -->
+            </div>
+            <!-- /.scaler -->
+          </div>
+          <!-- /.wrapper3d -->
+        </div>
+        <!-- /.simpleRoad -->
+      </div>
+    </div>
+    <!-- end of animated -->
+  </body>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carGroup = document.querySelector(".simpleRoad .carGroup");
+      let rotationY = 0; // Rotation for left-right spin
+      let rotationX = 0; // Rotation for up-down roll
+
+      document.addEventListener("keydown", (event) => {
+        switch (event.key) {
+          case "ArrowRight": // Spin car horizontally to the right
+            rotationY += 15;
+            carGroup.style.transform = `translate(-50%, -50%) rotateY(${rotationY}deg) rotateX(${rotationX}deg)`;
+            break;
+          case "ArrowLeft": // Spin car horizontally to the left
+            rotationY -= 15;
+            carGroup.style.transform = `translate(-50%, -50%) rotateY(${rotationY}deg) rotateX(${rotationX}deg)`;
+            break;
+          case "ArrowUp": // Roll car forward
+            rotationX -= 15;
+            carGroup.style.transform = `translate(-50%, -50%) rotateY(${rotationY}deg) rotateX(${rotationX}deg)`;
+            break;
+          case "ArrowDown": // Roll car backward
+            rotationX += 15;
+            carGroup.style.transform = `translate(-50%, -50%) rotateY(${rotationY}deg) rotateX(${rotationX}deg)`;
+            break;
+        }
+      });
+    });
+  </script>
+</html>
