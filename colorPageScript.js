@@ -19,19 +19,19 @@ if (carColorImage) {
 
     switch (targetId) {
       case "red":
-        newSrc = "assets/carImageSelection/1RedDiamond.png";
+        newSrc = "Assets/carImageSelection/1RedDiamond.png";
         priceChange = 370;
         itemName = "Solar Red";
         localStorage.setItem("selectedColor", "Red");
         break;
       case "silver":
-        newSrc = "assets/carImageSelection/4SilverDiamond.png";
+        newSrc = "Assets/carImageSelection/4SilverDiamond.png";
         priceChange = 470;
         itemName = "Brilliant Silver";
         localStorage.setItem("selectedColor", "Silver");
         break;
       case "green":
-        newSrc = "assets/carImageSelection/7GreenDiamond.png";
+        newSrc = "Assets/carImageSelection/7GreenDiamond.png";
         priceChange = 570;
         itemName = "Emerald Green";
         localStorage.setItem("selectedColor", "Green");
