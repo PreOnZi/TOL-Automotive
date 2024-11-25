@@ -260,11 +260,12 @@ div.simpleRoad .carGroup .dashboardFace1 {
 
 div.simpleRoad .carGroup .dashboardFace2 {
   /* Bottom of the dashboard */
-  transform: rotateX(90deg) translateZ(-4px) translateY(14px) translateX(33px)
+  transform: rotateX(90deg) translateZ(0px) translateY(17px) translateX(30px)
     scale(0.75);
   background: #616363;
-  width: 30px; /* Ensure consistent width */
-  height: 5px; /* Adjust height to fit */
+  width: 40px;
+  height: 45px;
+  z-index: 100;
 }
 
 div.simpleRoad .carGroup .dashboardFace3 {
@@ -327,8 +328,20 @@ div.simpleRoad .carGroup .dashboardFace9 {
 }
 
 #dashboard2 {
-  width: 35px;
+  width: 40px;
 }
+
+/* Vertical Dashboard Panel */
+div.simpleRoad .carGroup .dashboardBlock .verticalDashboard {
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  background: #707070;
+  transform: translateZ(20px) translateY(3px) translateX(35px);
+  transform-origin: center;
+  z-index: 100;
+}
+
 /* External trunk top */
 div.simpleRoad .trunkExternal {
   position: absolute;
@@ -348,6 +361,16 @@ div.simpleRoad .carBodyBlock .item.outerFrontTop {
   transform: translateY(-15px) translateZ(50px) rotateX(90deg);
   transform-origin: center;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+/* Car floor */
+div.simpleRoad .carBodyBlock .item.carFloor {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--default-car);
+  transform: translateY(10px) translateZ(0px) rotateX(90deg);
+  transform-origin: center;
 }
 
 /* -------------- Steering Wheel Styling -------------- */
