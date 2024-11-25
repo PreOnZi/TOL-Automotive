@@ -273,55 +273,61 @@ div.simpleRoad .carGroup .dashboardFace3 {
   transform: rotateX(50deg) translateZ(41px) translateY(-8px) translateX(10px)
     scale(0.09);
   border-radius: 50%;
-
+  top: -35px;
+  left: -54px;
   border: 20px solid #000000; /* Outer ring */
   background-color: transparent;
   animation: turnBackAndForth 10s ease-in-out infinite;
+  z-index: 101;
 }
 div.simpleRoad .carGroup .dashboardFace4 {
   /* steering wheel2 */
   transform: rotateX(50deg) translateZ(20px) translateY(-8px) translateX(10px)
     scale(0.075);
   border-radius: 50%;
-
+  top: -35px;
+  left: -54px;
   border: 20px solid #353535; /* Outer ring */
   background-color: transparent;
   animation: turnBackAndForth 10s ease-in-out infinite;
+  z-index: 101;
 }
 div.simpleRoad .carGroup .dashboardFace6 {
   /* steering wheel3 */
   transform: rotateX(50deg) translateZ(4px) translateY(-8px) translateX(10px)
     scale(0.04);
   border-radius: 50%;
-
+  top: -35px;
+  left: -54px;
   border: 20px solid #333232; /* Outer ring */
   background-color: transparent;
   animation: turnBackAndForth 10s ease-in-out infinite;
+  z-index: 101;
 }
 
 div.simpleRoad .carGroup .dashboardFace5 {
   /* large screen borders */
-  transform: rotateX(50deg) translateZ(4px) translateY(3.5px) translateX(40px)
+  transform: translateZ(18px) translateY(-1px) translateX(37px) rotateX(90deg)
     scale(0.2);
   background: #272727;
 }
 div.simpleRoad .carGroup .dashboardFace7 {
-  /* large screen*/
-  transform: rotateX(50deg) translateZ(5px) translateY(3.5px) translateX(40px)
-    scale(0.19);
-  background: #59a6b8;
-  border-radius: 5%;
+  /* Main screen inside dashboard */
+  transform: translateZ(18px) translateY(-1px) translateX(37px) rotateX(90deg)
+    scale(0.5);
+  background: #59a6b8; /* Screen color */
+  border-radius: 5%; /* Rounded screen edges */
 }
 div.simpleRoad .carGroup .dashboardFace8 {
-  /* small screen border */
-  transform: rotateX(50deg) translateZ(5px) translateY(4.5px)
-    translateX(29.75px) scale(0.1);
-  background: #0f0f0f;
+  /* Small screen border */
+  transform: translateZ(18px) translateY(-1px) translateX(37px) rotateX(90deg)
+    scale(0.3);
+  background: #272727;
 }
 
 div.simpleRoad .carGroup .dashboardFace9 {
   /* small screen */
-  transform: rotateX(50deg) translateZ(5px) translateY(4.5px)
+  transform: translateZ(18px) translateY(-1px) translateX(17px) rotateX(90deg)
     translateX(29.75px) scale(0.08);
   background: #59a6b8;
   border-radius: 10%;
@@ -369,20 +375,19 @@ div.simpleRoad .carBodyBlock .item.carFloor {
   width: 100px;
   height: 100px;
   background: var(--default-car);
-  transform: translateY(10px) translateZ(0px) rotateX(90deg);
+  transform: translateY(25px) translateZ(0px) rotateX(90deg);
   transform-origin: center;
 }
 
 /* -------------- Steering Wheel Styling -------------- */
-
 div.simpleRoad .carGroup .steeringWheelNode {
-  /* Position the steering wheel within the car */
   position: absolute;
-  top: -100px; /* Adjust as needed */
+  top: -15px;
   left: 0;
-  height: 200%;
-  width: 200%;
-  transform: translateX(-10px) translateZ(-5px) translateY(75px) rotateX(50deg); /* Adjust Z to move it forward/back */
+  height: 50px;
+  width: 50px;
+  transform: translateX(0px) translateY(15px) translateZ(30px) rotateX(90deg); /* Position steering wheel */
+  transform-origin: center;
 }
 
 div.simpleRoad .carGroup .steeringWheelBlock {
