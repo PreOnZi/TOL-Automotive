@@ -1,5 +1,9 @@
 window.addEventListener("message", (event) => {
-  const allowedOrigins = ["http://localhost:5500", "http://127.0.0.1:5500"];
+  const allowedOrigins = [
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "https://preonzi.github.io/TOL-Automotive",
+  ];
   if (!allowedOrigins.includes(event.origin)) {
     console.warn("Blocked message from untrusted origin:", event.origin);
     return;
