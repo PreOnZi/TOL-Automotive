@@ -42,7 +42,7 @@ function changeWheelOnClick(e) {
     const carWheelsImage = document.getElementById("car-wheels-image");
     carWheelsImage.setAttribute(
       "src",
-      `assets/carImageSelection/${selectedImage}`
+      `Assets/carImageSelection/${selectedImage}`
     );
   }
 
