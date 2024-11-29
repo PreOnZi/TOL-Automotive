@@ -629,7 +629,7 @@ header {
 
 
 /*ADS DETAILS COLUMNS*/
-.adsdetails {
+.explainAds {
   width: 100%; /* Full width of the page */
   background-color: #f4f4f4; /* Light gray background */
   padding: 50px 20px; /* Padding for spacing */
@@ -666,7 +666,8 @@ header {
   grid-column: 1 / span 2; /* Span across columns 1 and 2 */
   grid-row: 2; /* Place in the second row */
   max-height: fit-content;
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); gap: 20px;
 }
 
 .column1,
