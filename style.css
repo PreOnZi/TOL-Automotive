@@ -636,51 +636,35 @@ header {
   box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-.columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
 
-  gap: 20px; /* Space between grid items */
-  grid-template-rows: repeat(1, 1fr);
+/*CAROUSEL*/
+.carousel-container {
+  display: flex; /* Align items horizontally */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to each item */
+  gap: 20px; /* Space between items */
+  padding: 10px; /* Optional: Padding around carousel */
+  border: 1px solid #ccc; /* Optional: Visualize carousel boundaries */
+  border-radius: 8px; /* Optional: Rounded corners */
+  background-color: #f9f9f9; /* Optional: Background color */
+  width: 100%; /* Full width of the container */
 }
 
-.column1 {
-  grid-column: 1; /* Place in the first column */
-  grid-row: 1; /* Place in the first row */
-  max-height: fit-content;
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
 }
 
-.column2 {
-  grid-column: 2; /* Place in the second column */
-  grid-row: 1; /* Place in the first row */
-  max-height: fit-content;
+.carousel-item {
+  flex: 0 0 auto; /* Maintain item width */
+  width: 250px; /* Set width for each item */
+  height: auto; /* Adjust height based on content */
+  scroll-snap-align: center; /* Center item when snapping */
+  background-color: #e0e0e0; /* Optional: Background color */
+  border: 1px solid #ccc; /* Optional: Border for items */
+  border-radius: 8px; /* Optional: Rounded corners */
+  padding: 20px; /* Add padding to each item */
+  text-align: center; /* Center align text */
 }
-
-.column3 {
-  grid-column: 3; /* Place in the third column */
-  grid-row: 1 / span 2; /* Span two rows to accommodate its height */
-  max-height: fit-content;
-}
-
-.column4 {
-  grid-column: 1 / span 2; /* Span across columns 1 and 2 */
-  grid-row: 2; /* Place in the second row */
-  max-height: fit-content;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); gap: 20px;
-}
-
-.column1,
-.column2,
-.column3,
-.column4 {
-  background-color: #e0e0e0; 
-  padding: 20px;
-  border: 1px solid #ccc; 
-  border-radius: 8px; 
-  text-align: center;
-  box-sizing: border-box; 
-  }
 
   /*LEARN MORE BUTTON*/
   .learnMoreButton {
