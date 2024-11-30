@@ -75,81 +75,13 @@
             <br />
 
             <br />
-            <b><i>- £4,670</i></b>
-            <a href="#" onclick="openPopup()">
-              <img
-                src="Assets/info.png"
-                alt="Information Icon"
-                class="infoIcon"
-              />
-            </a>
+            <div style="display: flex; justify-content: space-between">
+              <b><i>- £4,670</i></b>
+              <button class="learnMoreButton" onclick="scrollToHowItWorks()">
+                Learn More
+              </button>
+            </div>
           </li>
-          <div
-            id="popup"
-            style="
-              display: none;
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              width: 700px;
-              background-color: white;
-              padding: 20px;
-              border: 1px solid black;
-              box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-              z-index: 1000;
-            "
-          >
-            <h1>Infotainment Advertising</h1>
-            <br />
-            <h3>Terms & Conditions</h3>
-            <br />
-            <p>
-              <b>Level One Advertising</b>
-              <br />
-              Level One offers a moderate level of advertising implementation
-              into the car's system. This includes the infotainment screen and
-              the car's audio system. The displayed advertisements will never be
-              in the driver's way of operating the vehicle safely. Additionally,
-              as the level One offers low personalisation, only selected data
-              will be shared with TOL and advertisers. This will result in less
-              relevant advertising being shown. TOL will collect and share
-              driving habits and most common routes; GPS information.
-              <br />
-              <br />
-
-              <b>Level Two Advertising</b>
-              <br />
-              Level Two offers more advertising within the system compared to
-              Level One. It again uses both the infotainment system screen and
-              the vehicle's audio system. Additionally, a small portion of the
-              driver's gauge cluster is reserved for advertising purposes. As
-              Level Two operates with higher personalisation, in addition to GPS
-              data, TOL will utilise the vehicle's microphones to gauge topics
-              of interest from the cabin. This function can be temporarily
-              disabled in the car's settings, however it will turn on
-              automatically after five minutes and on start. None of the
-              advertising features will prevent the driver from safe operation
-              of the vehicle.
-
-              <br />
-              <br />
-
-              <b>General</b>
-              <br />
-              By selecting one of the options above the customer agrees to
-              keeping and using the vehicle for at least four (4) years with
-              minimum 5000 miles driven annually. The customer has the option to
-              op-out of either selected advertising levels within the first two
-              months of purchase by paying the difference to RRP.
-              <br />
-              Please feel free to reach out to any dealership or the customer
-              service for more information.
-            </p>
-            <br />
-            <br />
-            <button class="closePopup" onclick="closePopup()">Close</button>
-          </div>
           <li>
             <b><h3>Level Two | High Personalisation</h3></b>
 
@@ -164,26 +96,166 @@
             <br />
 
             <br />
-            <b><i>- £6,670</i></b>
-            <a href="#" onclick="openPopup()">
-              <img
-                src="Assets/info.png"
-                alt="Information Icon"
-                class="infoIcon"
-              />
-            </a>
+            <div style="display: flex; justify-content: space-between">
+              <b><i>- £6,670</i></b>
+              <button class="learnMoreButton" onclick="scrollToHowItWorks()">
+                Learn More
+              </button>
+            </div>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="explainAds">
-      <div style="background-color: #ffffff; width: 100%; padding: 3%">
-        <h1 style="text-align: center; font-size: 3em">How it works</h1>
+      <div
+        id="howItWorksMenu"
+        style="
+          background-color: #ffffff;
+          width: 100%;
+          padding: 3%;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+          "
+        >
+          <h1 style="text-align: center; font-size: 3em">How it works</h1>
+          <a href="#" onclick="openPopup()">
+            <img
+              src="Assets/info.png"
+              alt="Information Icon"
+              class="infoIcon"
+            />
+          </a>
+        </div>
         <h4 style="text-align: center; color: rgb(128, 128, 128)">
           safety | convenience | value
         </h4>
       </div>
+
+      <div
+        id="popup"
+        style="
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 700px;
+          background-color: white;
+          padding: 20px;
+          border: 1px solid black;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+          z-index: 1000;
+        "
+      >
+        <h1>Infotainment Advertising</h1>
+        <br />
+        <h3>Terms & Conditions</h3>
+        <br />
+        <p>
+          <b>Level One Advertising</b>
+          <br />
+          Level One offers a moderate level of advertising implementation into
+          the car's system. This includes the infotainment screen and the car's
+          audio system. The displayed advertisements will never be in the
+          driver's way of operating the vehicle safely. Additionally, as the
+          level One offers low personalisation, only selected data will be
+          shared with TOL and advertisers. This will result in less relevant
+          advertising being shown. TOL will collect and share driving habits and
+          most common routes; GPS information.
+          <br />
+          <br />
+
+          <b>Level Two Advertising</b>
+          <br />
+          Level Two offers more advertising within the system compared to Level
+          One. It again uses both the infotainment system screen and the
+          vehicle's audio system. Additionally, a small portion of the driver's
+          gauge cluster is reserved for advertising purposes. As Level Two
+          operates with higher personalisation, in addition to GPS data, TOL
+          will utilise the vehicle's microphones to gauge topics of interest
+          from the cabin. This function can be temporarily disabled in the car's
+          settings, however it will turn on automatically after five minutes and
+          on start. None of the advertising features will prevent the driver
+          from safe operation of the vehicle.
+
+          <br />
+          <br />
+
+          <b>General</b>
+          <br />
+          By selecting one of the options above the customer agrees to keeping
+          and using the vehicle for at least four (4) years with minimum 5000
+          miles driven annually. The customer has the option to op-out of either
+          selected advertising levels within the first two months of purchase by
+          paying the difference to RRP.
+          <br />
+          The infotianment system runs on Google's Android Automotive platform
+          and can therefore be connected to apps such as Spotify and YouTube.
+          Android Auto and Apple Car Play is not available for vehicles with
+          advertising integration enabled.
+          <br />
+          <br />
+          Please feel free to reach out to any dealership or the customer
+          service for more information.
+        </p>
+        <br />
+        <br />
+        <button class="closePopup" onclick="closePopup()">Close</button>
+      </div>
+      <div class="table-container">
+        <div class="table-column">
+          <h2>Driving</h2>
+          <h3>parking brake disengaged</h3>
+          <br />
+          <p>
+            Advertising never takes over the screen or system. It never prevents
+            you from driving the vehicle safely. Only audi information and basic
+            text available in this mode.
+          </p>
+          <button class="column-button" onclick="scrollToDriving()">
+            Details & visual demonstration
+          </button>
+        </div>
+        <div class="table-column">
+          <h2>Parked</h2>
+          <h3>parking brake engaged</h3>
+          <br />
+          <p>
+            Advertising still does not take over the system, however more
+            information on the infotainment screen is available.
+          </p>
+          <br />
+          <br />
+          <br />
+          <button class="column-button" onclick="scrollToParked()">
+            Details & visual demonstration
+          </button>
+        </div>
+        <div class="table-column">
+          <h2>Away</h2>
+          <h3>vehicle is locked and empty</h3>
+          <br />
+          <p>
+            Saved, historical and new offers are directed to the accompanying
+            TOL app on your phone, where full access to all promotion is
+            enabled.
+          </p>
+          <br />
+          <button class="column-button" onclick="scrollToAway()">
+            Details & visual demonstration
+          </button>
+        </div>
+      </div>
+
       <br />
       <br />
       <br />
@@ -419,6 +491,38 @@
 
       function closePopup() {
         document.getElementById("popup").style.display = "none";
+      }
+
+      // HOW IT WORKS MENU SCROLL
+      function scrollToHowItWorks() {
+        document.getElementById("howItWorksMenu").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      //DRIVING SCROLL
+      function scrollToDriving() {
+        document.getElementById("driving").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      //PARKED SCROLL
+      function scrollToParked() {
+        document.getElementById("parked").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      //AWAY SCROLL
+      function scrollToAway() {
+        document.getElementById("away").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
     </script>
 
