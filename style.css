@@ -644,7 +644,7 @@ header {
   scroll-snap-type: x mandatory; 
   gap: 20px; 
   padding: 10px; 
-  border: 1px solid #ccc; 
+  border: 1px solid #ffffff; 
   border-radius: 8px;
   background-color: #f9f9f9; 
   width: 100%;
@@ -660,7 +660,7 @@ header {
   height: auto; 
   scroll-snap-align: center;
   background-color: #e0e0e0; 
-  border: 1px solid #ccc; 
+  border: 1px solid #ffffff; 
   border-radius: 8px; 
   padding: 20px; 
   text-align: center; 
