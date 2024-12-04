@@ -218,8 +218,8 @@
           <br />
           <p>
             Advertising never takes over the screen or system. It never prevents
-            you from driving the vehicle safely. Only audi information and basic
-            text available in this mode.
+            you from driving the vehicle safely. Only audio information and
+            basic text available in this mode.
           </p>
           <button class="column-button" onclick="scrollToDriving()">
             Details & visual demonstration
@@ -250,6 +250,7 @@
             enabled.
           </p>
           <br />
+          <br />
           <button class="column-button" onclick="scrollToAway()">
             Details & visual demonstration
           </button>
@@ -259,244 +260,268 @@
       <br />
       <br />
       <br />
-      <div class="columns">
-        <div class="column4">
-          <h1>One More Thing</h1>
-          <div class="thin-line"></div>
-          <br />
-          <h3 style="color: rgb(128, 128, 128)">
-            Not all advertising is selling.
-          </h3>
-        </div>
-        <div class="column1">
-          <h1 id="driving">Driving</h1>
-          <div class="thin-line"></div>
-          <br />
-          <h3 style="color: rgb(128, 128, 128)">
-            Parking brake is disengaged.
-          </h3>
-          <br />
-          <div style="height: 400px; width: 100%; border: solid 2px">
-            <img
-              src="Assets/drivemode.webp"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
-          </div>
-          <p>
-            <br />
-            Advertising will never take over your system, it will never prevent
-            you from driving your car safely.
-            <br />
-            <br />
-            <br />
-          </p>
-          <div
-            style="
-              display: flex;
-              justify-content: space-around;
-              align-items: center;
-              width: 100%;
-            "
-          >
-            <img
-              src="Assets/Apple_Music_icon.svg.png"
-              style="max-width: 70px"
-            />
-            <img
-              src="Assets/Spotify_logo_without_text.svg.png"
-              style="max-width: 70px"
-            />
-            <img src="Assets/tidal.webp" style="max-width: 70px" />
-            <img src="Assets/soundcloud.png" style="max-width: 70px" />
-            <img src="Assets/Podcasts_(iOS).png" style="max-width: 70px" />
-          </div>
-          <br />
-          <br />
-          <p>
-            It understands your media and will not cut your song or favourite
-            podcaster off mid sentence.
-          </p>
-          <br />
-          <br />
-          <div style="height: 400px; width: 100%; border: solid 2px">
-            <img
-              src="Assets/int.webp"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
-          </div>
-          <br />
-          <br />
-          <p>
-            Let your system direct you to a location or save the promotion for
-            later with two simple clicks.
-          </p>
 
-          <img src="Assets/skip.png" style="width: 180px" />
-          <p>All promotions can be skipped within a few seconds.</p>
-        </div>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-          <!-- First Carousel -->
-          <div class="carousel-container">
-            <div class="carousel-item">
+      <div
+        style="
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          justify-content: center;
+        "
+      >
+        <!-- First Carousel -->
+        <div class="carousel-container">
+          <div class="carousel-item">
+            <div style="height: 35%"></div>
+            <h1 id="driving">Driving</h1>
+            <div class="thin-line"></div>
+            <br />
+            <h3 style="color: rgb(128, 128, 128)">
+              parking brake is disengaged
+            </h3>
+          </div>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
               <img
-              src="Assets/drivemode.webp"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
+                src="Assets/drivemode.webp"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
             </div>
-            <div class="carousel-item">
-              <h3>Item 2</h3>
-              <p>Content for Item 2</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Item 3</h3>
-              <p>Content for Item 3</p>
-            </div>
+            <br />
+            <p style="width: 400px">
+              Advertising will never take over your system, it will never
+              prevent you from driving your car safely.
+            </p>
           </div>
-        
-          <!-- Second Carousel -->
-          <div class="carousel-container">
-            <div class="carousel-item">
-              <h3>Column 2 - Item 1</h3>
-              <p>Content for Column 2 - Item 1</p>
+          <div class="carousel-item">
+            <div
+              style="
+                display: grid;
+                grid-template-rows: 1fr auto 1fr;
+                grid-template-columns: 1fr auto 1fr;
+                position: relative;
+                width: 400px;
+                height: 400px;
+                padding-top: 20%;
+                padding-left: 23%;
+              "
+            >
+              <img
+                src="Assets/Apple_Music_icon.svg.png"
+                style="max-width: 100px; grid-row: 1; grid-column: 1"
+              />
+              <img
+                src="Assets/Spotify_logo_without_text.svg.png"
+                style="max-width: 100px; grid-row: 1; grid-column: 2"
+              />
+
+              <img
+                src="Assets/tidal.webp"
+                style="max-width: 100px; grid-row: 2; grid-column: 2"
+              />
+              <img
+                src="Assets/Podcasts_(iOS).png"
+                style="max-width: 100px; grid-row: 2; grid-column: 1"
+              />
             </div>
-            <div class="carousel-item">
-              <h3>Column 2 - Item 2</h3>
-              <p>Content for Column 2 - Item 2</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 2 - Item 2</h3>
-              <p>Content for Column 2 - Item 2</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 2 - Item 2</h3>
-              <p>Content for Column 2 - Item 2</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 2 - Item 2</h3>
-              <p>Content for Column 2 - Item 2</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 2 - Item 2</h3>
-              <p>Content for Column 2 - Item 2</p>
-            </div>
+            <br />
+            <p style="width: 400px">
+              It understands your media and will not cut your song or favourite
+              podcaster off mid sentence.
+            </p>
           </div>
-        
-          <!-- Third Carousel -->
-          <div class="carousel-container">
-            <div class="carousel-item">
-              <h3>Column 3 - Item 1</h3>
-              <p>Content for Column 3 - Item 1</p>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/map.webp"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
             </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 2</h3>
-              <p>Content for Column 3 - Item 2</p>
+            <br />
+            <p style="width: 400px">
+              Let your system direct you to a location or save the promotion for
+              later with two simple clicks.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <div style="height: 25%"></div>
+              <img
+                src="Assets/skip.png"
+                style="width: 50%; height: 50%; object-fit: cover"
+              />
             </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 3</h3>
-              <p>Content for Column 3 - Item 3</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 4</h3>
-              <p>Content for Column 3 - Item 4</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 4</h3>
-              <p>Content for Column 3 - Item 4</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 4</h3>
-              <p>Content for Column 3 - Item 4</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 4</h3>
-              <p>Content for Column 3 - Item 4</p>
-            </div>
-            <div class="carousel-item">
-              <h3>Column 3 - Item 4</h3>
-              <p>Content for Column 3 - Item 4</p>
-            </div>
+            <br />
+            <p style="width: 400px">
+              Advertising will never take over your system, it will never
+              prevent you from driving your car safely.
+            </p>
           </div>
         </div>
-        
-        <div class="column2">
-          <h1 id="parked">Parked</h1>
-          <div class="thin-line"></div>
-          <br />
-          <h3 style="color: rgb(128, 128, 128)">
-            Whenever the parking brake is engaged.
-          </h3>
-          <br />
-          <div style="height: 400px; width: 100%; border: solid 2px">
-            <img
-              src="Assets/parked.jpg"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
-          </div>
-          <br />
+        <div></div>
+        <div style="width: 60%">
+          <h3>The long print</h3>
           <br />
           <p>
-            Learn more about offers in your area and personalised deals through
-            your infotainment system and through longer audio advertisements.
-          </p>
-          <br />
-          <br />
-          <div style="height: 400px; width: 100%; border: solid 2px">
-            <img
-              src="Assets/int.webp"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
-          </div>
-          <p>
-            <br />
-            Advertising will not take over your infotainment system even when
-            parked, it will never prevent you from taking off immediately.
-            <br />
-            <br />
-            <br />
+            The trickiest mode advertising must deal with. Car infotainments are
+            already often criticised for moving most – if not all – of their
+            controls to the touch screen, forcing the drive to take their eyes
+            off the road (Kessels, 2024). Understandably, introducing
+            distracting advertisements into the mix would likely cause public
+            and legislative outrage. To mitigate this, the advertising in the
+            proposed systems never seeks more attention that other tasks on the
+            screen. Visual advertisements have a set place within the home
+            screen and never overlay other apps during driving. The driver can
+            interact with them only to the degree any other control would
+            require them, never requiring more than one or two taps of the
+            screen with minimal text. Alongside visual advertising – and as a
+            part of it – is the audio advertising. Since the media is playing
+            through the car’s system, the advertisement will not start mid-song
+            or a phone call and will scan for a suitable gap in a podcast before
+            starting. If the advertisement is geographically sensitive it will
+            give the option to reroute to the address of the business or be
+            saved, using buttons on the steering wheel. All advertising is
+            ‘skippable’ after a certain time. No advertising will start during a
+            parking sequence.
           </p>
         </div>
 
-        <div class="column3">
-          <h1 id="away">Away</h1>
-          <div class="thin-line"></div>
-          <br />
-          <h3 style="color: rgb(128, 128, 128)">
-            The vehicle is parked, locked, and empty.
-          </h3>
-          <br />
-          <div style="height: 580px; width: 100%">
-            <img
-              src="Assets/PhoneApp.png"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
+        <!-- Second Carousel -->
+        <div class="carousel-container">
+          <div class="carousel-item">
+            <div style="height: 35%"></div>
+            <h1 id="parked">Parked</h1>
+            <div class="thin-line"></div>
+            <br />
+            <h3 style="color: rgb(128, 128, 128)">parking brake is engaged</h3>
           </div>
-          <br />
-          <p>
-            The TOL companion app offers more than car controls. View and
-            explore offers from your last trip.
-          </p>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/parked.jpg"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              Learn more about offers in your area and personalised deals
+              through your infotainment system and through longer audio
+              advertisements.
+            </p>
+          </div>
 
-          <div style="height: 580px; width: 100%">
-            <img
-              src="Assets/PhoneAppOpen.png"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/Drive.png"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              Advertising will not take over your infotainment system even when
+              parked, it will never prevent you from taking off immediately.
+            </p>
           </div>
-          <br />
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/NatHighways.png"
+                style="width: 100%; height: 100%; object-fit: contain"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              Not all advertising is selling. The system can relay safety
+              announcements to improve driver awareness.
+            </p>
+          </div>
+        </div>
+        <div style="width: 60%">
+          <h3>The long print</h3>
           <br />
           <p>
-            Push notifications containing all saved offers are only sent once
-            the vehicle has been parked, emptied and locked.
+            The core functionality of the advertising is identical to the
+            driving mode, however if the parking brake is engaged, more
+            information can be displayed on the screen. Still, all content is
+            strictly audio and visual separately, the system does not support
+            videos.
           </p>
-          <br />
-          <br />
-          <div style="height: 900px; width: 100%">
-            <img
-              src="Assets/PhoneAppAds.png"
-              style="width: 100%; height: 100%; object-fit: cover"
-            />
+        </div>
+
+        <!-- Third Carousel -->
+        <div class="carousel-container">
+          <div class="carousel-item">
+            <div style="height: 35%"></div>
+            <h1 id="away">Away</h1>
+            <div class="thin-line"></div>
+            <br />
+            <h3 style="color: rgb(128, 128, 128)">
+              the vehicle is parked, locked, and empty
+            </h3>
           </div>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/PhoneApp.png"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              The TOL companion app offers more than car controls. View and
+              explore offers from your last trip.
+            </p>
+          </div>
+
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/PhoneAppOpen.png"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              Push notifications containing all saved offers are only sent once
+              the vehicle has been parked, emptied and locked.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/PhoneAppAds.png"
+                style="width: 100%; height: 100%; object-fit: contain"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              View saved and location-tied offers from your recent trips and
+              take advantage of the promotions from your phone or computer by a
+              single click.
+            </p>
+          </div>
+        </div>
+        <div style="width: 60%">
+          <h3>The long print</h3>
           <br />
+          <p>
+            Often forgotten, however it is the most common state of the vehicle
+            pointed out by Kessel (2024). The vehicle is parked, and the driver
+            is not in it. This may seem like the car’s infotainment has no
+            reach, yet that is not the case. As important as the in-car system
+            nowadays is the accompanying mobile application. Through the
+            application many functions can be accessed and many of them make
+            more sense on the phone more than within the car. The phone
+            application is where most interaction with the advertising can
+            happen. Whenever the driver receives an advertising message, they
+            have the option to save the message. This message is then stored in
+            their account and is sent in the form of a push notification to
+            their phone once they have locked the vehicle. This notification
+            includes the promotion from the advertisement but also allows them
+            to visit the website or take different actions depending on the
+            message – while it is safe, and they are not driving anymore.
+          </p>
         </div>
       </div>
     </div>
