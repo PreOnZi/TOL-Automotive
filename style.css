@@ -363,7 +363,8 @@ header {
 }
 
 .next-button:hover {
-  background-color: #ffae00
+  background-color: #ffae00;
+  transform: translateY(-2px); 
 }
 
 .confSelector ul li.selected {
