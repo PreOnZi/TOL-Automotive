@@ -10,6 +10,8 @@
       rel="stylesheet"
     />
     <link rel="icon" href="Assets/logoFav.png" type="image/png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
   </head>
   <body>
     <header>
@@ -29,7 +31,7 @@
       </div>
     </header>
     <section class="info">
-      <div class="info-text">
+      <div id="top" class="info-text">
         <h2>Extras: Advertising</h2>
         <p>
           TOL is happy to be the first brand in the UK to allow you to
@@ -39,7 +41,7 @@
     </section>
 
     <div class="configurator">
-      <div class="confgallery">
+      <div class="confGallery">
         <img
           src="Assets/lot.jpeg"
           alt="Hero Image"
@@ -221,8 +223,8 @@
             you from driving the vehicle safely. Only audio information and
             basic text available in this mode.
           </p>
-          <button class="column-button" onclick="scrollToDriving()">
-            Details & visual demonstration
+          <button class="column-button" onclick="scrollToDriving()" style="width: 20%;">
+            <i class="fas fa-arrow-down"></i>
           </button>
         </div>
         <div class="table-column">
@@ -233,11 +235,11 @@
             Advertising still does not take over the system, however more
             information on the infotainment screen is available.
           </p>
+        
           <br />
           <br />
-          <br />
-          <button class="column-button" onclick="scrollToParked()">
-            Details & visual demonstration
+          <button class="column-button" onclick="scrollToParked()" style="width: 20%;">
+            <i class="fas fa-arrow-down"></i>
           </button>
         </div>
         <div class="table-column">
@@ -249,10 +251,10 @@
             TOL app on your phone, where full access to all promotion is
             enabled.
           </p>
+          
           <br />
-          <br />
-          <button class="column-button" onclick="scrollToAway()">
-            Details & visual demonstration
+          <button class="column-button" onclick="scrollToAway()" style="width: 20%;">
+            <i class="fas fa-arrow-down"></i>
           </button>
         </div>
       </div>
@@ -271,9 +273,9 @@
       >
         <!-- First Carousel -->
         <div class="carousel-container">
-          <div class="carousel-item">
+          <div id="driving" class="carousel-item">
             <div style="height: 35%"></div>
-            <h1 id="driving">Driving</h1>
+            <h1>Driving</h1>
             <div class="thin-line"></div>
             <br />
             <h3 style="color: rgb(128, 128, 128)">
@@ -359,7 +361,8 @@
           </div>
         </div>
         <div></div>
-        <div style="width: 60%">
+        <div style="width: 60%; display: flex; align-items: center;">
+          <div>
           <h3>The long print</h3>
           <br />
           <p>
@@ -384,13 +387,19 @@
             ‘skippable’ after a certain time. No advertising will start during a
             parking sequence.
           </p>
+          </div>
+          <div style="width: 10%; margin-left: 10%;">
+            <button class="column-button" onclick="scrollToTop()">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Second Carousel -->
         <div class="carousel-container">
-          <div class="carousel-item">
+          <div id="parked" class="carousel-item">
             <div style="height: 35%"></div>
-            <h1 id="parked">Parked</h1>
+            <h1>Parked</h1>
             <div class="thin-line"></div>
             <br />
             <h3 style="color: rgb(128, 128, 128)">parking brake is engaged</h3>
@@ -437,7 +446,8 @@
             </p>
           </div>
         </div>
-        <div style="width: 60%">
+        <div style="width: 60%; display: flex; align-items: center;">
+          <div>
           <h3>The long print</h3>
           <br />
           <p>
@@ -447,13 +457,19 @@
             strictly audio and visual separately, the system does not support
             videos.
           </p>
+          </div>
+          <div style="width: 10%; margin-left: 10%;">
+            <button class="column-button" onclick="scrollToTop()">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+          </div>
         </div>
 
         <!-- Third Carousel -->
         <div class="carousel-container">
-          <div class="carousel-item">
+          <div id="away" class="carousel-item">
             <div style="height: 35%"></div>
-            <h1 id="away">Away</h1>
+            <h1>Away</h1>
             <div class="thin-line"></div>
             <br />
             <h3 style="color: rgb(128, 128, 128)">
@@ -502,9 +518,10 @@
             </p>
           </div>
         </div>
-        <div style="width: 60%">
-          <h3>The long print</h3>
-          <br />
+        <div style="width: 60%; display: flex; align-items: center;">
+          <div>
+            <h3>The long print</h3>
+            <br />
           <p>
             Often forgotten, however it is the most common state of the vehicle
             pointed out by Kessel (2024). The vehicle is parked, and the driver
@@ -522,6 +539,12 @@
             to visit the website or take different actions depending on the
             message – while it is safe, and they are not driving anymore.
           </p>
+          </div>
+          <div style="width: 10%; margin-left: 10%;">
+            <button class="column-button" onclick="scrollToTop()">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -570,6 +593,14 @@
       //AWAY SCROLL
       function scrollToAway() {
         document.getElementById("away").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      //SCROLL TO TOP
+      function scrollToTop() {
+        document.getElementById("top").scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
