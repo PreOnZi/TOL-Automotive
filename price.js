@@ -1,3 +1,10 @@
+let totalPrice = parseInt(localStorage.getItem("totalPrice")) || 0;
+let previousPrice = 0;
+let selections = JSON.parse(localStorage.getItem("selections")) || [];
+
+const priceValueElement = document.getElementById("priceValue");
+const priceDisplayElement = document.getElementById("priceDisplay");
+
 function updatePrice(newPrice = 0, itemName = "Unknown Item") {
   totalPrice -= previousPrice; // Remove the old price
   totalPrice += newPrice; // Add the new price
@@ -11,7 +18,7 @@ function updatePrice(newPrice = 0, itemName = "Unknown Item") {
 
   // Show the price box if it's hidden
   if (priceDisplayElement) {
-    priceDisplayElement.style.display = "flex";
+    priceDisplayElement.style.display = "block";
   }
 
   // Track the current selection for this page
