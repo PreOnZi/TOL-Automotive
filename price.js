@@ -23,12 +23,12 @@ function updatePrice(newPrice = 0, itemName = "Unknown Item") {
 
   // Track the current selection for this page
   const pages = {
-    Powertrain: "/TOL-Automotive/3powertrain.html",
-    Colour: "/TOL-Automotive/4.1colour.html",
-    Wheels: "/TOL-Automotive/4wheels.html",
-    Interior: "/TOL-Automotive/5interior.html",
+    Powertrain: "/3powertrain.html",
+    Colour: "/4.1colour.html",
+    Wheels: "/4wheels.html",
+    Interior: "/5interior.html",
     Advertising: "/TOL-Automotive/6ads.html",
-    Optional: "/TOL-Automotive/7addons.html",
+    Optional: "/7addons.html",
   };
 
   const currentPage = window.location.pathname;
