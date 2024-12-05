@@ -30,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const color = colorMap[selectedColor];
 
+  console.log("Selections:", selections);
+  console.log("Color selection:", colorSelection);
+  console.log("Selected color name:", selectedColor);
+
   //passing color info to iframe
   const iframe = document.querySelector("#animationFrame");
   if (iframe) {

@@ -1,3 +1,10 @@
+let totalPrice = parseInt(localStorage.getItem("totalPrice")) || 0;
+let previousPrice = 0;
+let selections = JSON.parse(localStorage.getItem("selections")) || [];
+
+const priceValueElement = document.getElementById("priceValue");
+const priceDisplayElement = document.getElementById("priceDisplay");
+
 function updatePrice(newPrice = 0, itemName = "Unknown Item") {
   totalPrice -= previousPrice; // Remove the old price
   totalPrice += newPrice; // Add the new price
@@ -11,17 +18,17 @@ function updatePrice(newPrice = 0, itemName = "Unknown Item") {
 
   // Show the price box if it's hidden
   if (priceDisplayElement) {
-    priceDisplayElement.style.display = "flex";
+    priceDisplayElement.style.display = "block";
   }
 
   // Track the current selection for this page
   const pages = {
-    Powertrain: "/TOL-Automotive/3powertrain.html",
-    Colour: "/TOL-Automotive/4.1colour.html",
-    Wheels: "/TOL-Automotive/4wheels.html",
-    Interior: "/TOL-Automotive/5interior.html",
+    Powertrain: "/3powertrain.html",
+    Colour: "/4.1colour.html",
+    Wheels: "/4wheels.html",
+    Interior: "/5interior.html",
     Advertising: "/TOL-Automotive/6ads.html",
-    Optional: "/TOL-Automotive/7addons.html",
+    Optional: "/7addons.html",
   };
 
   const currentPage = window.location.pathname;
