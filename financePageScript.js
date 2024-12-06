@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const selectionList = document.getElementById("selectionList");
-
   if (selectionList) {
     const selections = JSON.parse(localStorage.getItem("selections")) || [];
     selectionList.innerHTML = "";
@@ -32,6 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
       selectionList.appendChild(row);
     });
   }
+
+  let totalPrice = localStorage.getItem("totalPrice");
+
+  if (totalPrice) {
+    totalPrice = parseFloat(totalPrice).toLocaleString("en-GB", {
+      style: "currency",
+      currency: "GBP",
+    });
+  }
+
+  const priceValue = document.getElementById("priceValue");
+  priceValue.innerText = totalPrice || "£0.00";
 });
 
 const finalCar = document.getElementById("finalCar");
@@ -59,7 +70,7 @@ function getImageSrc(selections) {
 
   const fileName = imageMap[mapKey] || "1RedDiamond.png";
 
-  return `Assets/carImageSelection/${fileName}`;
+  return `assets/carImageSelection/${fileName}`;
 }
 
 const newSrc = getImageSrc(selections);
