@@ -39,22 +39,35 @@
 
     <div class="img-container">
       <div class="img-inner-container">
-        <img
-          src="Assets/lot.jpeg"
-          id="car-wheels-image"
-          alt="Image 1"
-          class="configurator-img"
-        />
+         <!-- IMAGE IS HIDDEN -->
+         <img
+         src="Assets/lot.jpeg"
+         id="car-wheels-image"
+         alt="Image 1"
+         class="configurator-img"
+         style="display: none;"
+       />
+       <!-- ACTUAL IFRAME SHOWN -->
+       <iframe
+         id="colorFrame"
+         src="carProjection.html"
+         style="
+         width: 100%;
+         height: 60vh;
+         border: solid 2px white;
+         background-color: #63d9fd;
+         "
+       ></iframe>
       </div>
       <div class="confSelector">
-        <ul>
+        <ul onclick="reloadIframe()">
           <li onclick="changeWheelOnClick(event)">
             <b><h3>Diamond on the rise</h3></b>
 
             <br />
             <div class="cube-container">
               <div class="cube">
-                <div class="face front"></div>
+                <div id="front" class="face front"></div>
                 <div class="face back">Back</div>
                 <div class="face left">Left</div>
                 <div class="face right">Right</div>
@@ -74,7 +87,7 @@
             <br />
             <div class="cube-container1">
               <div class="cube">
-                <div class="face front"></div>
+                <div id="front" class="face front"></div>
                 <div class="face back">Back</div>
                 <div class="face left">Left</div>
                 <div class="face right">Right</div>
@@ -93,7 +106,7 @@
             <br />
             <div class="cube-container2">
               <div class="cube">
-                <div class="face front"></div>
+                <div id="front" class="face front"></div>
                 <div class="face back">Back</div>
                 <div class="face left">Left</div>
                 <div class="face right">Right</div>
@@ -113,7 +126,14 @@
     </div>
     <script src="price.js"></script>
     <script src="wheelsPageScript.js"></script>
-
+    <!-- RELOAD IFRAME -->
+    <script>
+    
+      function reloadIframe() {
+        const iframe = document.getElementById("colorFrame");
+        iframe.contentWindow.location.reload();
+      }
+    </script>
     <footer class="footer">
       <p>© 2024 Modern Minimalist Site. All rights reserved.</p>
     </footer>

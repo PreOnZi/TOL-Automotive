@@ -36,16 +36,29 @@
     </section>
     <div class="img-container">
       <div class="img-inner-container">
+        <!-- IMAGE IS HIDDEN -->
         <img
           id="car-color-image"
           src="Assets/carImageSelection/1RedDiamond.png"
           alt="Selected car"
           class="configurator-img"
+          style="display: none;"
         />
+        <!-- ACTUAL IFRAME SHOWN -->
+        <iframe
+          id="colorFrame"
+          src="carProjection.html"
+          style="
+          width: 100%;
+          height: 60vh;
+          border: solid 2px white;
+          background-color: #63d9fd;
+          "
+        ></iframe>
       </div>
 
       <div class="confSelector">
-        <ul>
+        <ul onclick="reloadIframe()">
           <li onclick="changeImgOnClick(event)" id="red">
             <b><h3>Solar Red</h3></b>
 
@@ -82,6 +95,13 @@
     </div>
     <script src="price.js"></script>
     <script src="colorPageScript.js"></script>
+    <script>
+      // Function to reload the iframe
+      function reloadIframe() {
+        const iframe = document.getElementById("colorFrame");
+        iframe.contentWindow.location.reload(); // Reloads the iframe content
+      }
+    </script>
 
     <footer class="footer">
       <p>© 2024 TOL Automotive UK. All rights reserved.</p>

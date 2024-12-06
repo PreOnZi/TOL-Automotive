@@ -420,66 +420,15 @@ header {
 /* Cube container for perspective */
 .cube-container {
   perspective: 600px;
-  width: 100px;
-  height: 100px;
+  width: 0px;
+  height: 80px; 
   margin: auto;
 }
 
 /* Cube styling */
 .cube {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotateX(-15deg) rotateY(15deg); /* Slight angle for a 3D look */
-}
-
-/* Face styling */
-.face {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: black; /* Default black color for all sides */
-  border: 1px solid #000;
-}
-
-/* Front face with pattern */
-.cube-container .front {
-  background-image: url("Assets/pattern1.avif"); /* Replace with your pattern image URL */
-  background-size: cover;
-  transform: translateZ(50px);
-}
-
-/* Positioning other faces */
-.back {
-  transform: rotateY(180deg) translateZ(50px);
-}
-.left {
-  transform: rotateY(-90deg) translateZ(50px);
-}
-.right {
-  transform: rotateY(90deg) translateZ(50px);
-}
-.top {
-  transform: rotateX(90deg) translateZ(50px);
-}
-.bottom {
-  transform: rotateX(-90deg) translateZ(50px);
-}
-
-/*WHEEL2*/
-/* Cube container for perspective */
-.cube-container1 {
-  perspective: 600px;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-}
-
-/* Cube styling */
-.cube {
-  width: 100px;
-  height: 100px;
+  width: 80px; 
+  height: 80px; 
   position: relative;
   transform-style: preserve-3d;
   transform: rotateX(-15deg) rotateY(15deg); 
@@ -488,86 +437,138 @@ header {
 /* Face styling */
 .face {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px; 
   background-color: black; 
   border: 1px solid #000;
 }
 
 /* Front face with pattern */
-.cube-container1 .front {
-  background-image: url("Assets/pattern2.png"); 
+.cube-container .front {
+  background-image: url("Assets/pattern1.avif");
   background-size: cover;
-  transform: translateZ(50px);
+  transform: translateZ(40px); 
 }
 
 /* Positioning other faces */
 .back {
-  transform: rotateY(180deg) translateZ(50px);
+  transform: rotateY(180deg) translateZ(40px); 
 }
 .left {
-  transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(40px);
 }
 .right {
-  transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(40px); 
 }
 .top {
-  transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(40px); 
 }
 .bottom {
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(40px);
 }
 
-/*WHEEL 3*/
+/*WHEEL2*/
 /* Cube container for perspective */
-.cube-container2 {
+.cube-container1 {
   perspective: 600px;
-  width: 100px;
-  height: 100px;
+  width: 0px;
+  height: 80px; 
   margin: auto;
 }
 
 /* Cube styling */
 .cube {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px; 
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-15deg) rotateY(15deg); /* Slight angle for a 3D look */
+  transform: rotateX(-15deg) rotateY(15deg);
+}
+
+/* Face styling */
+.face {
+  position: absolute;
+  width: 80px; 
+  height: 80px; 
+  background-color: black;
+  border: 1px solid #000;
+}
+
+/* Front face with pattern */
+.cube-container1 .front {
+  background-image: url("Assets/pattern2.png");
+  background-size: cover;
+  transform: translateZ(40px); 
+}
+
+/* Positioning other faces */
+.back {
+  transform: rotateY(180deg) translateZ(40px); 
+}
+.left {
+  transform: rotateY(-90deg) translateZ(40px); 
+}
+.right {
+  transform: rotateY(90deg) translateZ(40px); 
+}
+.top {
+  transform: rotateX(90deg) translateZ(40px); 
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(40px); 
+}
+
+/*WHEEL3*/
+/* Cube container for perspective */
+.cube-container2 {
+  perspective: 600px;
+  width: 0px;
+  height: 80px; 
+  margin: auto;
+}
+
+/* Cube styling */
+.cube {
+  width: 80px; 
+  height: 80px; 
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(15deg); 
 }
 
 /* Face styling */
 .cube-container2 .face {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: black; /* Default black color for all sides */
+  width: 80px; 
+  height: 80px; 
+  background-color: black; 
   border: 1px solid #000;
 }
 
 /* Front face with pattern */
 .front {
-  background-image: url("Assets/pattern3.jpg"); /* Replace with your pattern image URL */
+  background-image: url("Assets/pattern3.jpg");
   background-size: cover;
-  transform: translateZ(50px);
+  transform: translateZ(40px); 
 }
 
 /* Positioning other faces */
 .back {
-  transform: rotateY(180deg) translateZ(50px);
+  transform: rotateY(180deg) translateZ(40px); 
 }
 .left {
-  transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(40px); 
 }
 .right {
-  transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(40px); 
 }
 .top {
-  transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(40px); 
 }
 .bottom {
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(40px); 
 }
+
 
 /*INTERIOR*/
 .interior1 {
