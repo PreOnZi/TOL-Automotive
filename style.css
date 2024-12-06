@@ -345,12 +345,19 @@ header {
 .confSelector ul li:hover {
   background-color: #ddd;
 }
-
-/*NEXT BUTTON*/
-.next-button {
+/*PRICE CONTAINER*/
+.button-container {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 20px; /* Adjusts the horizontal alignment */
+  bottom: 20px; /* Base position for the container */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+  gap: 10px; /* Space between the buttons */
+}
+/*NEXT BUTTON*/
+
+.next-button {
   padding: 12px 24px;
   background-color: #00bfd8;
   color: white;
@@ -373,9 +380,6 @@ header {
 
 /*PRICE BUTTON*/
 .price-button {
-  position: fixed;
-  right: 240px;
-  bottom: 20px;
   background-color: #ddd;
   color: white;
   padding: 10px 20px;
@@ -388,11 +392,12 @@ header {
   cursor: default;
 }
 
+
 /*COLOUR SELECTION*/
 .swatch1 {
   background-color: #8e0000;
   width: 300px;
-  height: 60px;
+  height: 40px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -401,7 +406,7 @@ header {
 .swatch2 {
   background-color: #949494;
   width: 350px;
-  height: 60px;
+  height: 40px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -410,7 +415,7 @@ header {
 .swatch3 {
   background-color: #aeffc0;
   width: 400px;
-  height: 60px;
+  height: 40px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -421,7 +426,7 @@ header {
 .cube-container {
   perspective: 600px;
   width: 0px;
-  height: 80px;
+  height: 50px;
   margin: auto;
 }
 
@@ -467,17 +472,17 @@ header {
   transform: rotateX(-90deg) translateZ(40px);
 }
 
+
 /*WHEEL2*/
-/* Cube container for perspective */
 .cube-container1 {
   perspective: 600px;
   width: 0px;
-  height: 80px;
+  height: 50px;
   margin: auto;
 }
 
 /* Cube styling */
-.cube {
+.cube1 {
   width: 80px;
   height: 80px;
   position: relative;
@@ -486,17 +491,17 @@ header {
 }
 
 /* Face styling */
-.face {
+.cube-container1 .face {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: black;
   border: 1px solid #000;
 }
 
 /* Front face with pattern */
 .cube-container1 .front {
-  background-image: url("assets/pattern2.png");
+  background-image: url("Assets/pattern2.png");
   background-size: cover;
   transform: translateZ(40px);
 }
@@ -523,12 +528,12 @@ header {
 .cube-container2 {
   perspective: 600px;
   width: 0px;
-  height: 80px;
+  height: 50px;
   margin: auto;
 }
 
 /* Cube styling */
-.cube {
+.cube2 {
   width: 80px;
   height: 80px;
   position: relative;
@@ -547,7 +552,7 @@ header {
 
 /* Front face with pattern */
 .front {
-  background-image: url("assets/pattern3.jpg");
+  background-image: url("Assets/pattern3.jpg");
   background-size: cover;
   transform: translateZ(40px);
 }
@@ -573,7 +578,7 @@ header {
 .interior1 {
   background-color: #4a4a4a;
   width: 60px;
-  height: 60px;
+  height: 50px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -582,7 +587,7 @@ header {
 .interior2 {
   background-color: #101010;
   width: 60px;
-  height: 60px;
+  height: 50px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -591,7 +596,7 @@ header {
 .interior3 {
   background-color: #e2e4cc;
   width: 60px;
-  height: 60px;
+  height: 50px;
   border-radius: 50px;
 
   border: 3px solid white;

@@ -145,5 +145,16 @@
     <script src="price.js"></script>
     <script src="gallery.js"></script>
     <script src="financePageScript.js"></script>
+    <script>
+      function clearLocalData() {
+        localStorage.clear();
+        console.log("LocalStorage cleared!");
+
+        sessionStorage.clear();
+        console.log("SessionStorage cleared!");
+    
+        alert("All data has been cleared!");
+      }
+    </script>
   </body>
 </html>
