@@ -14,8 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     default: "#7d7c7c",
   };
 
-  const colorSelection = selections.find((item) => item.category === "Colour");
+  const wheelMap = {
+    diamond: "url(./assets/pattern1.avif)",
+    square: "url(./assets/pattern2.png)",
+    dark: "url(./assets/pattern3.jpg)",
+  };
 
+  const colorSelection = selections.find((item) => item.category === "Colour");
   let selectedColor = "default";
   if (colorSelection) {
     const colorName = colorSelection.name.toLowerCase();
@@ -30,24 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const color = colorMap[selectedColor];
 
+  let selectedWheels = localStorage.getItem("selectedWheels");
+  selectedWheels = selectedWheels ? selectedWheels.toLowerCase() : "diamond"; // Use diamond if no selection
+
+  const wheelBackground = wheelMap[selectedWheels] || wheelMap.diamond; // Fallback to diamond if invalid key
+
   console.log("Selections:", selections);
   console.log("Color selection:", colorSelection);
   console.log("Selected color name:", selectedColor);
+  console.log("Selected wheels:", selectedWheels);
+  console.log("Wheel background:", wheelBackground);
 
-  //passing color info to iframe
+  const items = document.querySelectorAll(".item.index4.xFaces");
+  items.forEach((item) => {
+    item.style.backgroundImage = wheelBackground;
+    item.style.backgroundSize = "cover";
+  });
+
   const iframe = document.querySelector("#animationFrame");
   if (iframe) {
     iframe.onload = () => {
       const iframeOrigin = new URL(iframe.src).origin;
+
       iframe.contentWindow.postMessage(
         { variable: "--default-car", value: color },
         iframeOrigin
       );
-      console.log(`Sent color ${color} to iframe.`);
+
+      iframe.contentWindow.postMessage(
+        { variable: "--default-wheel", value: selectedWheels },
+        iframeOrigin
+      );
+
+      console.log(`Sent color ${color} and wheel ${selectedWheels} to iframe.`);
     };
   } else {
     console.error("Iframe not found.");
   }
 });
-
-
