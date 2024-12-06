@@ -13,32 +13,28 @@ window.addEventListener("message", (event) => {
 
   if (event.data && event.data.variable && event.data.value) {
     const { variable, value } = event.data;
-
-    // apply the CSS variable to the iframe
-    document.documentElement.style.setProperty(variable, value);
-    console.log(`CSS variable set: ${variable} = ${value}`);
+    console.log(`./assets/${value}.png`);
+    if (variable === "--default-car") {
+      document.documentElement.style.setProperty(variable, value);
+      console.log(`Car color set: ${variable} = ${value}`);
+    } else if (variable === "--default-wheel") {
+      const wheelElements = document.querySelectorAll(
+        ".wheelNode1 .item.xFaces, .wheelNode2 .item.xFaces, .wheelNode3 .item.xFaces, .wheelNode4 .item.xFaces"
+      );
+      if (wheelElements.length > 0) {
+        const wheelImageUrl = `./assets/${value}.png`;
+        wheelElements.forEach((wheel) => {
+          wheel.style.backgroundImage = `url('${wheelImageUrl}')`;
+          wheel.style.backgroundSize = "cover";
+        });
+        console.log(`Wheel pattern applied dynamically: ${wheelImageUrl}`);
+      } else {
+        console.warn("No wheel elements found to apply the pattern.");
+      }
+    } else {
+      console.warn(`Unknown variable received: ${variable}`);
+    }
   } else {
     console.warn("Invalid message format received in iframe.");
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const carGroup = document.querySelector(".simpleRoad .carGroup");
-
-  if (carGroup) {
-    let rotateY = 0;
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") {
-        rotateY -= 5;
-      } else if (event.key === "ArrowRight") {
-        rotateY += 5;
-      }
-
-      carGroup.style.transform = `rotateY(${rotateY}deg)`;
-      console.log(`Car rotated to: ${rotateY} degrees`);
-    });
-  } else {
-    console.error("Could not find .carGroup element.");
   }
 });

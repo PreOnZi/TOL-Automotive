@@ -1,6 +1,6 @@
 :root {
   --default-car: #7d7c7c;
-  --wheel-pattern: url("../../Assets/pattern1.avif");
+  --default-wheel: url(./assets/diamond.png);
 }
 
 body {
@@ -359,7 +359,6 @@ div.simpleRoad .trunkExternal {
   transform: translateY(-5px) translateZ(-35px) rotateX(90deg);
   transform-origin: center;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-
 }
 
 div.simpleRoad .carBodyBlock .item.outerFrontTop {
@@ -370,7 +369,6 @@ div.simpleRoad .carBodyBlock .item.outerFrontTop {
   transform: translateY(-15px) translateZ(50px) rotateX(90deg);
   transform-origin: center;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-  
 }
 
 /* Car floor */
@@ -381,7 +379,6 @@ div.simpleRoad .carBodyBlock .item.carFloor {
   background: var(--default-car);
   transform: translateY(25px) translateZ(0px) rotateX(90deg);
   transform-origin: center;
-
 }
 
 /* -------------- Steering Wheel Styling -------------- */
@@ -442,9 +439,6 @@ div.simpleRoad .carGroup .dashboardBlock::after {
    * Here are all the css used to texture all the block we've just created
    *
    */
-
-
-
 
 /* Car */
 
@@ -533,7 +527,7 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
     opacity: 1;
   }
   100% {
-    background-color: #63d9fd; 
+    background-color: #63d9fd;
     opacity: 1;
   }
 }
@@ -612,4 +606,9 @@ div.simpleRoad .speed:hover ~ div.wrapper3d .turbineGroup1 {
 div.simpleRoad .speed:hover + .day,
 div.simpleRoad .speed:hover ~ div.wrapper3d .lightBulbBlock2 .item {
   animation-duration: 1s;
+}
+
+div.simpleRoad [class^="wheelBlock"] .item.xFaces {
+  background-image: var(--default-wheel);
+  background-size: cover;
 }
