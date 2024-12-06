@@ -4,16 +4,16 @@ function changeWheelOnClick(e) {
 
   let wheelType = "Diamond";
   let priceChange = 0;
-  let itemName = "Diamond wheels";
+  let itemName = "Diamond on the rise";
 
   if (target.querySelector("h3")?.textContent.includes("Square")) {
     wheelType = "Square";
     priceChange = 670;
-    itemName = "Square wheels";
+    itemName = "Square targets";
   } else if (target.querySelector("h3")?.textContent.includes("Dark")) {
     wheelType = "Dark";
     priceChange = 870;
-    itemName = "Dark wheels";
+    itemName = "Dark circular";
   }
 
   const configItems = document.querySelectorAll(".confSelector ul li");
@@ -54,3 +54,4 @@ function changeWheelOnClick(e) {
     console.error("updatePrice function is not available");
   }
 }
+
