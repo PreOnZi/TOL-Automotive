@@ -747,6 +747,47 @@ header {
   background-color: #ffbe31;
 }
 
+/*POWERTRAIN - KIT COLUMNS*/
+.kit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 3% auto; 
+  align-items: start;
+  justify-content: center; 
+}
+
+.kitColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border: solid 2px white;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.kitColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.kitColumn li {
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+
 /*FOOTER*/
 .footer {
   padding: 20px;
