@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Car Seat</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            perspective: 1000px;
+        }
+
+        .car-seat {
+            position: relative;
+            width: 240px;
+            height: 360px;
+            transform-style: preserve-3d;
+            transform: rotateX(15deg) rotateY(0);
+            animation: rotate 5s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateX(15deg) rotateY(0); }
+            100% { transform: rotateX(15deg) rotateY(360deg); }
+        }
+
+        /* Seat Base */
+        .base {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateY(338px) translateZ(-133px) rotateX(90deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: solid 1px grey;
+        }
+        .base1 {
+            position: absolute;
+            width: 240px;
+            height: 260px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateY(375px) translateZ(-130px) rotateX(83deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: solid 1px grey;
+        }
+        .baseLight {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to bottom, #444, #b2b2b2);
+            transform: translateY(357px) translateZ(-140px) rotateX(90deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .baseFront {
+            position: absolute;
+            width: 240px;
+            height: 35px;
+            background: #333;
+            transform: translateX(-27px) translateY(455px) translateZ(-255px)rotateX(-4deg);
+            left: 30px;
+            border-radius: 5px;
+            border: solid 1px grey;
+        }
+        .baseLeft {
+            position: absolute;
+            width: 130px;
+            height: 270px;
+            background: linear-gradient(to bottom, #333, #111);
+            transform: translateX(177px) translateY(380px) translateZ(-123px) rotateY(90deg)rotateZ(87deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            clip-path: polygon(10% 0%, 35% 0%, 50% 100%, 0% 100%);
+            border: solid 1px grey;
+        }
+        .baseRight {
+            position: absolute;
+            width: 130px;
+            height: 270px;
+            background: linear-gradient(to bottom, #333, #111);
+            transform: translateX(-66.5px) translateY(380px) translateZ(-123px) rotateY(90deg)rotateZ(87deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            clip-path: polygon(10% 0%, 35% 0%, 50% 100%, 0% 100%);
+            border: solid 1px grey;
+        }
+        /* Seat Back */
+        .backrest {
+            position: absolute;
+            width: 240px; 
+            height: 385px;
+            background: linear-gradient(to bottom, #333, #111);
+            transform: translateY(126px) translateZ(-20px) rotateX(-4deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            border: solid 1px grey;
+        }
+
+        .backrestBack {
+            position: absolute;
+            width: 240px; 
+            height: 397px;
+            background: linear-gradient(to bottom, #333, #111);
+            transform: translateY(126px) translateZ(20px) rotateX(-2deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            border: solid 1px grey;
+        }
+
+        .backrestLeft {
+            position: absolute;
+            width: 45px; 
+            height: 385px;
+            background: linear-gradient(to bottom, #333, #111);
+            transform: translateX(218px) translateY(126px) translateZ(0px) rotateY(90deg) rotateZ(-3deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+            border: solid 1px grey;
+        }
+
+        .backrestRight {
+            position: absolute;
+            width: 45px; 
+            height: 385px;
+            background: linear-gradient(to bottom, #333, #111);
+            transform: translateX(-20px) translateY(126px) translateZ(0px) rotateY(90deg) rotateZ(-3deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+            border: solid 1px grey;
+        }
+
+        /* Headrest */
+        .headrest {
+            position: absolute;
+            width: 75px;
+            height: 100px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateX(60px) translateY(-14px) translateZ(-0px);
+            left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: solid 1px grey;
+        }
+        .headrestBack {
+            position: absolute;
+            width: 75px;
+            height: 100px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateX(60px) translateY(-14px) translateZ(20px);
+            left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: solid 1px grey;
+        }
+        .headrestLeft {
+            position: absolute;
+            width: 20px;
+            height: 100px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateX(124px) translateY(-14px) translateZ(10px) rotateY(90deg);
+            left: 20px;
+            border-radius: 20px;
+        
+            border: solid 1px grey;
+        }
+        .headrestRight {
+            position: absolute;
+            width: 20px;
+            height: 100px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateX(50px) translateY(-14px) translateZ(10px) rotateY(90deg);
+            left: 20px;
+            border-radius: 20px;
+            
+            border: solid 1px grey;
+        }
+        .headrestBottom {
+            position: absolute;
+            width: 75px;
+            height: 20px;
+            background: linear-gradient(to bottom, #444, #222);
+            transform: translateX(60px) translateY(75px) translateZ(10px) rotateX(90deg);
+            left: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: solid 1px grey;
+        }
+
+        /* Side Supports */
+        .side {
+            position: absolute;
+            width: 25px;
+            height: 310px;
+            background: linear-gradient(to bottom, #555, #333);
+            transform: translateY(150px) translateZ(-20px) rotateX(-4deg);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border: solid 1px grey;
+        }
+
+        .side.left {
+            left: 0px;
+        }
+
+        .side.right {
+            right: 0px;
+        }
+
+        /* Connecting Base and Backrest */
+        .connector {
+            position: absolute;
+            width: 170px;
+            height: 130px;
+            background-image: url(../Assets/perforation.jpg);
+            background-size:cover ;
+    background-repeat: no-repeat; 
+    background-position: center;
+            transform: translateX(5px) translateY(320px) translateZ(-25px)rotateX(-4deg);
+            left: 30px;
+            border-radius: 5px;
+        }
+        .connectorTop {
+            position: absolute;
+            width: 150px;
+            height: 130px;
+            background-image: url(../Assets/perforation.jpg);
+            background-size:cover ;
+    background-repeat: no-repeat; 
+    background-position: center;
+            transform: translateX(15px) translateY(180px) translateZ(-17px)rotateX(-4deg) rotateZ(180deg);
+            left: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="car-seat">
+        <div class="base"></div>
+        <div class="base1"></div>
+        <div class="baseLight"></div>
+        <div class="baseFront"></div>
+        <div class="baseLeft"></div>
+        <div class="baseRight"></div>
+        <div class="backrest"></div>
+        <div class="backrestLeft"></div>
+        <div class="backrestRight"></div>
+        <div class="backrestBack"></div>
+        <div class="connector"></div>
+        <div class="connectorTop"></div>
+        <div class="side left"></div>
+        <div class="side right"></div>
+        <div class="headrest"></div>
+        <div class="headrestBack"></div>
+        <div class="headrestLeft"></div>
+        <div class="headrestRight"></div>
+        <div class="headrestBottom"></div>
+    </div>
+</body>
+</html>
