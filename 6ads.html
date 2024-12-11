@@ -14,7 +14,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
-    
   </head>
   <body>
     <header>
@@ -130,37 +129,27 @@
         </ul>
       </div>
     </div>
-
-    <div class="explainAds">
-      <div
-        id="howItWorksMenu"
-        style="
-          background-color: #ffffff;
-          width: 100%;
-          padding: 3%;
-          display: flex;
-          flex-direction: column;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-          "
-        >
-          <h1 style="text-align: center; font-size: 3em">How it works</h1>
-          <a href="#" onclick="openPopup()">
-            <h3>*</h3>
-          </a>
-        </div>
-        <h4 style="text-align: center; color: rgb(128, 128, 128)">
-          safety | convenience | value
-        </h4>
+    <div
+      id="howItWorksMenu"
+      style="
+        background-color: #ffffff;
+        width: 100%;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+      "
+    >
+      <div class="howItWorks">
+        <h1 style="text-align: center; font-size: 3em">How it works</h1>
+        <a href="#" onclick="openPopup()">
+          <h3>*</h3>
+        </a>
       </div>
-
+      <h4 style="text-align: center; color: rgb(128, 128, 128)">
+        safety | convenience | value
+      </h4>
+    </div>
+    <div class="explainAds">
       <div
         id="popup"
         style="
@@ -225,15 +214,15 @@
           Audio system volume will automatically rise to 10 (out of 50) when an
           advertisement starts and the 'Mute' option is disabled for the first 5
           seconds, until skipping the promotion becomes available.
-          <br>
-          <br>
-          Advertising will trigger even if there is no media playing or the car's cabin is
-          quiet. It will, however postpone and queue advertisements during phone
-          calls. Level Two has the ability to analyse conversations and will not
-          disturb an important/serious conversation. Level One does not
-          have this feature.
           <br />
-          <br>
+          <br />
+          Advertising will trigger even if there is no media playing or the
+          car's cabin is quiet. It will, however postpone and queue
+          advertisements during phone calls. Level Two has the ability to
+          analyse conversations and will not disturb an important/serious
+          conversation. Level One does not have this feature.
+          <br />
+          <br />
           Please feel free to reach out to any dealership or the customer
           service for more information.
         </p>
@@ -580,7 +569,9 @@
             </div>
             <br />
             <p style="width: 400px">
-              Let the vehicle get to know you. Use the TOL mobile app to plan road trips based on what you like. Is McDonald's where you like to eat? How about the car finds a charger with a branch on your way?
+              Let the vehicle get to know you. Use the TOL mobile app to plan
+              road trips based on what you like. Is McDonald's where you like to
+              eat? How about the car finds a charger with a branch on your way?
             </p>
           </div>
         </div>
@@ -630,9 +621,13 @@
       </div>
     </div>
     <div class="button-container">
-      <a href="7addons.html" class="next-button">Optional equipment <i class="fas fa-arrow-right"></i></a>
+      <a href="7addons.html" class="next-button"
+        >Optional equipment <i class="fas fa-arrow-right"></i
+      ></a>
       <div class="price-button" id="priceDisplay" style="display: none">
-        <a href="5interior.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <a href="5interior.html" class="back-button"
+          ><i class="fas fa-arrow-left"></i
+        ></a>
         <span>Subtotal: £<span id="priceValue">0</span></span>
       </div>
     </div>
@@ -689,8 +684,6 @@
           block: "start",
         });
       }
-
-      
     </script>
 
     <footer class="footer">
