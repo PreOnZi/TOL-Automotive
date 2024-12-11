@@ -2,7 +2,7 @@ window.addEventListener("message", (event) => {
   const allowedOrigins = [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
-    "https://preonzi.github.io/TOL-Automotive",
+    "https://preonzi.github.io",
   ];console.log("Received message from origin:", event.origin);
   if (!allowedOrigins.includes(event.origin)) {
   if (!allowedOrigins.includes(event.origin)) {
