@@ -300,19 +300,19 @@ header {
   margin-bottom: 50px;
 }
 
-.confgallery,
+.confGallery,
 .img-inner-container {
   width: 60%;
   position: relative;
 }
 
-.confgallery img {
+.confGallery img {
   width: 100%;
   height: auto;
   display: none;
 }
 
-.confgallery img.active {
+.confGallery img.active {
   display: block;
 }
 
@@ -368,6 +368,7 @@ header {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  
 }
 
 .next-button:hover {
