@@ -22,19 +22,19 @@ if (carColorImage) {
         newSrc = "Assets/carImageSelection/1RedDiamond.png";
         priceChange = 370;
         itemName = "Solar Red";
-        localStorage.setItem("selectedColor", "Red");
+        localStorage.setItem("selectedColor", "red");
         break;
       case "silver":
         newSrc = "Assets/carImageSelection/4SilverDiamond.png";
         priceChange = 470;
         itemName = "Brilliant Silver";
-        localStorage.setItem("selectedColor", "Silver");
+        localStorage.setItem("selectedColor", "silver");
         break;
       case "green":
         newSrc = "Assets/carImageSelection/7GreenDiamond.png";
         priceChange = 570;
         itemName = "Emerald Green";
-        localStorage.setItem("selectedColor", "Green");
+        localStorage.setItem("selectedColor", "green");
         break;
       default:
         console.warn("Unknown target ID:", targetId);
@@ -55,6 +55,36 @@ if (carColorImage) {
     }
   }
 
+  // Load the saved selection on page load
+  const savedColor = localStorage.getItem("selectedColor");
+  if (savedColor) {
+    const savedItem = document.getElementById(savedColor);
+    if (savedItem) {
+      savedItem.style.backgroundColor = "#ddd";
+
+      // Update the image and other related data
+      let savedSrc;
+      switch (savedColor) {
+        case "red":
+          savedSrc = "Assets/carImageSelection/1RedDiamond.png";
+          break;
+        case "silver":
+          savedSrc = "Assets/carImageSelection/4SilverDiamond.png";
+          break;
+        case "green":
+          savedSrc = "Assets/carImageSelection/7GreenDiamond.png";
+          break;
+        default:
+          savedSrc = null;
+      }
+
+      if (savedSrc) {
+        carColorImage.setAttribute("src", savedSrc);
+      }
+    }
+  }
+
+  // Attach the click event listeners
   const configItems = document.querySelectorAll(".confSelector ul li");
   configItems.forEach((item) =>
     item.addEventListener("click", changeImgOnClick)

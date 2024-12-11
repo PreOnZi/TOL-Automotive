@@ -55,3 +55,48 @@ function changeWheelOnClick(e) {
   }
 }
 
+// Load the saved selection on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedWheelType = localStorage.getItem("selectedWheels") || "Diamond";
+  const selectedColor = localStorage.getItem("selectedColor") || "Red";
+  const configItems = document.querySelectorAll(".confSelector ul li");
+
+  configItems.forEach((item) => {
+    const wheelText = item.querySelector("h3")?.textContent || "";
+
+    if (
+      (savedWheelType === "Diamond" && wheelText.includes("Diamond")) ||
+      (savedWheelType === "Square" && wheelText.includes("Square")) ||
+      (savedWheelType === "Dark" && wheelText.includes("Dark"))
+    ) {
+      item.style.backgroundColor = "#ddd";
+
+      // Update the image to match the saved selection
+      const imageKey = `${selectedColor}${savedWheelType}`;
+      const imageOptions = {
+        RedDiamond: "1RedDiamond.png",
+        RedSquare: "2RedSquare.png",
+        RedDark: "3RedDark.png",
+        SilverDiamond: "4SilverDiamond.png",
+        SilverSquare: "6SilverSquare.png",
+        SilverDark: "5SilverDark.png",
+        GreenDiamond: "7GreenDiamond.png",
+        GreenSquare: "8GreenSquare.png",
+        GreenDark: "9GreenDark.png",
+      };
+      const selectedImage = imageOptions[imageKey];
+
+      if (selectedImage) {
+        const carWheelsImage = document.getElementById("car-wheels-image");
+        carWheelsImage.setAttribute(
+          "src",
+          `Assets/carImageSelection/${selectedImage}`
+        );
+      }
+    }
+  });
+});
+
+// Attach the event listener to all list items
+const configItems = document.querySelectorAll(".confSelector ul li");
+configItems.forEach((item) => item.addEventListener("click", changeWheelOnClick));

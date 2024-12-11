@@ -68,34 +68,29 @@
 
       <div class="confSelector">
         <ul>
-          <li>
+          <li data-id="noAdvertising">
             <b><h3>No Advertising | Default</h3></b>
-
             <br />
             <p style="font-size: small">
               Your car will have no advertising features implemented in its
               infotainment system.
               <br />
-              The system maintains its full functionality, however, TOL
-              exclusive offers on hundreds of retailers and services will not be
-              available.
+              The system maintains its full functionality, however, TOL exclusive
+              offers on hundreds of retailers and services will not be available.
             </p>
             <br />
             <b><i> £0</i></b>
           </li>
-          <li>
+          <li data-id="levelOne">
             <b><h3>Level One | No Personalisation</h3></b>
-
             <br />
             <p style="font-size: small">
               Lower your vehicle price with advertising without sharing personal
-              information. Enjoy the BLINK for less and take advantage of our
-              smart systems. On your terms.
+              information. Enjoy the BLINK for less and take advantage of our smart
+              systems. On your terms.
               <br />
               You can always upgrade to Level Two and get the difference!*
             </p>
-            <br />
-
             <br />
             <div style="display: flex; justify-content: space-between">
               <b><i>- £4,670</i></b>
@@ -104,21 +99,18 @@
               </button>
             </div>
           </li>
-          <li>
+          <li data-id="levelTwo">
             <b><h3>Level Two | High Personalisation</h3></b>
-
             <br />
             <p style="font-size: small">
-              Get the offers you want and pay less for your BLINK at the same
-              time. If you are looking for a car that understands you, the Level
-              Two-equipped BLINK is here for you. From discounts to your
-              favourite restaurants, to exclusive deals on the brands you love.
-              <br />Get to know each other and let the vehicle keep you
-              comfortable, wherever you go, thanks to its smart
-              habit-understanding and more!
+              Get the offers you want and pay less for your BLINK at the same time.
+              If you are looking for a car that understands you, the Level
+              Two-equipped BLINK is here for you. From discounts to your favourite
+              restaurants, to exclusive deals on the brands you love.
+              <br />
+              Get to know each other and let the vehicle keep you comfortable,
+              wherever you go, thanks to its smart habit-understanding and more!
             </p>
-            <br />
-
             <br />
             <div style="display: flex; justify-content: space-between">
               <b><i>- £6,670</i></b>
@@ -129,6 +121,7 @@
           </li>
         </ul>
       </div>
+      
     </div>
     <div
       id="howItWorksMenu"
@@ -645,6 +638,39 @@
       function closePopup() {
         document.getElementById("popup").style.display = "none";
       }
+
+      //SELECTION MEMORY
+      document.addEventListener("DOMContentLoaded", () => {
+  const listItems = document.querySelectorAll(".confSelector ul li");
+
+  // Load saved selection from localStorage
+  const savedSelection = localStorage.getItem("selectedAdOption");
+
+  if (savedSelection) {
+    const selectedElement = document.querySelector(
+      `.confSelector ul li[data-id="${savedSelection}"]`
+    );
+    if (selectedElement) {
+      selectedElement.classList.add("selected");
+    }
+  }
+
+  // Add click event listeners
+  listItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Remove 'selected' class from all items
+      listItems.forEach((li) => li.classList.remove("selected"));
+
+      // Add 'selected' class to clicked item
+      item.classList.add("selected");
+
+      // Save the selection to localStorage
+      const selectedId = item.getAttribute("data-id");
+      localStorage.setItem("selectedAdOption", selectedId);
+    });
+  });
+});
+
 
       // HOW IT WORKS MENU SCROLL
       function scrollToHowItWorks() {

@@ -60,21 +60,21 @@
       ></iframe>
       <div class="confSelector">
         <ul>
-          <li onclick="changeIframe('3Dseat/blackText.html')">
+          <li data-id="blackText" onclick="changeIframe('3Dseat/blackText.html')">
             <b><h3>Recycled textiles | black</h3></b>
             <br />
             <div class="interior1"></div>
             <br />
             <b><i>+ £0</i></b>
           </li>
-          <li onclick="changeIframe('3Dseat/blackLead.html')">
+          <li data-id="blackLead" onclick="changeIframe('3Dseat/blackLead.html')">
             <b><h3>Vegan leather | black</h3></b>
             <br />
             <div class="interior2"></div>
             <br />
             <b><i>+ £3,670</i></b>
           </li>
-          <li onclick="changeIframe('3Dseat/creamLead.html')">
+          <li data-id="creamLead" onclick="changeIframe('3Dseat/creamLead.html')">
             <b><h3>Vegan leather | cream</h3></b>
             <br />
             <div class="interior3"></div>
@@ -83,6 +83,7 @@
           </li>
         </ul>
       </div>
+      
     </div>
 
     <div class="button-container">
@@ -103,6 +104,39 @@
           console.error("Iframe with id 'colorFrame' not found.");
         }
       }
+      //SELECTION MEMORY
+      document.addEventListener("DOMContentLoaded", () => {
+  const listItems = document.querySelectorAll(".confSelector ul li");
+
+  // Load saved selection from localStorage
+  const savedSelection = localStorage.getItem("selectedSeatOption");
+
+  if (savedSelection) {
+    // Highlight the previously selected item
+    const selectedElement = document.querySelector(
+      `.confSelector ul li[data-id="${savedSelection}"]`
+    );
+    if (selectedElement) {
+      selectedElement.classList.add("selected");
+    }
+  }
+
+  // Add click event to each list item
+  listItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Remove 'selected' class from all items
+      listItems.forEach((li) => li.classList.remove("selected"));
+
+      // Add 'selected' class to the clicked item
+      item.classList.add("selected");
+
+      // Save the selection to localStorage
+      const selectedId = item.getAttribute("data-id");
+      localStorage.setItem("selectedSeatOption", selectedId);
+    });
+  });
+});
+
     </script>
     <footer class="footer">
       <p>© 2024 TOL Automotive UK. All rights reserved.</p>
