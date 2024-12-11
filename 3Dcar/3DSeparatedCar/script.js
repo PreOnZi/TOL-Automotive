@@ -3,8 +3,6 @@ window.addEventListener("message", (event) => {
     "http://localhost:5500",
     "http://127.0.0.1:5500",
     "https://preonzi.github.io/TOL-Automotive",
-    "https://preonzi.github.io/TOL-Automotive/4.1colour.html",
-    "https://preonzi.github.io/TOL-Automotive/4wheels.html",
   ];
   if (!allowedOrigins.includes(event.origin)) {
     console.warn("Blocked message from untrusted origin:", event.origin);
