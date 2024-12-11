@@ -9,9 +9,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
     <link rel="icon" href="Assets/logoFav.png" type="image/png" />
     <style>
-      /* Layout adjustments for horizontal display */
+     
       .configurator {
         display: flex;
         flex-direction: column;
@@ -118,11 +122,12 @@
       </div>
     </div>
     <div class="button-container">
-    <a href="8finance.html" class="next-button">Financing options</a>
-    <div class="price-button" id="priceDisplay" style="display: none">
-      <span>Subtotal: £<span id="priceValue">0</span></span>
+      <a href="8finance.html" class="next-button">Financing options <i class="fas fa-arrow-right"></i></a>
+      <div class="price-button" id="priceDisplay" style="display: none">
+        <a href="6ads.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <span>Subtotal: £<span id="priceValue">0</span></span>
+      </div>
     </div>
-</div>
     <script src="price.js"></script>
     <script src="optionalEquipmentScript.js"></script>
 

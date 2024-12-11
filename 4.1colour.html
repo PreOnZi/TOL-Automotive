@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
     <link rel="icon" href="Assets/logoFav.png" type="image/png" />
   </head>
   <body>
@@ -42,17 +46,17 @@
           src="Assets/carImageSelection/1RedDiamond.png"
           alt="Selected car"
           class="configurator-img"
-          style="display: none;"
+          style="display: none"
         />
         <!-- ACTUAL IFRAME SHOWN -->
         <iframe
           id="colorFrame"
           src="carProjection.html"
           style="
-          width: 100%;
-          height: 60vh;
-          border: solid 2px white;
-          background-color: #63d9fd;
+            width: 100%;
+            height: 60vh;
+            border: solid 2px white;
+            background-color: #63d9fd;
           "
         ></iframe>
       </div>
@@ -90,19 +94,20 @@
       </div>
     </div>
     <div class="button-container">
-    <a href="4wheels.html" class="next-button">Wheel design</a>
-    <div class="price-button" id="priceDisplay" style="display: none">
-      <span>Subtotal: £<span id="priceValue">0</span></span>
-    </div>
+      <a href="4wheels.html" class="next-button">Wheel design <i class="fas fa-arrow-right"></i></a>
+      <div class="price-button" id="priceDisplay" style="display: none">
+        <a href="3powertrain.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <span>Subtotal: £<span id="priceValue">0</span></span>
+      </div>
     </div>
     <script src="price.js"></script>
     <script src="colorPageScript.js"></script>
     <script>
-      // Function to reload the iframe
       function reloadIframe() {
         const iframe = document.getElementById("colorFrame");
-        iframe.contentWindow.location.reload(); // Reloads the iframe content
+        iframe.contentWindow.location.reload();
       }
+
     </script>
 
     <footer class="footer">
