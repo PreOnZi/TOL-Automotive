@@ -832,6 +832,47 @@ header {
   justify-content: space-between;
 }
 
+/* ADDONS SELECTION DIV AND UL */
+.confSelectorAddons ul {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  gap: 10px; /* Adds space between items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center; /* Centers items */
+}
+
+.confSelectorAddons li {
+  flex: 1 1 calc(33.33% - 20px); /* Ensures three items per row */
+  box-sizing: border-box; /* Prevents width issues with padding */
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  max-width: calc(33.33% - 20px); /* Adds clarity to max width */
+}
+
+.confSelectorAddons img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.confSelectorAddons h3 {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.confSelectorAddons p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.confSelectorAddons b i {
+  font-size: 1.1rem;
+  color: #000;
+}
 /*FOOTER*/
 .footer {
   padding: 20px;
