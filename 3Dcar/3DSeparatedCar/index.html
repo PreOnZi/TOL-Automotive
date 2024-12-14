@@ -35,6 +35,11 @@
                       <div class="item dashboardFace7"></div>
                       <div class="item dashboardFace8"></div>
                       <div class="item dashboardFace9"></div>
+                      <div class="item dashboardFace10"></div>
+                      <div class="item dashboardFace11"></div>
+                      <div class="item dashboardFace12"></div>
+                      <div class="item dashboardFace13"></div>
+                      <div class="item dashboardFace14"></div>
                     </div>
                   </div>
 
@@ -275,6 +280,21 @@
                       "
                     ></div>
                     <div
+                    class="blinkersRearLeftSmall"
+                    style="
+                      position: absolute;
+                      width: 5px;
+                      height: 5px;
+                      background: linear-gradient(
+                        to bottom,
+                        #ffb25f,
+                        #f1320c
+                      );
+                      transform: translateX(-48px) translateY(-45px)
+                        translateZ(-50.5px) rotateY(180deg);
+                    "
+                  ></div>
+                    <div
                       class="blinkersRearRight"
                       style="
                         position: absolute;
@@ -292,6 +312,21 @@
                       "
                     ></div>
                     <div
+                    class="blinkersRearRightSmall"
+                    style="
+                      position: absolute;
+                      width: 5px;
+                      height: 5px;
+                      background: linear-gradient(
+                        to bottom,
+                        #ffb25f,
+                        #f1320c
+                      );
+                      transform: translateX(44px) translateY(-45px)
+                        translateZ(-50.5px) rotateY(180deg);
+                    "
+                  ></div>
+                    <div
                       class="brakeLightTop"
                       style="
                         position: absolute;
@@ -302,7 +337,7 @@
                           #ff2e1b,
                           #b30000
                         );
-                        transform: translateX(-20px) translateY(-50px)
+                        transform: translateX(-20px) translateY(-51px)
                           translateZ(-50px) rotateX(90deg);
 
                         box-shadow: 0 0 5px 1px rgba(255, 17, 17, 0.8);
@@ -553,7 +588,7 @@
                     width: 100px;
                     height: 15.5px;
                     background: #7d7c7c;
-                    transform: translateX(-49px) translateY(-55px)
+                    transform: translateX(-49.5px) translateY(-53px)
                       translateZ(-30px) rotateX(90deg);
                     border-radius: 1px;
                   "
@@ -660,5 +695,27 @@
         }
       });
     });
+
+    //STEERING WHEEL
+    document.addEventListener("DOMContentLoaded", () => {
+  const steeringWheel = document.querySelector(".simpleRoad .carGroup .dashboardFace4");
+  let currentAngle = 0;
+
+  function turnSteeringWheel() {
+    // Generate a random angle between -15 and 15 degrees
+    const randomAngle = Math.random() * 30 - 15;
+
+    // Smoothly rotate to the new angle
+    currentAngle += randomAngle;
+    steeringWheel.style.transform = `translateZ(12.3px) translateY(37px) translateX(37.5px) rotateX(-15deg) rotate(${currentAngle}deg)`;
+
+    // Set a random delay between 500ms and 1500ms for the next movement
+    setTimeout(turnSteeringWheel, Math.random() * 1000 + 500);
+  }
+
+  // Start the turning animation
+  turnSteeringWheel();
+});
+
   </script>
 </html>
