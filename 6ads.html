@@ -43,7 +43,8 @@
     </section>
 
     <div class="configurator">
-      <div class="confGallery">
+      <!-- HIDDEN GALLERY -->
+      <div class="confGallery" style="display: none">
         <img
           src="Assets/lot.jpeg"
           alt="Hero Image"
@@ -52,37 +53,44 @@
         <img src="Assets/char.webp" alt="Hero Image" class="gallery-img" />
         <img src="Assets/lot1.jpg" alt="Hero Image" class="gallery-img" />
       </div>
+      <!-- ACTUAL IFRAME SHOWN -->
+      <iframe
+        id="colorFrame"
+        src="carProjection.html"
+        style="
+          width: 60%;
+          height: 60vh;
+          border: solid 2px white;
+          background-color: #63d9fd;
+          border-radius: 20px;
+        "
+      ></iframe>
 
       <div class="confSelector">
         <ul>
-          <li>
+          <li data-id="noAdvertising">
             <b><h3>No Advertising | Default</h3></b>
-
             <br />
-            <p>
+            <p style="font-size: small">
               Your car will have no advertising features implemented in its
               infotainment system.
               <br />
-              The system maintains its full functionality, however, TOL
-              exclusive offers on hundreds of retailers and services will not be
-              available.
+              The system maintains its full functionality, however, TOL exclusive
+              offers on hundreds of retailers and services will not be available.
             </p>
             <br />
             <b><i> £0</i></b>
           </li>
-          <li>
+          <li data-id="levelOne">
             <b><h3>Level One | No Personalisation</h3></b>
-
             <br />
-            <p>
+            <p style="font-size: small">
               Lower your vehicle price with advertising without sharing personal
-              information. Enjoy the BLINK for less and take advantage of our
-              smart systems. On your terms.
+              information. Enjoy the BLINK for less and take advantage of our smart
+              systems. On your terms.
               <br />
               You can always upgrade to Level Two and get the difference!*
             </p>
-            <br />
-
             <br />
             <div style="display: flex; justify-content: space-between">
               <b><i>- £4,670</i></b>
@@ -91,21 +99,18 @@
               </button>
             </div>
           </li>
-          <li>
+          <li data-id="levelTwo">
             <b><h3>Level Two | High Personalisation</h3></b>
-
             <br />
-            <p>
-              Get the offers you want and pay less for your BLINK at the same
-              time. If you are looking for a car that understands you, the Level
-              Two-equipped BLINK is here for you. From discounts to your
-              favourite restaurants, to exclusive deals on the brands you love.
-              <br />Get to know each other and let the vehicle keep you
-              comfortable, wherever you go, thanks to its smart
-              habit-understanding and more!
+            <p style="font-size: small">
+              Get the offers you want and pay less for your BLINK at the same time.
+              If you are looking for a car that understands you, the Level
+              Two-equipped BLINK is here for you. From discounts to your favourite
+              restaurants, to exclusive deals on the brands you love.
+              <br />
+              Get to know each other and let the vehicle keep you comfortable,
+              wherever you go, thanks to its smart habit-understanding and more!
             </p>
-            <br />
-
             <br />
             <div style="display: flex; justify-content: space-between">
               <b><i>- £6,670</i></b>
@@ -116,37 +121,29 @@
           </li>
         </ul>
       </div>
+      
     </div>
-
-    <div class="explainAds">
-      <div
-        id="howItWorksMenu"
-        style="
-          background-color: #ffffff;
-          width: 100%;
-          padding: 3%;
-          display: flex;
-          flex-direction: column;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-          "
-        >
-          <h1 style="text-align: center; font-size: 3em">How it works</h1>
-          <a href="#" onclick="openPopup()">
-            <h3>*</h3>
-          </a>
-        </div>
-        <h4 style="text-align: center; color: rgb(128, 128, 128)">
-          safety | convenience | value
-        </h4>
+    <div
+      id="howItWorksMenu"
+      style="
+        background-color: #ffffff;
+        width: 100%;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+      "
+    >
+      <div class="howItWorks">
+        <h1 style="text-align: center; font-size: 3em">How it works</h1>
+        <a href="#" onclick="openPopup()">
+          <h3>*</h3>
+        </a>
       </div>
-
+      <h4 style="text-align: center; color: rgb(128, 128, 128)">
+        safety | convenience | value
+      </h4>
+    </div>
+    <div class="explainAds">
       <div
         id="popup"
         style="
@@ -174,10 +171,9 @@
           the car's system. This includes the infotainment screen and the car's
           audio system. The displayed advertisements will never be in the
           driver's way of operating the vehicle safely. Additionally, as the
-          level One offers low personalisation, only selected data will be
-          shared with TOL and advertisers. This will result in less relevant
-          advertising being shown. TOL will collect and share driving habits and
-          most common routes; GPS information.
+          level One offers no personalisation, no data will be shared with TOL
+          for the purpose of advertising. This will result in less relevant
+          advertising being shown.
           <br />
           <br />
 
@@ -185,14 +181,13 @@
           <br />
           Level Two offers more advertising within the system compared to Level
           One. It again uses both the infotainment system screen and the
-          vehicle's audio system. Additionally, a small portion of the driver's
-          gauge cluster is reserved for advertising purposes. As Level Two
-          operates with higher personalisation, in addition to GPS data, TOL
-          will utilise the vehicle's microphones to gauge topics of interest
-          from the cabin. This function can be temporarily disabled in the car's
-          settings, however it will turn on automatically after five minutes and
-          on start. None of the advertising features will prevent the driver
-          from safe operation of the vehicle.
+          vehicle's audio system. As Level Two operates with higher
+          personalisation, the vehicle will collect & send relevant data,
+          including snippets from the vehicle's internal microphones. This
+          function can be temporarily disabled in the car's settings, however it
+          will turn on automatically after five minutes and on start. None of
+          the advertising features will prevent the driver from safe operation
+          of the vehicle.
 
           <br />
           <br />
@@ -205,10 +200,21 @@
           selected advertising levels within the first two months of purchase by
           paying the difference to RRP.
           <br />
-          The infotianment system runs on Google's Android Automotive platform
+          The infotainment system runs on Google's Android Automotive platform
           and can therefore be connected to apps such as Spotify and YouTube.
           Android Auto and Apple Car Play is not available for vehicles with
           advertising integration enabled.
+          <br />
+          Audio system volume will automatically rise to 10 (out of 50) when an
+          advertisement starts and the 'Mute' option is disabled for the first 5
+          seconds, until skipping the promotion becomes available.
+          <br />
+          <br />
+          Advertising will trigger even if there is no media playing or the
+          car's cabin is quiet. It will, however postpone and queue
+          advertisements during phone calls. Level Two has the ability to
+          analyse conversations and will not disturb an important/serious
+          conversation. Level One does not have this feature.
           <br />
           <br />
           Please feel free to reach out to any dealership or the customer
@@ -218,8 +224,8 @@
         <br />
         <button class="closePopup" onclick="closePopup()">Close</button>
       </div>
-      <div class="table-container">
-        <div class="table-column">
+      <div class="adsModes-table">
+        <div class="adsModes-column">
           <h2>Driving</h2>
           <h3>parking brake disengaged</h3>
           <br />
@@ -236,7 +242,7 @@
             <i class="fas fa-arrow-down"></i>
           </button>
         </div>
-        <div class="table-column">
+        <div class="adsModes-column">
           <h2>Parked</h2>
           <h3>parking brake engaged</h3>
           <br />
@@ -245,7 +251,7 @@
             information on the infotainment screen is available.
           </p>
 
-          <br />
+          
           <br />
           <button
             class="column-button"
@@ -255,7 +261,7 @@
             <i class="fas fa-arrow-down"></i>
           </button>
         </div>
-        <div class="table-column">
+        <div class="adsModes-column">
           <h2>Away</h2>
           <h3>vehicle is locked and empty</h3>
           <br />
@@ -548,6 +554,20 @@
               single click.
             </p>
           </div>
+          <div class="carousel-item">
+            <div style="height: 400px; width: 400px">
+              <img
+                src="Assets/mapPlan.png"
+                style="width: 100%; height: 100%; object-fit: contain"
+              />
+            </div>
+            <br />
+            <p style="width: 400px">
+              Let the vehicle get to know you. Use the TOL mobile app to plan
+              road trips based on what you like. Is McDonald's where you like to
+              eat? How about the car finds a charger with a branch on your way?
+            </p>
+          </div>
         </div>
         <div style="width: 60%; display: flex; align-items: center">
           <div>
@@ -594,11 +614,18 @@
         </div>
       </div>
     </div>
-
-    <a href="7addons.html" class="next-button">Optional equipment</a>
-    <div class="price-button" id="priceDisplay" style="display: none">
-      <span>Selected vehicle price: £<span id="priceValue">0</span></span>
+    <div class="button-container">
+      <a href="7addons.html" class="next-button"
+        >Optional equipment <i class="fas fa-arrow-right"></i
+      ></a>
+      <div class="price-button" id="priceDisplay" style="display: none">
+        <a href="5interior.html" class="back-button"
+          ><i class="fas fa-arrow-left"></i
+        ></a>
+        <span>Subtotal: £<span id="priceValue">0</span></span>
+      </div>
     </div>
+
     <script src="price.js"></script>
     <script src="gallery.js"></script>
     <script>
@@ -611,6 +638,39 @@
       function closePopup() {
         document.getElementById("popup").style.display = "none";
       }
+
+      //SELECTION MEMORY
+      document.addEventListener("DOMContentLoaded", () => {
+  const listItems = document.querySelectorAll(".confSelector ul li");
+
+  // Load saved selection from localStorage
+  const savedSelection = localStorage.getItem("selectedAdOption");
+
+  if (savedSelection) {
+    const selectedElement = document.querySelector(
+      `.confSelector ul li[data-id="${savedSelection}"]`
+    );
+    if (selectedElement) {
+      selectedElement.classList.add("selected");
+    }
+  }
+
+  // Add click event listeners
+  listItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Remove 'selected' class from all items
+      listItems.forEach((li) => li.classList.remove("selected"));
+
+      // Add 'selected' class to clicked item
+      item.classList.add("selected");
+
+      // Save the selection to localStorage
+      const selectedId = item.getAttribute("data-id");
+      localStorage.setItem("selectedAdOption", selectedId);
+    });
+  });
+});
+
 
       // HOW IT WORKS MENU SCROLL
       function scrollToHowItWorks() {

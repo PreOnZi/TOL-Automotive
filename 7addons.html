@@ -9,9 +9,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
     <link rel="icon" href="Assets/logoFav.png" type="image/png" />
     <style>
-      /* Layout adjustments for horizontal display */
+     
       .configurator {
         display: flex;
         flex-direction: column;
@@ -91,22 +95,42 @@
     </section>
 
     <div class="configurator">
-      <div class="confSelector">
+      <div class="confSelectorAddons">
         <ul>
           <li>
-            <img src="Assets/lot.jpeg" alt="No Advertising" />
-            <h3>Towbar, foldable</h3>
+            <img src="Assets/lot.jpeg"/>
+            <h3>Tow bar, electronic, foldable</h3>
             <p></p>
             <b><i>£1,200</i></b>
           </li>
           <li>
-            <img src="Assets/char.webp" alt="Low Personalisation" />
+            <img src="Assets/char.webp"  />
             <h3>Load carrier, roof</h3>
             <p></p>
             <b><i>£170</i></b>
           </li>
           <li>
-            <img src="Assets/lot1.jpg" alt="High Personalisation" />
+            <img src="Assets/lot1.jpg"  />
+            <h3>Panoramic roof</h3>
+            <p>
+             Electronic dimming
+            </p>
+            <b><i>£1,070</i></b>
+          </li>
+          <li>
+            <img src="Assets/lot.jpeg"  />
+            <h3>Panoramic roof shade </h3>
+            <p></p>
+            <b><i>£130</i></b>
+          </li>
+          <li>
+            <img src="Assets/char.webp"  />
+            <h3>TOL Automotive mystery merch box</h3>
+            <p></p>
+            <b><i>£100</i></b>
+          </li>
+          <li>
+            <img src="Assets/lot1.jpg" />
             <h3>Protect Plan | TOL Automotive</h3>
             <p>
               Add extra care to the vehicles interior and exterior to ensure it
@@ -117,12 +141,13 @@
         </ul>
       </div>
     </div>
-
-    <a href="8finance.html" class="next-button">Financing options</a>
-    <div class="price-button" id="priceDisplay" style="display: none">
-      <span>Selected vehicle price: £<span id="priceValue">0</span></span>
+    <div class="button-container">
+      <a href="8finance.html" class="next-button">Financing options <i class="fas fa-arrow-right"></i></a>
+      <div class="price-button" id="priceDisplay" style="display: none">
+        <a href="6ads.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <span>Subtotal: £<span id="priceValue">0</span></span>
+      </div>
     </div>
-
     <script src="price.js"></script>
     <script src="optionalEquipmentScript.js"></script>
 

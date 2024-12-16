@@ -123,11 +123,22 @@
       </section>
 
       <section class="finance-section">
-        <div class="image-container">
-          <img src="assets/lot.jpeg" alt="Product Image" id="finalCar"/>
-        </div>
-    
+        <iframe
+        id="colorFrame"
+        src="carProjection.html"
+        style="
+          width: 40%;
+          height: 48vh;
+          border: solid 2px white;
+          background-color: #63d9fd;
+          border-radius: 20px;
+        "
+      ></iframe>
+    <div>
+      <h1 style="padding-bottom: 8%; font-size:x-large;">Your configuration:</h1>
+     
         <div id="selectionList"></div>
+        </div>
       </section>
 
       <section class="main-content">
@@ -145,5 +156,16 @@
     <script src="price.js"></script>
     <script src="gallery.js"></script>
     <script src="financePageScript.js"></script>
+    <script>
+      function clearLocalData() {
+        localStorage.clear();
+        console.log("LocalStorage cleared!");
+
+        sessionStorage.clear();
+        console.log("SessionStorage cleared!");
+    
+        alert("All data has been cleared!");
+      }
+    </script>
   </body>
 </html>

@@ -228,7 +228,7 @@ header {
   color: #333;
 }
 
-/*CONFIGURE BUTTON8*/
+/*CONFIGURE BUTTONS*/
 .configure-button {
   display: inline-block;
   padding: 12px 24px;
@@ -297,22 +297,22 @@ header {
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
-.confgallery,
+.confGallery,
 .img-inner-container {
   width: 60%;
   position: relative;
 }
 
-.confgallery img {
+.confGallery img {
   width: 100%;
   height: auto;
   display: none;
 }
 
-.confgallery img.active {
+.confGallery img.active {
   display: block;
 }
 
@@ -345,12 +345,20 @@ header {
 .confSelector ul li:hover {
   background-color: #ddd;
 }
-
-/*NEXT BUTTON*/
-.next-button {
+/*PRICE CONTAINER*/
+.button-container {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 20px; 
+  bottom: 20px; 
+  display: flex;
+  flex-direction: column;
+  
+ 
+  gap: 10px; 
+}
+/*NEXT BUTTON*/
+
+.next-button, .back-button {
   padding: 12px 24px;
   background-color: #00bfd8;
   color: white;
@@ -360,6 +368,7 @@ header {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  
 }
 
 .next-button:hover {
@@ -373,12 +382,9 @@ header {
 
 /*PRICE BUTTON*/
 .price-button {
-  position: fixed;
-  right: 240px;
-  bottom: 20px;
-  background-color: #ddd;
+  background-color: #bfbfbf;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: bold;
@@ -388,11 +394,12 @@ header {
   cursor: default;
 }
 
+
 /*COLOUR SELECTION*/
 .swatch1 {
   background-color: #8e0000;
   width: 300px;
-  height: 60px;
+  height: 40px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -401,7 +408,7 @@ header {
 .swatch2 {
   background-color: #949494;
   width: 350px;
-  height: 60px;
+  height: 40px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -410,7 +417,7 @@ header {
 .swatch3 {
   background-color: #aeffc0;
   width: 400px;
-  height: 60px;
+  height: 40px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -421,7 +428,7 @@ header {
 .cube-container {
   perspective: 600px;
   width: 0px;
-  height: 80px;
+  height: 50px;
   margin: auto;
 }
 
@@ -467,17 +474,17 @@ header {
   transform: rotateX(-90deg) translateZ(40px);
 }
 
+
 /*WHEEL2*/
-/* Cube container for perspective */
 .cube-container1 {
   perspective: 600px;
   width: 0px;
-  height: 80px;
+  height: 50px;
   margin: auto;
 }
 
 /* Cube styling */
-.cube {
+.cube1 {
   width: 80px;
   height: 80px;
   position: relative;
@@ -486,17 +493,17 @@ header {
 }
 
 /* Face styling */
-.face {
+.cube-container1 .face {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: black;
   border: 1px solid #000;
 }
 
 /* Front face with pattern */
 .cube-container1 .front {
-  background-image: url("assets/pattern2.png");
+  background-image: url("Assets/pattern2.png");
   background-size: cover;
   transform: translateZ(40px);
 }
@@ -523,12 +530,12 @@ header {
 .cube-container2 {
   perspective: 600px;
   width: 0px;
-  height: 80px;
+  height: 50px;
   margin: auto;
 }
 
 /* Cube styling */
-.cube {
+.cube2 {
   width: 80px;
   height: 80px;
   position: relative;
@@ -547,7 +554,7 @@ header {
 
 /* Front face with pattern */
 .front {
-  background-image: url("assets/pattern3.jpg");
+  background-image: url("Assets/pattern3.jpg");
   background-size: cover;
   transform: translateZ(40px);
 }
@@ -573,7 +580,7 @@ header {
 .interior1 {
   background-color: #4a4a4a;
   width: 60px;
-  height: 60px;
+  height: 50px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -582,16 +589,16 @@ header {
 .interior2 {
   background-color: #101010;
   width: 60px;
-  height: 60px;
+  height: 50px;
   border-radius: 50px;
 
   border: 3px solid white;
 }
 
 .interior3 {
-  background-color: #e2e4cc;
+  background-color: #d9d2af;
   width: 60px;
-  height: 60px;
+  height: 50px;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -676,24 +683,6 @@ header {
   display: flex;
 }
 
-/*STATS TABLE*/
-.stable-container {
-  padding-left: 20%;
-  margin: 20px auto;
-  max-width: 60%;
-  border: white solid 1px;
-  border-radius: 20px;
-  display: grid;
-}
-.stable-row {
-  display: grid;
-  grid-template-rows: 1fr auto 1fr;
-  grid-template-columns: 1fr auto 1fr;
-  width: 40%;
-}
-.icon {
-  max-width: 50px;
-}
 
 /*HOW IT WORKS TABLE*/
 .table-container {
@@ -742,6 +731,148 @@ header {
   background-color: #ffbe31;
 }
 
+/*POWERTRAIN - KIT COLUMNS*/
+.kit {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 3% auto; 
+  align-items: start;
+  justify-content: center; 
+}
+
+.kitColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border: solid 2px white;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.kitColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.kitColumn li {
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+
+.whatIsIncluded{
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.howItWorks{
+  padding: 20px 20px;
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+/* ADS CAR DRIVING MODES TABLE */
+.adsModes-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  margin: 3% auto; 
+  align-items: start;
+  justify-content: center; 
+}
+
+.adsModes-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border: solid 2px white;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.adsModes-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.adsModes-column li {
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* FINANCES DIV */
+.finance-section{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ADDONS SELECTION DIV AND UL */
+.confSelectorAddons ul {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  gap: 10px; /* Adds space between items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center; /* Centers items */
+}
+
+.confSelectorAddons li {
+  flex: 1 1 calc(33.33% - 20px); /* Ensures three items per row */
+  box-sizing: border-box; /* Prevents width issues with padding */
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  max-width: calc(33.33% - 20px); /* Adds clarity to max width */
+}
+
+.confSelectorAddons img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.confSelectorAddons h3 {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.confSelectorAddons p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.confSelectorAddons b i {
+  font-size: 1.1rem;
+  color: #000;
+}
 /*FOOTER*/
 .footer {
   padding: 20px;

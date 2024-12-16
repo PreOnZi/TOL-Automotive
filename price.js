@@ -36,14 +36,19 @@ function updatePrice(newPrice = 0, itemName = "Unknown Item") {
 
   togglePriceBox();
 
-  const pages = {
-    Powertrain: "/3powertrain.html",
-    Colour: "/4.1colour.html",
-    Wheels: "/4wheels.html",
-    Interior: "/5interior.html",
-    Advertising: "/6ads.html",
-    Optional: "/7addons.html",
-  };
+  const basePath = window.location.hostname.includes("github.io")
+  ? "/TOL-Automotive"
+  : "";
+
+const pages = {
+  Powertrain: `${basePath}/3powertrain.html`,
+  Colour: `${basePath}/4.1colour.html`,
+  Wheels: `${basePath}/4wheels.html`,
+  Interior: `${basePath}/5interior.html`,
+  Advertising: `${basePath}/6ads.html`,
+  Optional: `${basePath}/7addons.html`,
+};
+
 
   const currentPage = window.location.pathname;
 
