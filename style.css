@@ -848,6 +848,7 @@ header {
   box-sizing: border-box; /* Prevents width issues with padding */
   background-color: #f4f4f4;
   border: 1px solid #ddd;
+  border-radius: 8px;
   padding: 10px;
   text-align: center;
   max-width: calc(33.33% - 20px); /* Adds clarity to max width */
@@ -856,6 +857,7 @@ header {
 .confSelectorAddons img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 

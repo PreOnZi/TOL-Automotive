@@ -396,8 +396,14 @@ div.simpleRoad .carBodyBlock .item.zFaces {
 }
 
 div.simpleRoad .carBodyBlock .item.index5 {
-  transform: translateY(-50px) rotateX(90deg); /* Adjust height and rotation */
-  background: var(--default-car, #7d7c7c); /* Match car color */
+  transform: translateY(-50px) rotateX(90deg); 
+  background: var(--default-car, #7d7c7c);
+  border: solid 0.5px white;
+}
+
+div.simpleRoad .carBodyBlock .item.index5 {
+  transform: translateY(-50px) rotateX(90deg); 
+  background: var(--default-car, #7d7c7c);
   border: solid 0.5px white;
 }
 
