@@ -248,7 +248,7 @@ div.simpleRoad .carGroup .dashboardFace10 {
   /* topRight Screen item */
   transform: translateZ(11.3px) translateY(42.5px) translateX(46.5px)
     rotateX(-15deg);
-  background-image: url(../../Assets/settings\\(1\).png);
+  background-image: url(../../Assets/settingsWhite.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
