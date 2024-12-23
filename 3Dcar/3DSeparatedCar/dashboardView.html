@@ -22,6 +22,7 @@
             perspective: 1000px; /* Creates 3D perspective */
         }
 
+   
         .sky {
             position: absolute;
             width: 100%;
@@ -31,92 +32,57 @@
 
         .cloud {
             position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
+            margin-top: 70px;
+            width: 350px;
+            height: 120px;
+            background: #ECEFF1;
+            box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 100px;
             animation: moveClouds linear infinite;
         }
 
-        /* Cloud sizes and starting positions */
-        .cloud {
-            animation-duration: 10s; /* Default duration */
+        .cloud::after, .cloud::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            background: inherit;
+            border-radius: inherit;
         }
 
-        /* Specific cloud configurations for variety */
-        .cloud1 {
-            width: 50px;
-            height: 30px;
-            bottom: -20%;
-            left: 10%;
-            animation-duration: 15s;
+        .cloud::after {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 50px;
         }
 
-        .cloud2 {
-            width: 70px;
-            height: 40px;
-            bottom: -15%;
-            left: 40%;
-            animation-duration: 12s;
+        .cloud::before {
+            width: 180px;
+            height: 180px;
+            top: -70px;
+            left: 130px;
         }
 
-        .cloud3 {
-            width: 40px;
-            height: 25px;
-            bottom: -30%;
-            left: 70%;
-            animation-duration: 18s;
-        }
-
-        .cloud4 {
-            width: 60px;
-            height: 35px;
-            bottom: -25%;
-            left: 20%;
-            animation-duration: 20s;
-        }
-
-        .cloud5 {
-            width: 80px;
-            height: 50px;
-            bottom: -10%;
-            left: 50%;
-            animation-duration: 14s;
-        }
-
-    
-        .cloud6 {
-            width: 90px;
-            height: 55px;
-            bottom: -15%;
-            left: 80%;
-            animation-duration: 16s;
-        }
-
-        .cloud7 {
-            width: 75px;
-            height: 45px;
-            bottom: -20%;
-            left: 30%;
-            animation-duration: 22s;
-        }
-        .cloud1 { width: 50px; height: 30px; bottom: -20%; left: 10%; animation-duration: 6s; }
-    .cloud2 { width: 70px; height: 40px; bottom: -15%; left: 40%; animation-duration: 5s; }
-    .cloud3 { width: 40px; height: 25px; bottom: -30%; left: 70%; animation-duration: 7s; }
-    .cloud4 { width: 60px; height: 35px; bottom: -25%; left: 20%; animation-duration: 8s; }
-    .cloud5 { width: 80px; height: 50px; bottom: -10%; left: 50%; animation-duration: 5s; }
-    .cloud6 { width: 90px; height: 55px; bottom: -15%; left: 80%; animation-duration: 6.5s; }
-    .cloud7 { width: 75px; height: 45px; bottom: -20%; left: 30%; animation-duration: 8s; }
-
-
-        /* Cloud animation for bottom-to-top movement and scaling */
+        /* Cloud animation */
         @keyframes moveClouds {
             0% {
                 transform: translateY(0) scale(1); /* Start small */
+                opacity: 0.8;
             }
             100% {
                 transform: translateY(-120vh) scale(3); /* Move up and grow */
+                opacity: 0;
             }
         }
+
+        /* Adjusted Cloud Animation Durations for Speed */
+        .cloud1 { bottom: -20%; left: 10%; animation-duration: 6s; }
+        .cloud2 { bottom: -15%; left: 40%; animation-duration: 5s; }
+        .cloud3 { bottom: -30%; left: 70%; animation-duration: 7s; }
+        .cloud4 { bottom: -25%; left: 20%; animation-duration: 8s; }
+        .cloud5 { bottom: -10%; left: 50%; animation-duration: 5s; }
+        .cloud6 { bottom: -15%; left: 80%; animation-duration: 6.5s; }
+        .cloud7 { bottom: -20%; left: 30%; animation-duration: 8s; }
 
         /* Container to hold the 3D elements */
         .scene {

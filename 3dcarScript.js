@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const seatColor = seatColorMap[selectedSeatColor];
 
+
   console.log("Selections:", selections);
   console.log("Color selection:", colorSelection);
   console.log("Selected color name:", selectedColor);

@@ -1,7 +1,7 @@
 :root {
   --default-car: #7d7c7c;
   --default-wheel: url(./assets/diamond.png);
-  --default-seat: #4a4a4a;
+  --default-seat-color: #4a4a4a;
 }
 
 body {
@@ -486,3 +486,95 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
     transform: translate3d(-22px, -5px, -50px);
   }
 }
+
+/* SEATS */
+.seatRearTop,
+.seatRearBottom,
+.seatFrontTop,
+.seatFrontBottom {
+  position: absolute;
+  width: 87px;
+  height: 80px;
+  background-color: var(--default-seat-color);
+  border-radius: 1px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.8);
+}
+
+.seatRearTop {
+  transform: translateX(-43px) translateY(-70px) translateZ(-15px) rotateX(5deg);
+}
+
+.seatRearBottom {
+  transform: translateX(-43px) translateY(-70px) translateZ(-20px) rotateX(5deg);
+}
+
+.seatFrontTop {
+  transform: translateX(-43px) translateY(-70px) translateZ(3px) rotateX(5deg);
+}
+
+.seatFrontBottom {
+  transform: translateX(-43px) translateY(-70px) translateZ(-2px) rotateX(5deg);
+}
+
+.verticalLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-1px);
+  width: 2px;
+  background: #9f9f9f;
+}
+
+.seatRearGap,
+.seatFrontGap {
+  position: absolute;
+  width: 87px;
+  height: 5px;
+  background-color: var(--default-seat-color);
+  border-radius: 1px;
+}
+
+.seatRearGap {
+  transform: translateX(-43px) translateY(-73px) translateZ(-21px) rotateX(90deg);
+}
+
+.seatFrontGap {
+  transform: translateX(-43px) translateY(-73px) translateZ(-3px) rotateX(90deg);
+}
+
+.seatRearGapBottom,
+.seatFrontGapBottom {
+  position: absolute;
+  width: 87px;
+  height: 10px;
+  background-color: var(--default-seat-color);
+  border-radius: 1px;
+}
+
+.seatRearGapBottom {
+  transform: translateX(-43px) translateY(-15px) translateZ(-10px) rotateX(90deg);
+}
+
+.seatFrontGapBottom {
+  transform: translateX(-43px) translateY(-15px) translateZ(8px) rotateX(90deg);
+}
+
+.floor {
+  position: absolute;
+  width: 90px;
+  height: 70px;
+  background-color: var(--default-seat-color);
+  transform: translateX(-42px) translateY(-15px) translateZ(-8px) rotateX(90deg);
+  border-radius: 1px;
+}
+
+.parcelShelf {
+  position: absolute;
+  width: 100px;
+  height: 15.5px;
+  background: #7d7c7c;
+  transform: translateX(-49.5px) translateY(-53px) translateZ(-30px) rotateX(90deg);
+  border-radius: 1px;
+}
+
