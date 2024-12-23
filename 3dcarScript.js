@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
     dark: "url(./assets/pattern3.jpg)",
   };
 
+  const seatColorMap = {
+    blackText: "#4A4A4A",
+    blackLead: "#101010",
+    creamLead: "#D9D2AF",
+  };
+
+  // COLOR
   const colorSelection = selections.find((item) => item.category === "Colour");
   let selectedColor = "default";
   if (colorSelection) {
@@ -32,19 +39,35 @@ document.addEventListener("DOMContentLoaded", () => {
       selectedColor = "silver";
     }
   }
-
   const color = colorMap[selectedColor];
 
+  // WHEELS
   let selectedWheels = localStorage.getItem("selectedWheels");
-  selectedWheels = selectedWheels ? selectedWheels.toLowerCase() : "diamond"; // Use diamond if no selection
+  selectedWheels = selectedWheels ? selectedWheels.toLowerCase() : "diamond";
+  const wheelBackground = wheelMap[selectedWheels] || wheelMap.diamond;
 
-  const wheelBackground = wheelMap[selectedWheels] || wheelMap.diamond; // Fallback to diamond if invalid key
+  // SEATS
+  const seatSelection = selections.find((item) => item.category === "Seats");
+  let selectedSeatColor = "blackText";
+  if (seatSelection) {
+    const seatColorName = seatSelection.name.toLowerCase();
+    if (seatColorName.includes("lead") && seatColorName.includes("black")) {
+      selectedSeatColor = "blackLead";
+    } else if (
+      seatColorName.includes("lead") &&
+      seatColorName.includes("cream")
+    ) {
+      selectedSeatColor = "creamLead";
+    }
+  }
+  const seatColor = seatColorMap[selectedSeatColor];
 
   console.log("Selections:", selections);
   console.log("Color selection:", colorSelection);
   console.log("Selected color name:", selectedColor);
   console.log("Selected wheels:", selectedWheels);
   console.log("Wheel background:", wheelBackground);
+  console.log("Selected seat color:", selectedSeatColor);
 
   const items = document.querySelectorAll(".item.index4.xFaces");
   items.forEach((item) => {
@@ -67,7 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
         iframeOrigin
       );
 
-      console.log(`Sent color ${color} and wheel ${selectedWheels} to iframe.`);
+      iframe.contentWindow.postMessage(
+        { variable: "--default-seat-color", value: seatColor },
+        iframeOrigin
+      );
+
+      console.log(
+        `Sent color ${color}, wheel ${selectedWheels}, and seat color ${seatColor} to iframe.`
+      );
     };
   } else {
     console.error("Iframe not found.");

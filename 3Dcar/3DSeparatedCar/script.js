@@ -32,6 +32,12 @@ window.addEventListener("message", (event) => {
       } else {
         console.warn("No wheel elements found to apply the pattern.");
       }
+      if (variable === "--default-seat-color") {
+        document.documentElement.style.setProperty(variable, value);
+        console.log(`Seat color set: ${variable} = ${value}`);
+      } else {
+        console.warn(`Unknown variable received: ${variable}`);
+      }
     } else {
       console.warn(`Unknown variable received: ${variable}`);
     }

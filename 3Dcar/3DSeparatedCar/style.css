@@ -1,6 +1,7 @@
 :root {
   --default-car: #7d7c7c;
   --default-wheel: url(./assets/diamond.png);
+  --default-seat: #4a4a4a;
 }
 
 body {
@@ -25,11 +26,7 @@ div.simpleRoad .day {
   will-change: opacity;
 }
 
-
-/** 3D scaler
-   *
-  
-   */
+/* 3D scaler */
 
 div.simpleRoad .scaler {
   position: absolute;
@@ -40,18 +37,15 @@ div.simpleRoad .scaler {
   animation: SR-scaleIn 0.5s ease;
 }
 
-/** 3D world main node
- 
-   */
+/* 3D world main node */
 
 div.simpleRoad .mainNode {
   transform: rotateX(-25deg) rotateY(55deg) translate3d(0, 0, 0);
   transition: transform 1s ease;
   will-change: transform;
 }
-
-
 /* When hovering over .wrapper3d, show the PNG */
+
 div.simpleRoad .wrapper3d:hover .png-image {
   display: block; /* Show the image on hover */
 }
@@ -104,7 +98,6 @@ div.simpleRoad .carGroup {
   will-change: transform;
 }
 
-
 div.simpleRoad .carBodyNode {
   transform: translate3d(-21px, -5px, -50px);
   animation: SR-drive 5s linear infinite 1.5s;
@@ -156,8 +149,6 @@ div.simpleRoad .cockpitBlock2 {
 div.simpleRoad .carGroup .dashboardNode {
   /* Position the dashboard within the car */
   position: absolute;
-
- 
 }
 
 div.simpleRoad .carGroup .dashboardBlock {
@@ -166,11 +157,11 @@ div.simpleRoad .carGroup .dashboardBlock {
 
 /* Dashboard Faces */
 div.simpleRoad .carGroup .dashboardFace1 {
- 
   width: 30px;
   height: 8px;
   position: absolute;
-  transform: translateZ(11.5px) translateX(35px) translateY(40px) rotateX(-15deg);
+  transform: translateZ(11.5px) translateX(35px) translateY(40px)
+    rotateX(-15deg);
   background: var(--default-car); /* Dark dashboard color */
 }
 /* Vertical Dashboard Panel */
@@ -180,7 +171,8 @@ div.simpleRoad .carGroup .dashboardBlock .verticalDashboard {
   width: 28px;
   height: 6px;
   position: absolute;
-  transform: translateZ(11.6px) translateX(36.5px) translateY(40.5px) rotateX(-15deg);
+  transform: translateZ(11.6px) translateX(36.5px) translateY(40.5px)
+    rotateX(-15deg);
   transform-origin: center;
   z-index: 100;
 }
@@ -188,19 +180,21 @@ div.simpleRoad .carGroup .dashboardFace2 {
   /* top of dashboard */
   height: 8px;
   max-width: 29.8px;
-  transform: rotateX(83deg) translateZ(-34.5px) translateY(21px) translateX(35.2px);
+  transform: rotateX(83deg) translateZ(-34.5px) translateY(21px)
+    translateX(35.2px);
   background: #636161;
   position: absolute;
 }
 
 div.simpleRoad .carGroup .dashboardFace5 {
   /* Map on screen */
-  transform: translateZ(12.25px) translateY(38.4px) translateX(46.4px) rotateX(-15deg);
+  transform: translateZ(12.25px) translateY(38.4px) translateX(46.4px)
+    rotateX(-15deg);
   background-image: url(../../Assets/map.png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 7px;
   height: 4px;
   position: absolute;
@@ -208,9 +202,9 @@ div.simpleRoad .carGroup .dashboardFace5 {
 
 div.simpleRoad .carGroup .dashboardFace6 {
   /* glove box */
-  transform: translateZ(11.5px) translateY(42px) translateX(56px) rotateX(-15deg)
-  ;
-  background: #000000; 
+  transform: translateZ(11.5px) translateY(42px) translateX(56px)
+    rotateX(-15deg);
+  background: #000000;
   border-radius: 5%;
   width: 7px;
   height: 3px;
@@ -219,18 +213,18 @@ div.simpleRoad .carGroup .dashboardFace6 {
 
 div.simpleRoad .carGroup .dashboardFace7 {
   /* Main screen background*/
-  transform: translateZ(11.75px) translateY(38px) translateX(46px) rotateX(-15deg)
-    ;
-  background: #000000; 
-  border-radius: 5%; 
+  transform: translateZ(11.75px) translateY(38px) translateX(46px)
+    rotateX(-15deg);
+  background: #000000;
+  border-radius: 5%;
   width: 8px;
   height: 9.5px;
   position: absolute;
 }
 div.simpleRoad .carGroup .dashboardFace8 {
   /* Main screen */
-  transform: translateZ(11.7px) translateY(38.2px) translateX(46.2px) rotateX(-15deg)
-  ;
+  transform: translateZ(11.7px) translateY(38.2px) translateX(46.2px)
+    rotateX(-15deg);
   background: #003642;
   width: 7.7px;
   height: 9px;
@@ -239,36 +233,40 @@ div.simpleRoad .carGroup .dashboardFace8 {
 
 div.simpleRoad .carGroup .dashboardFace9 {
   /* topLeft Screen item */
-  transform: translateZ(11.3px) translateY(42.5px) translateX(51.05px) rotateX(-15deg);
+  transform: translateZ(11.3px) translateY(42.5px) translateX(51.05px)
+    rotateX(-15deg);
   background-image: url(../../Assets/batteryGreen.png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 2px;
   height: 2px;
   position: absolute;
 }
 div.simpleRoad .carGroup .dashboardFace10 {
   /* topRight Screen item */
-  transform: translateZ(11.3px) translateY(42.5px) translateX(46.5px) rotateX(-15deg);
-  background-image: url(../../Assets/settings\ \(1\).png);
+  transform: translateZ(11.3px) translateY(42.5px) translateX(46.5px)
+    rotateX(-15deg);
+  background-image: url(../../Assets/settings\\(1\).png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 2px;
   height: 2px;
   position: absolute;
 }
+
 div.simpleRoad .carGroup .dashboardFace11 {
   /* bottomLeft Screen item */
-  transform: translateZ(10.8px) translateY(44.55px) translateX(51.05px) rotateX(-15deg);
+  transform: translateZ(10.8px) translateY(44.55px) translateX(51.05px)
+    rotateX(-15deg);
   background-image: url(../../Assets/McDonalds-Logo.png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 2px;
   height: 2px;
   position: absolute;
@@ -276,36 +274,39 @@ div.simpleRoad .carGroup .dashboardFace11 {
 
 div.simpleRoad .carGroup .dashboardFace12 {
   /* bottomRight Screen item */
-  transform: translateZ(10.8px) translateY(44.55px) translateX(46.5px) rotateX(-15deg);
+  transform: translateZ(10.8px) translateY(44.55px) translateX(46.5px)
+    rotateX(-15deg);
   background-image: url(../../Assets/Spotify_Primary_Logo_RGB_Green.png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 2px;
   height: 2px;
   position: absolute;
 }
 div.simpleRoad .carGroup .dashboardFace13 {
   /* topMiddle Screen item */
-  transform: translateZ(11.3px) translateY(42.5px) translateX(48.8px) rotateX(-15deg);
+  transform: translateZ(11.3px) translateY(42.5px) translateX(48.8px)
+    rotateX(-15deg);
   background-image: url(../../Assets/phoneicon.png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 2px;
   height: 2px;
   position: absolute;
 }
 div.simpleRoad .carGroup .dashboardFace14 {
   /* bottomMiddle Screen item */
-  transform: translateZ(10.8px) translateY(44.55px) translateX(48.8px) rotateX(-15deg);
+  transform: translateZ(10.8px) translateY(44.55px) translateX(48.8px)
+    rotateX(-15deg);
   background-image: url(../../Assets/Google_Assistant-Logo.wine.png);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  border-radius: 5%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5%;
   width: 2px;
   height: 2px;
   position: absolute;
@@ -314,38 +315,39 @@ div.simpleRoad .carGroup .dashboardFace14 {
 /* STEERING WHEEL */
 div.simpleRoad .carGroup .dashboardFace4 {
   /* Steering wheel */
-  transform: translateZ(12.3px) translateY(37px) translateX(37.5px) rotateX(-15deg);
+  transform: translateZ(12.3px) translateY(37px) translateX(37.5px)
+    rotateX(-15deg);
   background: transparent;
-  border: 2px solid #000; 
-  border-radius: 50%; 
-  width: 3.5px; 
-  height: 3.5px; 
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 3.5px;
+  height: 3.5px;
   position: absolute;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 div.simpleRoad .carGroup .dashboardFace4::before {
-  content: '';
+  content: "";
   position: absolute;
-  width: 0.2px; 
-  height: 1px; 
-  background: #fff; 
-  top: 0; 
-  left: 50%; 
-  transform: translateX(-50%) translateY(-185%); 
+  width: 0.2px;
+  height: 1px;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-185%);
 }
 div.simpleRoad .carGroup .dashboardFace3 {
   /* Steering wheel middle*/
-  transform: translateZ(12.3px) translateY(39.5px) translateX(40px) rotateX(-15deg);
+  transform: translateZ(12.3px) translateY(39.5px) translateX(40px)
+    rotateX(-15deg);
   background: #000;
-  border: 1px solid #000; 
-  border-radius: 50%; 
-  width: 0.5px; 
-  height: 0.5px; 
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 0.5px;
+  height: 0.5px;
   position: absolute;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
-
 
 /* External trunk top */
 div.simpleRoad .trunkExternal {
@@ -378,7 +380,6 @@ div.simpleRoad .carBodyBlock .item.carFloor {
   transform-origin: center;
 }
 
-
 /** Texturing
 
 
@@ -389,20 +390,19 @@ div.simpleRoad .carBodyBlock .item.xFaces {
   border: solid 0.5px white;
 }
 
-
 div.simpleRoad .carBodyBlock .item.zFaces {
   background: var(--default-car);
   border: solid 0.5px white;
 }
 
 div.simpleRoad .carBodyBlock .item.index5 {
-  transform: translateY(-50px) rotateX(90deg); 
+  transform: translateY(-50px) rotateX(90deg);
   background: var(--default-car, #7d7c7c);
   border: solid 0.5px white;
 }
 
 div.simpleRoad .carBodyBlock .item.index5 {
-  transform: translateY(-50px) rotateX(90deg); 
+  transform: translateY(-50px) rotateX(90deg);
   background: var(--default-car, #7d7c7c);
   border: solid 0.5px white;
 }
@@ -438,8 +438,6 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
     transform: scale3d(0, 0, 0);
   }
 }
-
-
 
 /* Used to cycle from bright to dark background */
 @keyframes SR-timeCycle {
@@ -488,7 +486,3 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
     transform: translate3d(-22px, -5px, -50px);
   }
 }
-
-
-
-
