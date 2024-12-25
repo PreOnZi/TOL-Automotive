@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Clouds</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../../Assets/logoFav.png" type="image/png" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #34b3e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            perspective: 1000px; 
+            font-family: "Montserrat", sans-serif;
+  font-weight: 50;
+  
+  align-items: center;
+        }
+
+   
+        .sky {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .cloud {
+            position: absolute;
+            margin-top: 70px;
+            width: 350px;
+            height: 120px;
+            background: #ECEFF1;
+            box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 100px;
+            animation: moveClouds linear infinite;
+        }
+
+        .cloud::after, .cloud::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            background: inherit;
+            border-radius: inherit;
+        }
+
+        .cloud::after {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 50px;
+        }
+
+        .cloud::before {
+            width: 180px;
+            height: 180px;
+            top: -70px;
+            left: 130px;
+        }
+
+        /* Cloud animation */
+        @keyframes moveClouds {
+            0% {
+                transform: translateY(0) scale(0.1); /* Start small */
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-120vh) scale(1); /* Move up and grow */
+                opacity: 0;
+            }
+        }
+
+        /* Adjusted Cloud Animation Durations for Speed */
+        .cloud1 { bottom: -20%; left: 10%; animation-duration: 15s; }
+        .cloud2 { bottom: -15%; left: 40%; animation-duration: 12s; }
+        .cloud3 { bottom: -30%; left: 70%; animation-duration: 10s; }
+        .cloud4 { bottom: -25%; left: 20%; animation-duration: 16s; }
+        .cloud5 { bottom: -10%; left: 50%; animation-duration: 19s; }
+        .cloud6 { bottom: -15%; left: 80%; animation-duration: 11.5s; }
+        .cloud7 { bottom: -20%; left: 30%; animation-duration: 13s; }
+       
+        .skyline {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    background: linear-gradient(to top, #09608665, #34b3e900); 
+    z-index: -0.5; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    animation: moveSkyline 7s infinite ease-in-out; 
+  
+}
+
+
+.building {
+    width: 300px;
+    background:linear-gradient(to left, #444444, #595959);
+ 
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    display: grid; 
+    grid-template-columns: repeat(4, 40px); 
+    gap: 10px; 
+    padding: 10px; 
+    justify-content: center; 
+    align-content: start; 
+    box-sizing: border-box; 
+    height: auto; 
+    padding-top: 30px;
+}
+
+
+.window {
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    background: linear-gradient(to right,#00a6ff, #b3e3fc) ;
+    border-radius: 1px; /* Rounded corners */
+    box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+/* Variations for building heights */
+.building.tall {
+    height: 950px;
+}
+
+.building.medium {
+    height: 850px;
+}
+
+.building.short {
+    height: 800px;
+}
+.building.overlap {
+            margin-left: -50px; /* Slight overlap */
+        }
+        .building.overlap1 {
+            margin-right: -50px; /* Slight overlap */
+        }
+
+        /* Container to hold the 3D elements */
+        .scene {
+            position: relative;
+            transform-style: preserve-3d; 
+            transform: rotateX(0deg) rotateY(0deg) translateZ(-200px);
+            transition: transform 0.1s ease-out;
+           
+        }
+
+        /* Vertical screen */
+        .screen {
+            position: absolute;
+            width: 800px;
+            height: 1000px;
+            background-image: url(../../Assets/InfotainmentBase.jpg);
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            border: 20px solid #000000;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+            transform: translateZ(0px) translateY(-390px) translateX(-1000px);
+        }
+
+        /* Horizontal screen */
+        .screenCluster {
+            position: absolute;
+            width: 500px;
+            height: 250px;
+            background-image: url(../../Assets/infotainmentClusterParked.jpg);
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            border: 10px solid #000000;
+            border-radius: 30px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+            transform: translateZ(0px) translateY(-180px) translateX(400px);
+        }
+        .advert{ transform: translateZ(0px) translateY(310px) translateX(-970px);
+            background-image: url(../../Assets/aldi.png);
+            background-size: contain; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+      
+            border-radius: 15px; 
+            width: 270px; 
+            height: 190px; 
+            position: absolute;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+
+.steeringWheelInt {
+    transform: translateZ(0px) translateY(-340px) translateX(37.5px);
+    background: transparent;
+    border: 140px solid #000; 
+    border-radius: 50%; 
+    width: 1200px; 
+    height: 1200px; 
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: turnSteeringWheel 7s infinite ease-in-out;
+}
+
+
+        .steeringWheelIntMiddle {
+            transform: translateZ(0px) translateY(50px) translateX(450px);
+            background: #000;
+            border: 100px solid #000; 
+            border-radius: 50%; 
+            width: 400px; 
+            height: 400px; 
+            position: absolute;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .steeringWheelLine {
+    position: absolute;
+    width: 10px; 
+    height: 80px; 
+    background-color: white;
+    border-radius: 2px; 
+    transform: translateZ(0px) translateY(-138px) translateX(450px); 
+  
+    z-index: 10;
+}
+/* WINDSHIELD */
+.windShield{
+    position: absolute;
+            width: 3500px;
+            height: 1000px;
+            transform: translateX(-1500px) translateY(-1150px) translateZ(-50px);
+            border-radius: 10px;
+            background: linear-gradient(to top, #5775d944, #2395ff37);
+            border: solid 10px rgb(187, 187, 187);
+}
+
+        /* Main dashboard */
+        .dashboard-left {
+            position: absolute;
+            width: 3500px;
+            height: 1000px;
+            transform: translateX(-1500px) translateY(-150px) translateZ(-50px);
+            border-radius: 10px;
+            background: linear-gradient(to top, #000000, #595959);
+            border: solid 10px rgb(187, 187, 187);
+        }
+        .dashboard-pattern {
+            position: absolute;
+            width: 3500px;
+            height: 1000px;
+            transform: translateX(-1500px) translateY(-150px) translateZ(-50px);
+            border-radius: 10px;
+            background-image: url(../../Assets/patternDash.png);
+            background-size:contain; 
+            background-position: center; 
+            background-repeat:inherit;
+            opacity: 0.2;
+        }
+
+        /* vent */
+        .vent {
+            position: absolute;
+            width: 3000px;
+            height: 200px;
+            background: linear-gradient(to bottom, #2c2c2cd9, #595959);
+            transform: translateZ(-10px) translateY(-100px) translateX(-1200px);
+        }
+        .vent1 {
+            position: absolute;
+            width: 3000px;
+            height: 200px;
+            background-image: url(../../Assets/horizLines.png);
+            background-size:contain; 
+            background-position: center; 
+            background-repeat:inherit; 
+            transform: translateZ(-10px) translateY(-100px) translateX(-1200px);
+        }
+
+        .menu {
+    position: absolute;
+    top: -595px;
+    right: -480px; 
+    width: 760px;
+    height: 590px;
+    background-color: #203c65de;
+   
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; 
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.menu.active {
+    display: flex; 
+}
+
+.menu-item {
+    padding: 10px;
+    font-size: 35px;
+    color: #ffffff;
+    border: solid 0.5px #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+   
+}
+
+
+
+
+.notification {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 400px;
+    height: auto;
+    transform: translateX(-800px) translateY(-200px);
+    background-color: #203c658f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 40px;
+    display: none;
+    z-index: 15;
+    text-align: center;
+    justify-content: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="skyline">
+        <div class="building tall">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building short">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building medium overlap1">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+       
+        <div class="building tall">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building short overlap">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div> <div class="building short">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+        <div class="building medium">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div> <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+    </div>
+    
+    <div class="sky">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        <div class="cloud cloud4"></div>
+        <div class="cloud cloud5"></div>
+        <div class="cloud cloud6"></div>
+        <div class="cloud cloud7"></div>
+    </div>
+    <!-- Scene container -->
+    <div class="scene" id="scene">
+        <!-- Screens -->
+        <div class="screen"></div>
+        <div class="screenCluster"></div>
+        <!-- AD element -->
+        <div class="advert" onclick="toggleMenu()">
+            <div class="menu">
+                <div class="menu-item" onclick="showNotification()">Save</div>
+                <div class="menu-item" onclick="showNotification1()"">Directions</div>
+                <div class="menu-item" id="skip-option">Skip (<span id="counter">5</span>)</div>
+            </div>
+        </div>
+        <!-- Overlay Notification -->
+<div class="notification" id="notification">Saved to your TOL mobile app.</div>
+<div class="notification" id="notification1">Finding directions to the nearest branch...</div>
+        <!-- Dashboard parts -->
+        <div class="dashboard dashboard-left"></div>
+        <div class="dashboard-pattern"></div>
+        <div class="windShield"></div>
+        <div class="steeringWheelInt">
+            <div class="steeringWheelLine"></div>
+        </div>
+        <div class="steeringWheelIntMiddle"></div>
+    
+
+
+        <!-- Vent -->
+        <div class="vent"></div>
+        <div class="vent1"></div>
+    </div>
+</body>
+<script>
+    let counter = 5;
+    let counterInterval;
+
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
+        if (!counterInterval) startCounter();
+    }
+
+    function startCounter() {
+        const counterElement = document.getElementById('counter');
+        const skipOption = document.getElementById('skip-option');
+
+        counterInterval = setInterval(() => {
+            if (counter > 0) {
+                counter--;
+                counterElement.textContent = counter;
+            } else {
+                clearInterval(counterInterval);
+                counterElement.textContent = '';
+                skipOption.textContent = 'Skip'; // Remove the counter
+                skipOption.classList.remove('inactive'); // Enable the "Skip" option
+                skipOption.style.cursor = 'pointer';
+                skipOption.style.color = 'black';
+            }
+        }, 1000);
+    }
+// SAVE NOTIFICATION
+    function showNotification() {
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000); // Hide after 5 seconds
+    }
+
+    //DIRECTIONS NOTIFICATION
+    function showNotification1() {
+        const notification = document.getElementById('notification1');
+        notification.style.display = 'block';
+
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000); // Hide after 5 seconds
+    }
+</script>
+
+
+</html>
