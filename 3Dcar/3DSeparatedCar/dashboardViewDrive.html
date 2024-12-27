@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard with Clouds</title>
+    <title>Dashboard View in Drive</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -363,7 +363,9 @@
    
 }
 
-
+#skip-option{
+    color: grey;
+}
 
 
 .notification {
@@ -593,7 +595,7 @@
                 skipOption.textContent = 'Skip'; // Remove the counter
                 skipOption.classList.remove('inactive'); // Enable the "Skip" option
                 skipOption.style.cursor = 'pointer';
-                skipOption.style.color = 'black';
+                skipOption.style.color = 'white';
             }
         }, 1000);
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard with Clouds</title>
+    <title>Dashboard View Parked</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -197,7 +197,7 @@
             transform: translateZ(0px) translateY(-180px) translateX(400px);
         }
         .advert{ transform: translateZ(0px) translateY(310px) translateX(-970px);
-            background-image: url(../../Assets/aldi.png);
+            background-image: url(../../Assets/wren_kitchens.png);
             background-size: contain; 
             background-position: center; 
             background-repeat: no-repeat; 
@@ -303,7 +303,7 @@
     width: 760px;
     height: 590px;
     background-color: #203c65de;
-   
+   justify-content: center;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none; 
@@ -313,6 +313,7 @@
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
     z-index: 10;
+    text-align: center;
 }
 
 .menu.active {
@@ -331,7 +332,9 @@
    
 }
 
-
+#skip-option{
+    color: grey;
+}
 
 
 .notification {
@@ -513,6 +516,11 @@
         <!-- AD element -->
         <div class="advert" onclick="toggleMenu()">
             <div class="menu">
+                <img style="max-width: 30%; display: flex; align-self: center; padding: 3%;" src="../../Assets/wren_kitchens.png">
+                <div style="color: white; padding-bottom: 2%;" class="adText">
+                    <h1>TOL Exclusive: 30% OFF selected appliances</h1>
+                    <p>Exclusive offer for TOL owners, large discounts on known brands as well as budget-friendly options. Shop designer appliances and kitchens with Wren. Available online and in-store Visit wren.co.uk/TOL for full Terms and Conditions.</p>
+                </div>
                 <div class="menu-item" onclick="showNotification()">Save</div>
                 <div class="menu-item" onclick="showNotification1()"">Directions</div>
                 <div class="menu-item" id="skip-option">Skip (<span id="counter">5</span>)</div>
@@ -561,7 +569,7 @@
                 skipOption.textContent = 'Skip'; // Remove the counter
                 skipOption.classList.remove('inactive'); // Enable the "Skip" option
                 skipOption.style.cursor = 'pointer';
-                skipOption.style.color = 'black';
+                skipOption.style.color = 'white';
             }
         }, 1000);
     }

@@ -651,10 +651,42 @@ header {
   border: 1px solid #ffffff;
   border-radius: 8px;
   background-color: #f9f9f9;
-  width: 100%;
+  width: 90%;
 }
 
 .carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel2-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 90%;
+}
+
+.carousel2-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel3-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 90%;
+}
+
+.carousel3-container::-webkit-scrollbar {
   display: none;
 }
 
@@ -875,6 +907,26 @@ header {
   font-size: 1.1rem;
   color: #000;
 }
+
+/*ADS IFRAME  */
+.driveIframe-container {
+  position: relative;
+  width: 850px; 
+  height: 520px; 
+  overflow: hidden; 
+  border: 1px solid #ccc;
+margin-top:1%;
+}
+
+.driveIframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  transform: scale(0.5);
+  transform-origin: top left; }
+
 /*FOOTER*/
 .footer {
   padding: 20px;
