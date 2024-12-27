@@ -177,56 +177,67 @@ header {
   color: #666;
 }
 
-/*SPECS TABLE*/
-.table-container {
-  display: table;
-  width: 60%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.table-row {
-  display: table-row;
+
+/* SPECS TABLE */
+.specTable-container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  width: 30%; 
+  height: 100%;
+  margin: 0 auto; 
+  padding: 10px;
+  border: solid 2px white;
+  margin-bottom:5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
-.icon-cell,
-.text-cell {
-  display: table-cell;
-  padding: 20px;
-  vertical-align: middle;
-  align-content: center;
+.specTable-row {
+  display: grid; 
+  grid-template-columns: auto 2px 1fr; 
+  align-items: center; 
+  gap: 10px; 
+  width: 100%; 
+  max-width: 500px; 
 }
 
-.icon-cell {
-  width: 50px;
-  text-align: center;
+.specIcon-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right:10%;
+  padding-left:50%;
 }
 
 .icon {
-  max-width: 40px;
+  max-width: 80px;
   height: auto;
-  margin-left: 50px;
 }
 
 .divider {
-  width: 2px;
-  background-color: #ccc;
-  display: inline-block;
-  height: 70px;
-  margin-left: 20px;
-  margin-top: 2px;
+  background-color:#ffae00;
+  width: 1px;
+  height: 100%;
+  margin-left: 40px;;
 }
 
-.text-cell {
-  padding-left: 20px;
+.specText-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  padding-left: 20%;
+
 }
 
-.text-cell p {
+.specText-cell p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #333;
+  text-align: left; 
 }
+
 
 /*CONFIGURE BUTTONS*/
 .configure-button {
@@ -677,6 +688,7 @@ header {
 .carousel3-container {
   display: flex;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 10px;
@@ -689,6 +701,20 @@ header {
 .carousel3-container::-webkit-scrollbar {
   display: none;
 }
+
+.carousel3-container .carousel-item img {
+  transition: transform 0.1s ease-in-out; 
+  overflow-y: visible;
+  transform-origin: center;
+}
+
+.carousel3-container .carousel-item img.enlarged {
+  transform: scale(1.5);
+  z-index: 10; 
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px; 
+}
+
 
 .carousel-item {
   flex: 0 0 auto;
@@ -926,6 +952,8 @@ margin-top:1%;
   height: 100vh; 
   transform: scale(0.5);
   transform-origin: top left; }
+
+
 
 /*FOOTER*/
 .footer {

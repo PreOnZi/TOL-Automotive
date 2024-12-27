@@ -865,6 +865,30 @@
           carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
       }
+//ENLARGE IMAGES CAROUSEL 3
+document.querySelectorAll('.carousel3-container .carousel-item img').forEach((img) => {
+  img.addEventListener('mouseenter', () => {
+    img.classList.add('enlarged');
+  });
+
+  img.addEventListener('mousemove', (event) => {
+    const rect = img.getBoundingClientRect();
+    const offsetY = event.clientY - rect.top;
+    const height = rect.height;
+
+   
+    const translateY = ((offsetY / height) - 0.5) * -50; 
+    img.style.transform = `scale(1.5) translateY(${translateY}%)`;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.classList.remove('enlarged');
+    img.style.transform = ''; 
+  });
+});
+
+      
+
     </script>
 
     <footer class="footer">
