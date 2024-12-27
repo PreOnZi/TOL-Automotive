@@ -953,7 +953,42 @@ margin-top:1%;
   transform: scale(0.5);
   transform-origin: top left; }
 
+/* PAYMENT BUTTON NOTIFICATION */
+.notification-container1 {
+  position: fixed;
+  top: 20%;
+  right: 35%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 30%;
+}
 
+/* Notification styling */
+.notification1 {
+  background-color: #000200d1; 
+  color: white; 
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+ 
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
 
 /*FOOTER*/
 .footer {
