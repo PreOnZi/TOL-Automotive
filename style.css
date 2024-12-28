@@ -356,6 +356,68 @@ header {
 .confSelector ul li:hover {
   background-color: #ddd;
 }
+
+/* 2-BY-2 IN ADS */
+.adHighlight {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 20px;
+ 
+}
+
+.twoByTwo {
+  width: 96%; 
+  display: flex; 
+  justify-content: center;
+  gap: 10px; 
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-top:2%;
+}
+
+.twoByTwo ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px; 
+}
+
+.twoByTwo li {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box; 
+  width: 50%; 
+  height: auto;
+}
+
+.twoByTwo img {
+  width: 100%;
+  height:100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.twoByTwo h3 {
+  margin: 5px 0;
+  font-size: 0.8rem; /* Adjust font size for smaller items */
+}
+
+.twoByTwo p {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.twoByTwo b i {
+  font-size: 0.9rem;
+  color: #000;
+}
+
 /*PRICE CONTAINER*/
 .button-container {
   position: fixed;
