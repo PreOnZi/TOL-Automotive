@@ -14,7 +14,7 @@ window.addEventListener("message", (event) => {
 
   if (event.data && event.data.variable && event.data.value) {
     const { variable, value } = event.data;
-    console.log(`./assets/${value}.png`);
+
     if (variable === "--default-car") {
       document.documentElement.style.setProperty(variable, value);
       console.log(`Car color set: ${variable} = ${value}`);
@@ -32,12 +32,9 @@ window.addEventListener("message", (event) => {
       } else {
         console.warn("No wheel elements found to apply the pattern.");
       }
-      if (variable === "--default-seat-color") {
-        document.documentElement.style.setProperty(variable, value);
-        console.log(`Seat color set: ${variable} = ${value}`);
-      } else {
-        console.warn(`Unknown variable received: ${variable}`);
-      }
+    } else if (variable === "--default-seat-color") {
+      document.documentElement.style.setProperty(variable, value);
+      console.log(`Seat color set: ${variable} = ${value}`);
     } else {
       console.warn(`Unknown variable received: ${variable}`);
     }

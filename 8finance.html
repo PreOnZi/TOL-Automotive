@@ -146,10 +146,16 @@
           <div class="info-text">
             <strong>Total Price: <span id="priceValue">0</span></strong>
           </div>
+          <div class="notification-container1"></div>
+<button style="margin-top:2%" class="next-button" onclick="showNotification('Thank you for your participation. If you have any feedback, please feel free to share it with the authors. This project is a part of my (Ondrej Zika) bachelor research project. Through this practical experience as well as the written portion, I explored the question |What is the correct way of implementing advertising into car infotainment systems in the UK context?| If you would like to learn more about my process and outcomes, please visit the |About| section of this site.')">
+ Payment
+</button>
         </section>
   
     </section>
-    <button onclick="clearLocalData()">Clear All Data</button>
+    
+    <button class="next-button" style="margin-bottom:5%; margin-top:5%;" onclick="clearLocalData()">Clear All Data</button>
+
     <footer class="footer">
         <p>© 2024 TOL Automotive UK. All rights reserved.</p>
       </footer>
@@ -166,6 +172,25 @@
     
         alert("All data has been cleared!");
       }
+
+      //PAYMENT BUTTON
+      function showNotification(message) {
+  const notificationContainer = document.querySelector('.notification-container1');
+  
+  // Create a new notification element
+  const notification = document.createElement('div');
+  notification.classList.add('notification1');
+  notification.textContent = message;
+  
+  // Append the notification to the container
+  notificationContainer.appendChild(notification);
+  
+  // Remove the notification after 3 seconds
+  setTimeout(() => {
+    notification.remove();
+  }, 1000000);
+}
+
     </script>
   </body>
 </html>

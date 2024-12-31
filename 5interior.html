@@ -48,18 +48,18 @@
       </div>
       <!-- ACTUAL IFRAME SHOWN -->
       <iframe
-        id="seatFrame"
-        src="3Dseat/chairPlace.html"
-        style="
-          width: 60%;
-          height: 60vh;
-          border: solid 2px white;
-          background-color: #ffffff;
-          border-radius: 20px;
-        "
-      ></iframe>
+      id="colorFrame"
+      src="carProjection.html"
+      style="
+      width: 60%;
+      height: 60vh;
+      border: solid 2px white;
+      background-color: #63d9fd;
+      border-radius: 20px;
+      "
+    ></iframe>
       <div class="confSelector">
-        <ul>
+        <ul onclick="reloadIframe()">
           <li
             data-id="blackText"
             onclick="changeIframe('3Dseat/blackText.html')"
@@ -93,6 +93,17 @@
         </ul>
       </div>
     </div>
+    <iframe
+    id="seatFrame"
+    src="3Dseat/chairPlace.html"
+    style="
+      width: 60%;
+      height: 60vh;
+      border: solid 2px white;
+      background-color: #ffffff;
+      border-radius: 20px;
+    "
+  ></iframe>
 
     <div class="button-container">
       <a href="6ads.html" class="next-button"
@@ -148,6 +159,12 @@
           });
         });
       });
+
+      // RELOAD IFRAME
+      function reloadIframe() {
+        const iframe = document.getElementById("colorFrame");
+        iframe.contentWindow.location.reload();
+      }
     </script>
     <footer class="footer">
       <p>© 2024 TOL Automotive UK. All rights reserved.</p>
