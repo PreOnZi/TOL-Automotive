@@ -55,10 +55,15 @@ function changeWheelOnClick(e) {
   }
 }
 
-// Load the saved selection on page load
 document.addEventListener("DOMContentLoaded", () => {
-  const savedWheelType = localStorage.getItem("selectedWheels") || "Diamond";
+  let savedWheelType = localStorage.getItem("selectedWheels") || "Diamond";
   const selectedColor = localStorage.getItem("selectedColor") || "Red";
+
+  if (!localStorage.getItem("selectedWheels")) {
+    savedWheelType = "Diamond";
+    localStorage.setItem("selectedWheels", "Diamond");
+  }
+
   const configItems = document.querySelectorAll(".confSelector ul li");
 
   configItems.forEach((item) => {
@@ -71,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       item.style.backgroundColor = "#ddd";
 
-      // Update the image to match the saved selection
       const imageKey = `${selectedColor}${savedWheelType}`;
       const imageOptions = {
         RedDiamond: "1RedDiamond.png",
@@ -97,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Attach the event listener to all list items
 const configItems = document.querySelectorAll(".confSelector ul li");
-configItems.forEach((item) => item.addEventListener("click", changeWheelOnClick));
+configItems.forEach((item) =>
+  item.addEventListener("click", changeWheelOnClick)
+);
