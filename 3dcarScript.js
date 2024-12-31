@@ -52,24 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (seatSelection && seatSelection.name) {
     if (seatSelection.name === "Recycled textiles | black") {
       selectedSeatColor = "blackText";
-      console.log("SELECTED:", seatColorMap.blackLead);
     } else if (seatSelection.name === "Vegan leather | black") {
       selectedSeatColor = "blackLead";
-      console.log("SELECTED:", seatColorMap.creamLead);
     } else if (seatSelection.name === "Vegan leather | cream") {
       selectedSeatColor = "creamLead";
-      console.log("SELECTED:", seatColorMap.creamLead);
     }
   }
   const seatColor = seatColorMap[selectedSeatColor];
-
-
-  console.log("Selections:", selections);
-  console.log("Color selection:", colorSelection);
-  console.log("Selected color name:", selectedColor);
-  console.log("Selected wheels:", selectedWheels);
-  console.log("Wheel background:", wheelBackground);
-  console.log("Selected seat color:", selectedSeatColor);
 
   const items = document.querySelectorAll(".item.index4.xFaces");
   items.forEach((item) => {
@@ -95,10 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
       iframe.contentWindow.postMessage(
         { variable: "--default-seat-color", value: seatColor },
         iframeOrigin
-      );
-
-      console.log(
-        `Sent color ${color}, wheel ${selectedWheels}, and seat color ${seatColor} to iframe.`
       );
     };
   } else {

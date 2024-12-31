@@ -10,13 +10,10 @@ window.addEventListener("message", (event) => {
     return;
   }
 
-  console.log("Message received in iframe:", event.data);
-
   if (event.data && event.data.variable && event.data.value) {
     const { variable, value } = event.data;
     if (variable === "--default-car") {
       document.documentElement.style.setProperty(variable, value);
-      console.log(`Car color set: ${variable} = ${value}`);
     } else if (variable === "--default-wheel") {
       const wheelElements = document.querySelectorAll(
         ".wheelNode1 .item.xFaces, .wheelNode2 .item.xFaces, .wheelNode3 .item.xFaces, .wheelNode4 .item.xFaces"
@@ -27,13 +24,11 @@ window.addEventListener("message", (event) => {
           wheel.style.backgroundImage = `url('${wheelImageUrl}')`;
           wheel.style.backgroundSize = "cover";
         });
-        console.log(`Wheel pattern applied dynamically: ${wheelImageUrl}`);
       } else {
         console.warn("No wheel elements found to apply the pattern.");
       }
     } else if (variable === "--default-seat-color") {
       document.documentElement.style.setProperty(variable, value);
-      console.log(`Seat color set: ${variable} = ${value}`);
     } else {
       console.warn(`Unknown variable received: ${variable}`);
     }

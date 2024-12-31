@@ -536,7 +536,8 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
 }
 
 .seatRearGap {
-  transform: translateX(-43px) translateY(-73px) translateZ(-21px) rotateX(90deg);
+  transform: translateX(-43px) translateY(-73px) translateZ(-21px)
+    rotateX(90deg);
 }
 
 .seatFrontGap {
@@ -553,7 +554,8 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
 }
 
 .seatRearGapBottom {
-  transform: translateX(-43px) translateY(-15px) translateZ(-10px) rotateX(90deg);
+  transform: translateX(-43px) translateY(-15px) translateZ(-10px)
+    rotateX(90deg);
 }
 
 .seatFrontGapBottom {
@@ -574,7 +576,7 @@ div.simpleRoad [class^="wheelBlock"] .item.zFaces {
   width: 100px;
   height: 15.5px;
   background: #7d7c7c;
-  transform: translateX(-49.5px) translateY(-53px) translateZ(-30px) rotateX(90deg);
+  transform: translateX(-49.5px) translateY(-53px) translateZ(-30px)
+    rotateX(90deg);
   border-radius: 1px;
 }
-
