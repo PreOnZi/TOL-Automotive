@@ -47,17 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const wheelBackground = wheelMap[selectedWheels] || wheelMap.diamond;
 
   // SEATS
-  const seatSelection = selections.find((item) => item.category === "Seats");
+  const seatSelection = selections.find((item) => item.category === "Interior");
   let selectedSeatColor = "blackText";
-  if (seatSelection) {
-    const seatColorName = seatSelection.name.toLowerCase();
-    if (seatColorName.includes("lead") && seatColorName.includes("black")) {
+  if (seatSelection && seatSelection.name) {
+    if (seatSelection.name === "Recycled textiles | black") {
+      selectedSeatColor = "blackText";
+      console.log("SELECTED:", seatColorMap.blackLead);
+    } else if (seatSelection.name === "Vegan leather | black") {
       selectedSeatColor = "blackLead";
-    } else if (
-      seatColorName.includes("lead") &&
-      seatColorName.includes("cream")
-    ) {
+      console.log("SELECTED:", seatColorMap.creamLead);
+    } else if (seatSelection.name === "Vegan leather | cream") {
       selectedSeatColor = "creamLead";
+      console.log("SELECTED:", seatColorMap.creamLead);
     }
   }
   const seatColor = seatColorMap[selectedSeatColor];

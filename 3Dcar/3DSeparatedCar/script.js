@@ -14,7 +14,6 @@ window.addEventListener("message", (event) => {
 
   if (event.data && event.data.variable && event.data.value) {
     const { variable, value } = event.data;
-
     if (variable === "--default-car") {
       document.documentElement.style.setProperty(variable, value);
       console.log(`Car color set: ${variable} = ${value}`);

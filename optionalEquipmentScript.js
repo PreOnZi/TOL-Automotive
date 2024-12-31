@@ -4,70 +4,88 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Load carrier, roof", price: 170 },
     { name: "Panoramic roof", price: 1070 },
     { name: "Panoramic roof shade", price: 130 },
-    { name: "TOL Automotive mystery merch box", price: 100 },
+    { name: "TOL Automotive mystery merch box", price: 150 },
     { name: "Protect Plan | TOL Automotive", price: 670 },
   ];
 
-  // Load saved selections from localStorage
-  const savedSelections = JSON.parse(localStorage.getItem("selectedEquipment")) || [];
+  let savedSelections =
+    JSON.parse(localStorage.getItem("selectedEquipment")) || [];
+  let addonsPrice = savedSelections.reduce(
+    (sum, index) => sum + (equipmentOptions[index]?.price || 0),
+    0
+  );
+  let totalPrice = parseInt(localStorage.getItem("totalPrice")) || 0;
+  let selections = JSON.parse(localStorage.getItem("selections")) || [];
 
-  function updatePrice(amount, name) {
-    const priceDisplay = document.getElementById("priceDisplay");
-    const priceValue = document.getElementById("priceValue");
+  const priceDisplay = document.getElementById("priceDisplay");
+  const priceValue = document.getElementById("priceValue");
 
-    if (!priceDisplay || !priceValue) return;
+  function updatePriceDisplay() {
+    const subtotal = totalPrice + addonsPrice;
 
-    const currentPrice = parseInt(priceValue.textContent, 10);
-    const newPrice = currentPrice + amount;
-    priceValue.textContent = newPrice;
-
-    // Show price display if it's hidden and price > 0
-    if (newPrice > 0) {
+    if (subtotal > 0 && priceDisplay) {
       priceDisplay.style.display = "block";
-    } else {
+      if (priceValue) {
+        priceValue.textContent = subtotal.toLocaleString();
+      }
+    } else if (priceDisplay) {
       priceDisplay.style.display = "none";
     }
-
-    console.log(`${amount > 0 ? "Added" : "Removed"} ${name}. Total: £${newPrice}`);
   }
 
   function handleEquipmentSelection(index) {
     const selectedEquipment = equipmentOptions[index];
     if (!selectedEquipment) return;
 
-    const equipmentListItems = document.querySelectorAll(".confSelectorAddons ul li");
+    const equipmentListItems = document.querySelectorAll(
+      ".confSelectorAddons ul li"
+    );
 
-    // Toggle selection
     if (savedSelections.includes(index)) {
-      // Remove from selections
       const itemIndex = savedSelections.indexOf(index);
       savedSelections.splice(itemIndex, 1);
       equipmentListItems[index].style.backgroundColor = "#f4f4f4";
 
-      updatePrice(-selectedEquipment.price, selectedEquipment.name);
+      addonsPrice -= selectedEquipment.price;
     } else {
-      // Add to selections
       savedSelections.push(index);
       equipmentListItems[index].style.backgroundColor = "#ddd";
 
-      updatePrice(selectedEquipment.price, selectedEquipment.name);
+      addonsPrice += selectedEquipment.price;
     }
 
-    // Save updated selections
+    const itemNames = savedSelections.map((idx) => equipmentOptions[idx].name);
+    const addonsSelection = {
+      name: itemNames.length > 1 ? "Multiple items" : itemNames[0] || "None",
+      price: addonsPrice,
+      page: window.location.pathname,
+      category: "Addons",
+    };
+
+    selections = selections.filter(
+      (selection) => selection.category !== "Addons"
+    );
+    selections.push(addonsSelection);
+
     localStorage.setItem("selectedEquipment", JSON.stringify(savedSelections));
+    localStorage.setItem("selections", JSON.stringify(selections));
+
+    updatePriceDisplay();
   }
 
-  const equipmentListItems = document.querySelectorAll(".confSelectorAddons ul li");
-
-  // Restore selections from localStorage
+  const equipmentListItems = document.querySelectorAll(
+    ".confSelectorAddons ul li"
+  );
   savedSelections.forEach((index) => {
     if (equipmentOptions[index] && equipmentListItems[index]) {
       equipmentListItems[index].style.backgroundColor = "#ddd";
     }
   });
 
-  // Attach event listeners to equipment list items
   equipmentListItems.forEach((item, index) => {
+    item.style.cursor = "pointer";
     item.addEventListener("click", () => handleEquipmentSelection(index));
   });
+
+  updatePriceDisplay();
 });
