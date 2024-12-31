@@ -47,28 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const wheelBackground = wheelMap[selectedWheels] || wheelMap.diamond;
 
   // SEATS
-  const seatSelection = selections.find((item) => item.category === "Seats");
+  const seatSelection = selections.find((item) => item.category === "Interior");
   let selectedSeatColor = "blackText";
-  if (seatSelection) {
-    const seatColorName = seatSelection.name.toLowerCase();
-    if (seatColorName.includes("lead") && seatColorName.includes("black")) {
+  if (seatSelection && seatSelection.name) {
+    if (seatSelection.name === "Recycled textiles | black") {
+      selectedSeatColor = "blackText";
+    } else if (seatSelection.name === "Vegan leather | black") {
       selectedSeatColor = "blackLead";
-    } else if (
-      seatColorName.includes("lead") &&
-      seatColorName.includes("cream")
-    ) {
+    } else if (seatSelection.name === "Vegan leather | cream") {
       selectedSeatColor = "creamLead";
     }
   }
   const seatColor = seatColorMap[selectedSeatColor];
-
-
-  console.log("Selections:", selections);
-  console.log("Color selection:", colorSelection);
-  console.log("Selected color name:", selectedColor);
-  console.log("Selected wheels:", selectedWheels);
-  console.log("Wheel background:", wheelBackground);
-  console.log("Selected seat color:", selectedSeatColor);
 
   const items = document.querySelectorAll(".item.index4.xFaces");
   items.forEach((item) => {
@@ -94,10 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
       iframe.contentWindow.postMessage(
         { variable: "--default-seat-color", value: seatColor },
         iframeOrigin
-      );
-
-      console.log(
-        `Sent color ${color}, wheel ${selectedWheels}, and seat color ${seatColor} to iframe.`
       );
     };
   } else {

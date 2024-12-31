@@ -50,7 +50,7 @@ function updatePrice(newPrice = 0, itemName = "Unknown Item") {
     Wheels: `${basePath}/4wheels.html`,
     Interior: `${basePath}/5interior.html`,
     Advertising: `${basePath}/6ads.html`,
-    Optional: `${basePath}/7addons.html`,
+    Extras: `${basePath}/7addons.html`,
   };
 
   const category = Object.keys(pages).find((key) =>
