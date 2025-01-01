@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
     <title>3D Car Seat</title>
     <style>
         body {
+            font-family: "Montserrat", sans-serif;
+  font-weight: 50;
             margin: 0;
             height: 100vh;
             display: flex;
@@ -15,7 +21,32 @@
             perspective: 800px;
             transform: scale(0.7); transform-origin: top;
         }
+        .textLeft{
+  position: absolute;
+  transform: translateX(650px) translateY(0px);
+  color:rgb(255, 255, 255);
+  z-index:1000;
 
+      }
+      .textLeft h1{
+        font-size: 2rem;
+      }
+      .textLeft ul{
+        font-size: 1.3rem;
+      }
+.textRight{
+  position: absolute;
+  transform: translateX(700px) translateY(250px);
+  color:rgb(255, 255, 255);
+  z-index:1000;
+
+}
+.textRight h1{
+        font-size: 2rem;
+      }
+      .textRight ul{
+        font-size: 1.3rem;
+      }
         .carSeat {
             position: relative;
             width: 240px;
@@ -268,5 +299,17 @@
         <div class="headrestRight"></div>
         <div class="headrestBottom"></div>
     </div>
+    <div class="textLeft"><h1>Vegan Leather</h1>
+        <ul>
+         <li>Made from sustainable materials</li>
+       <li>50% repurposed waste from the food industry</li>
+     <li>50% sustainably sourced mushroom and cactus blend</li>
+     <li>Smooth and durable finish without creases</li>
+     <li>Easy to maintain and clean</li></ul></div>
+         <div class="textRight"><h1>Black</h1><ul>
+           <li>Timeless & classy design</li>
+         <li>Accents in contrasting colours</li>
+       <li>Unique perforation pattern in seats</li>
+       <li>Ready for those who are ready</li></ul></div>
 </body>
 </html>

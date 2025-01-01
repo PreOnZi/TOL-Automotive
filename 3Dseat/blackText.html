@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
     <title>3D Car Seat</title>
     <style>
         body {
+            font-family: "Montserrat", sans-serif;
+  font-weight: 50;
             margin: 0;
             height: 100vh;
             display: flex;
@@ -15,6 +21,30 @@
             perspective: 800px;
             transform: scale(0.7); transform-origin: top;
         }
+        .textLeft{
+  position: absolute;
+  transform: translateX(650px) translateY(0px);
+  color:rgb(115, 115, 115);
+
+      }
+      .textLeft h1{
+        font-size: 2rem;
+      }
+      .textLeft ul{
+        font-size: 1.3rem;
+      }
+.textRight{
+  position: absolute;
+  transform: translateX(700px) translateY(250px);
+  color:rgb(195, 195, 195);
+
+}
+.textRight h1{
+        font-size: 2rem;
+      }
+      .textRight ul{
+        font-size: 1.3rem;
+      }
 
         .carSeat {
             position: relative;
@@ -268,5 +298,16 @@
         <div class="headrestRight"></div>
         <div class="headrestBottom"></div>
     </div>
+    <div class="textLeft"><h1>Recycled textiles</h1>
+        <ul>
+       <li>50% repurposed waste from the clothing industry</li>
+     <li>30% recycled fishing nets</li>
+     <li>20% sustainably sourced cotton</li>
+     <li>Durable finish with premium finish</li>
+     <li>Easy to maintain and clean</li></ul></div>
+         <div class="textRight"><h1>Black</h1><ul>
+           <li>Functional yet stilish</li>
+         <li>Seamless blend of colour</li>
+       <li>Ideal colour for practical minds with a purpose</li></ul></div>
 </body>
 </html>
