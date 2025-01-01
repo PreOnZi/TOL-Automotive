@@ -1061,6 +1061,7 @@ margin-top:1%;
   width: 50%;
 padding: 3%;
   margin: 0 auto;
+  margin-top: 5%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 .aboutText p{
@@ -1070,6 +1071,32 @@ padding: 3%;
 
 .aboutText ul {
   list-style-type: none;}
+
+/* CREDITS PAGE */
+.creditText{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+padding: 3%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.creditText p{
+ margin-top:2%;
+ text-align:justify;
+}
+.creditText h5{
+  text-align: left;
+padding-left: 10%;
+}
+.creditText ul {
+ 
+text-align: left;
+padding-left: 10%;}
 
 /*FOOTER*/
 .footer {
