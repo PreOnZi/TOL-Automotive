@@ -42,7 +42,7 @@ function changeWheelOnClick(e) {
     const carWheelsImage = document.getElementById("car-wheels-image");
     carWheelsImage.setAttribute(
       "src",
-      `Assets/carImageSelection/${selectedImage}`
+      `assets/carImageSelection/${selectedImage}`
     );
   }
 
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const carWheelsImage = document.getElementById("car-wheels-image");
         carWheelsImage.setAttribute(
           "src",
-          `Assets/carImageSelection/${selectedImage}`
+          `assets/carImageSelection/${selectedImage}`
         );
       }
     }

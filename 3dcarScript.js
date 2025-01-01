@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rawSelections = localStorage.getItem("selections");
   let selections = [];
   try {
-    selections = JSON.parse(rawSelections);
+    selections = rawSelections ? JSON.parse(rawSelections) : [];
   } catch (error) {
     console.error("Failed to parse selections from localStorage:", error);
   }
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedWheels = localStorage.getItem("selectedWheels");
   selectedWheels = selectedWheels ? selectedWheels.toLowerCase() : "diamond";
   const wheelBackground = wheelMap[selectedWheels] || wheelMap.diamond;
+  console.log(selectedWheels, wheelBackground);
 
   // SEATS
   const seatSelection = selections.find((item) => item.category === "Interior");
