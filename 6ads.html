@@ -81,7 +81,7 @@
               wherever you go, thanks to its smart habit-understanding and more!
             </p>
             <br />
-            <h4 style="color: #0e8800;">Discount:</h4>
+            <h4 style="color: #0e8800">Discount:</h4>
             <div style="display: flex; justify-content: space-between">
               <b><i>- £3,000</i></b>
               <button class="learnMoreButton" onclick="scrollToHowItWorks()">
@@ -97,10 +97,13 @@
               information. Enjoy the BLINK for less and take advantage of our
               smart systems. On your terms.
               <br />
-              You can always upgrade to Level Two and get the difference!*
+              You can always upgrade to Level Two and get the difference!
+              <a href="#" onclick="openPopup()">
+                <p>*</p>
+              </a>
             </p>
             <br />
-            <h4 style="color: #0e8800;">Discount:</h4>
+            <h4 style="color: #0e8800">Discount:</h4>
             <div style="display: flex; justify-content: space-between">
               <b><i>- £2,000</i></b>
               <button class="learnMoreButton" onclick="scrollToHowItWorks()">
@@ -120,15 +123,13 @@
               available.
             </p>
             <br />
-            <h4 style="color: #0e8800;">Discount:</h4>
+            <h4 style="color: #0e8800">Discount:</h4>
             <b><i> £0</i></b>
           </li>
-          
         </ul>
       </div>
     </div>
 
-    
     <div
       id="howItWorksMenu"
       style="
@@ -142,7 +143,7 @@
       <div class="howItWorks">
         <h1 style="text-align: center; font-size: 3em">How it works</h1>
         <a href="#" onclick="openPopup()">
-          <h3 style="color: #ffae00;">*</h3>
+          <h3 style="color: #ffae00">*</h3>
         </a>
       </div>
       <h4 style="text-align: center; color: rgb(128, 128, 128)">
@@ -153,27 +154,32 @@
       <div class="twoByTwo">
         <ul>
           <li>
-            <img src="Assets/redirect.png"/>
+            <img src="Assets/redirect.png" />
             <h2>Get directions to the best deals around</h2>
             <p></p>
-            
           </li>
           <li>
-            <img src="Assets/personalised.png"  />
-            <h2>Plan trips tailored to your habits. Places to explore, brands you trust.</h2>
-            <p>Only available on Level 2.</p>
-            
-          </li>
-          <li>
-            <img src="Assets/priorCharge.png"  />
-            <h2>Priority charging and discount rates with your favourite retailers.</h2>
+            <img src="Assets/personalised.png" />
+            <h2>
+              Plan trips tailored to your habits. Places to explore, brands you
+              trust.
+            </h2>
             <p>Only available on Level 2.</p>
           </li>
           <li>
-            <img src="Assets/warnings.png"  />
-            <h2>Helpful warnings and safety notification from trusted sources.</h2>
+            <img src="Assets/priorCharge.png" />
+            <h2>
+              Priority charging and discount rates with your favourite
+              retailers.
+            </h2>
+            <p>Only available on Level 2.</p>
+          </li>
+          <li>
+            <img src="Assets/warnings.png" />
+            <h2>
+              Helpful warnings and safety notification from trusted sources.
+            </h2>
             <p>Not all promotion is selling!</p>
-            
           </li>
         </ul>
       </div>
@@ -232,12 +238,12 @@
           By selecting one of the options above the customer agrees to keeping
           and using the vehicle for at least four (4) years with minimum 5000
           miles driven annually. The customer has the option to change to either
-         advertising levels within the first two months of purchase by
-          paying the difference to RRP.
+          advertising levels within the first two months of purchase by paying
+          the difference to RRP.
           <br />
           The infotainment system runs on Google's Android Automotive platform
           and can therefore be connected to apps such as Spotify and YouTube.
-          
+
           <br />
           Audio system volume will automatically rise to 10 (out of 50) when an
           advertisement starts and the 'Mute' option is disabled for the first 5
@@ -325,40 +331,17 @@
           gap: 20px;
           flex-wrap: wrap;
           justify-content: center;
+          flex-direction: column;
+          align-items: center;
         "
       >
         <!-- First Carousel -->
+        <div class="carouselTitleDiv">
+          <h1 id="driving">Driving</h1>
+
+          <h4 style="color: rgb(128, 128, 128)">parking brake is disengaged</h4>
+        </div>
         <div class="carousel-container">
-          <div
-            class="carouselArrows"
-            style="width: 90%; display: flex; justify-content: space-between"
-          >
-            <button class="next-button" onclick="moveCarousel('right')">
-              &gt;
-            </button>
-          </div>
-          <div id="driving" class="carousel-item" style="width: 250px">
-            <div style="height: 35%"></div>
-            <h1>Driving</h1>
-            <div class="thin-line"></div>
-            <br />
-            <h3 style="color: rgb(128, 128, 128)">
-              parking brake is disengaged
-              
-            </h3>
-            <p
-              style="
-                width: 200px;
-                font-size: smaller;
-                color: rgba(128, 128, 128, 0.396);
-                margin-top: 20%;
-              "
-            >
-              Use touchpad or keyboard arrows to manipulate carousel.
-              <br>
-              All images are for illustration purposes only.
-            </p>
-          </div>
           <div class="carousel-item">
             <p style="width: 400px; font-size: x-large; margin-top: 70%">
               Advertising will never take over your system, it will never
@@ -397,10 +380,20 @@
               It understands you and your media. Promotions will not start
               during important conversations and during phone calls or cut your
               song or favourite podcaster off mid sentence.
-              <br>
-              <p style="width: 400px; font-size: smaller; color: grey; margin-top: 20%;">
-             Interior microphones listen to and analyse conversations. However, this is happening locally, and is <b>not shared or used for promotional purposes</b>.
-              </p>
+              <br />
+            </p>
+
+            <p
+              style="
+                width: 400px;
+                font-size: smaller;
+                color: grey;
+                margin-top: 20%;
+              "
+            >
+              Interior microphones listen to and analyse conversations. However,
+              this is happening locally, and is
+              <b>not shared or used for promotional purposes</b>.
             </p>
           </div>
           <div class="carousel-item">
@@ -489,46 +482,24 @@
               </button>
             </div>
           </div>
-          <div
-            class="carouselArrows"
-            style="width: 90%; display: flex; justify-content: space-between"
-          >
-            <button class="next-button" onclick="moveCarousel('left')">
-              &lt;
-            </button>
-          </div>
+        </div>
+        <div class="arrowsDiv" style="display: flex">
+          <button class="arrow-button" onclick="moveCarousel('left')">
+            &lt;
+          </button>
+
+          <button class="arrow-button" onclick="moveCarousel('right')">
+            &gt;
+          </button>
         </div>
 
         <!-- Second Carousel -->
-        <div class="carousel2-container">
-          <div
-            class="carouselArrows"
-            style="width: 90%; display: flex; justify-content: space-between"
-          >
-            <button class="next-button" onclick="moveCarousel1('right')">
-              &gt;
-            </button>
-          </div>
-          <div id="parked" class="carousel-item" style="width: 250px">
-            <div style="height: 35%"></div>
-            <h1>Parked</h1>
-            <div class="thin-line"></div>
-            <br />
-            <h3 style="color: rgb(128, 128, 128)">parking brake is engaged</h3>
-            <p
-              style="
-                width: 200px;
-                font-size: smaller;
-                color: rgba(128, 128, 128, 0.396);
-                margin-top: 20%;
-              "
-            >
-              Use touchpad or keyboard arrows to manipulate carousel.
-              <br>
-              All images are for illustration purposes only.
-            </p>
-          </div>
+        <div class="carouselTitleDiv">
+          <h1 id="parked">Parked</h1>
 
+          <h4 style="color: rgb(128, 128, 128)">parking brake is engaged</h4>
+        </div>
+        <div class="carousel2-container">
           <div class="carousel-item">
             <br />
             <p style="width: 400px; font-size: x-large; margin-top: 50%">
@@ -602,47 +573,28 @@
               </button>
             </div>
           </div>
-          <div
-            class="carouselArrows"
-            style="width: 90%; display: flex; justify-content: space-between"
-          >
-            <button class="next-button" onclick="moveCarousel1('left')">
-              &lt;
-            </button>
-          </div>
+        </div>
+        <div class="arrowsDiv" style="display: flex">
+          <button class="arrow-button" onclick="moveCarousel1('left')">
+            &lt;
+          </button>
+
+          <button class="arrow-button" onclick="moveCarousel1('right')">
+            &gt;
+          </button>
         </div>
 
         <!-- Third Carousel -->
+        <div class="carouselTitleDiv">
+          <h1 id="away">Away</h1>
+
+          <h4 style="color: rgb(128, 128, 128)">the vehicle is parked, locked, and empty</h4>
+          <p style="color: #bfbfbf; font-size: smaller;">   
+            
+            All images are for illustration purposes only.</p>
+        </div>
         <div class="carousel3-container">
-          <div
-            class="carouselArrows"
-            style="width: 90%; display: flex; justify-content: space-between"
-          >
-            <button class="next-button" onclick="moveCarousel2('right')">
-              &gt;
-            </button>
-          </div>
-          <div id="away" class="carousel-item" style="width: 250px">
-            <div style="height: 35%"></div>
-            <h1>Away</h1>
-            <div class="thin-line"></div>
-            <br />
-            <h3 style="color: rgb(128, 128, 128)">
-              the vehicle is parked, locked, and empty
-            </h3>
-            <p
-              style="
-                width: 200px;
-                font-size: smaller;
-                color: rgba(128, 128, 128, 0.396);
-                margin-top: 20%;
-              "
-            >
-              Use touchpad or keyboard arrows to manipulate carousel.
-              <br>
-              All images are for illustration purposes only.
-            </p>
-          </div>
+          
           <div class="carousel-item">
             <br />
             <p style="width: 400px; font-size: x-large; margin-top: 50%">
@@ -664,8 +616,8 @@
             <p style="width: 400px; font-size: x-large; margin-top: 50%">
               Push notifications containing all saved offers are only sent once
               the vehicle has been parked, vacated and locked.
-              <br>
-              All offers are guaranteed for 24 hours  saving.
+              <br />
+              All offers are guaranteed for 24 hours saving.
             </p>
           </div>
 
@@ -696,7 +648,6 @@
             <p style="width: 400px; font-size: smaller; color: grey">
               Only available at Level 2, Level 1 cannot learn habits and make
               personalised recommendations.
-        
             </p>
           </div>
           <div class="carousel-item">
@@ -763,14 +714,15 @@
               </button>
             </div>
           </div>
-          <div
-            class="carouselArrows"
-            style="width: 90%; display: flex; justify-content: space-between"
-          >
-            <button class="next-button" onclick="moveCarousel2('left')">
-              &lt;
-            </button>
-          </div>
+        </div>
+        <div class="arrowsDiv" style="display: flex">
+          <button class="arrow-button" onclick="moveCarousel2('left')">
+            &lt;
+          </button>
+
+          <button class="arrow-button" onclick="moveCarousel2('right')">
+            &gt;
+          </button>
         </div>
       </div>
     </div>
@@ -884,7 +836,7 @@
       //CAROUSEL 1 SCROLL ARROWS
       function moveCarousel(direction) {
         const carousel = document.querySelector(".carousel-container");
-        const scrollAmount = 2000;
+        const scrollAmount = 800;
         if (direction === "left") {
           carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         } else if (direction === "right") {
@@ -895,7 +847,7 @@
       //CAROUSEL 2 SCROLL ARROWS
       function moveCarousel1(direction) {
         const carousel = document.querySelector(".carousel2-container");
-        const scrollAmount = 2000;
+        const scrollAmount = 800;
         if (direction === "left") {
           carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         } else if (direction === "right") {
@@ -906,37 +858,35 @@
       //CAROUSEL 3 SCROLL ARROWS
       function moveCarousel2(direction) {
         const carousel = document.querySelector(".carousel3-container");
-        const scrollAmount = 4000;
+        const scrollAmount = 800;
         if (direction === "left") {
           carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         } else if (direction === "right") {
           carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
       }
-//ENLARGE IMAGES CAROUSEL 3
-document.querySelectorAll('.carousel3-container .carousel-item img').forEach((img) => {
-  img.addEventListener('mouseenter', () => {
-    img.classList.add('enlarged');
-  });
+      //ENLARGE IMAGES CAROUSEL 3
+      document
+        .querySelectorAll(".carousel3-container .carousel-item img")
+        .forEach((img) => {
+          img.addEventListener("mouseenter", () => {
+            img.classList.add("enlarged");
+          });
 
-  img.addEventListener('mousemove', (event) => {
-    const rect = img.getBoundingClientRect();
-    const offsetY = event.clientY - rect.top;
-    const height = rect.height;
+          img.addEventListener("mousemove", (event) => {
+            const rect = img.getBoundingClientRect();
+            const offsetY = event.clientY - rect.top;
+            const height = rect.height;
 
-   
-    const translateY = ((offsetY / height) - 0.5) * -50; 
-    img.style.transform = `scale(1.5) translateY(${translateY}%)`;
-  });
+            const translateY = (offsetY / height - 0.5) * -50;
+            img.style.transform = `scale(1.5) translateY(${translateY}%)`;
+          });
 
-  img.addEventListener('mouseleave', () => {
-    img.classList.remove('enlarged');
-    img.style.transform = ''; 
-  });
-});
-
-      
-
+          img.addEventListener("mouseleave", () => {
+            img.classList.remove("enlarged");
+            img.style.transform = "";
+          });
+        });
     </script>
 
     <footer class="footer">
