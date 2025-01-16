@@ -72,6 +72,7 @@ header {
 .top-bar nav ul li a {
   color: #000000;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .main-content {
@@ -82,7 +83,7 @@ header {
 }
 @media(max-width:768px){
   .hero-image{
-    margin-bottom:-20%;
+    margin-bottom:-30%;
   }
 }
 .hero-image img {
@@ -97,9 +98,15 @@ header {
   text-align: left;
   color: white;
 }
+@media (max-width: 1000px) {
+  .hero-text {
+    max-width: 80%;
+  }
+}
 @media (max-width: 768px) {
   .hero-text {
     max-width: 80%;
+    margin-top:15%
   }
 }
 
@@ -206,7 +213,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30rem;
+  width: 25rem;
   height: 100%;
   margin: 0 auto;
   padding: 10px;
@@ -398,6 +405,11 @@ header {
 
 .confSelector {
   width: 35%;
+}
+@media (max-width:1000px){
+  .confSelector{
+    width: 100%;
+  }
 }
 
 .confSelector ul {
@@ -908,6 +920,23 @@ header {
   background-color: #ffbe31;
 }
 
+/* SEAT IFRAME*/
+#seatFrame{
+  width: 94%;
+      height: 60vh;
+      border: solid 2px white;
+      background-color: #ffffff;
+      border-radius: 20px;
+      margin: 0 auto;
+}
+
+@media (max-width: 1000px){
+  #seatFrame{
+    width: 100%;
+    transform: translateX(0%);
+  }
+}
+
 /*POWERTRAIN - KIT COLUMNS*/
 .kit {
   display: grid;
@@ -917,6 +946,13 @@ header {
   margin: 3% auto;
   align-items: start;
   justify-content: center;
+}
+@media (max-width: 1000px){
+  .kit{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
 }
 
 .kitColumn {
