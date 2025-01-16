@@ -84,11 +84,14 @@ header {
 @media(max-width:768px){
   .hero-image{
     margin-bottom:-30%;
+    height: 40rem;
   }
 }
 .hero-image img {
-  width: 100%;
+  width: 190%;
   height: auto;
+  height: 30rem;
+  transform: translateX(-20%);
 }
 .hero-text {
   position: relative;
@@ -106,7 +109,8 @@ header {
 @media (max-width: 768px) {
   .hero-text {
     max-width: 80%;
-    margin-top:15%
+    margin-top:15%;
+   left: 2rem;
   }
 }
 
@@ -150,6 +154,12 @@ header {
   display: flex;
   justify-content: space-around;
   margin: 2rem 0;
+}
+@media(max-width:768px){
+  .image-boxes{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .image-boxes .box {
