@@ -111,7 +111,7 @@
     bottom: 0;
     width: 100%;
 
-    background: linear-gradient(to top, #09608665, #34b3e900); 
+
     z-index: -0.5; 
     display: flex;
     justify-content: center;
@@ -119,6 +119,11 @@
     gap: 10px;
     animation: moveSkyline 7s infinite ease-in-out; 
   
+}
+@media(max-width:1200px){
+    .skyline{
+        bottom:10%;
+    }
 }
 
 @keyframes moveSkyline {
@@ -373,7 +378,14 @@
     text-align: center;
     transition: background-color 0.3s ease-in-out;
 }
-
+@media(max-width:1200px){
+    .menu-item{
+        padding:0.1rem;
+        font-size: 3.5rem;
+        width:100%;
+      transform: translateX(0%)
+    }
+}
 #skip-option {
     color: grey;
 }
@@ -397,6 +409,27 @@
 }
 
 
+@media (max-width: 500px) {
+  .orientation-message {
+    display: block;
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100rem;
+    font-size: 8rem;
+    z-index: 9999;
+left:-25rem;
+  }
+}
+
+@media (min-width: 501px) {
+  .orientation-message {
+    display: none;
+  }
+}
 
     </style>
 </head>
@@ -580,6 +613,10 @@
         <!-- Vent -->
         <div class="vent"></div>
         <div class="vent1"></div>
+        <div class="orientation-message">
+            Please place your phone horizontally and zoom slightly out for a better viewing experience.
+          </div>
+          
     </div>
 </body>
 <script>
