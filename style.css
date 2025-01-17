@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  overflow-x: hidden;
+  
 }
 a {
   color: inherit;
@@ -12,8 +13,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 50;
   background-color: #f4f4f4;
-  align-items: center;
-  overflow-x: hidden;
+  height: 100%;
 }
 h1,
 h2,
@@ -42,7 +42,11 @@ header {
   background-color: #dedede;
   align-items: center;
   padding: 0 1rem;
-  position: relative;
+  position: sticky;
+
+  top: 0;           
+  z-index: 9999; 
+
 }
 
 .logo img {
@@ -80,12 +84,12 @@ header {
 .main-content {
   text-align: center;
 }
-.hero-image{
+.hero-image {
   margin-bottom: -5%;
 }
-@media(max-width:768px){
-  .hero-image{
-    margin-bottom:-10%;
+@media (max-width: 768px) {
+  .hero-image {
+    margin-bottom: -10%;
     height: 40rem;
   }
 }
@@ -93,12 +97,11 @@ header {
   width: 100%;
   height: auto;
 }
-@media(max-width:1000px){
-  .hero-image img{
-    
-  width: auto;
-  height: 45rem;
-  transform: translateX(-20%);
+@media (max-width: 1000px) {
+  .hero-image img {
+    width: auto;
+    height: 45rem;
+    transform: translateX(-20%);
   }
 }
 .hero-text {
@@ -117,8 +120,8 @@ header {
 @media (max-width: 768px) {
   .hero-text {
     max-width: 80%;
-    margin-top:15%;
-   left: 2rem;
+    margin-top: 15%;
+    left: 2rem;
   }
 }
 
@@ -163,8 +166,8 @@ header {
   justify-content: space-around;
   margin: 2rem 0;
 }
-@media(max-width:768px){
-  .image-boxes{
+@media (max-width: 768px) {
+  .image-boxes {
     display: flex;
     flex-direction: column;
   }
@@ -195,21 +198,21 @@ header {
 }
 @media (max-width: 768px) {
   .info1 {
-    width: 100%; 
-    max-width: 80rem; 
-    margin: 0 auto; 
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
   }
 }
-.info-text{
+.info-text1 {
   width: 100%;
 }
 
-@media (max-width:768px){
-  .info-text{
+@media (max-width: 768px) {
+  .info-text1 {
     padding: 2rem;
   }
 }
@@ -330,9 +333,9 @@ header {
   width: 60%;
   margin: auto;
 }
-@media(max-width:768px){
-  .confGallery{
-    width:100%
+@media (max-width: 768px) {
+  .confGallery {
+    width: 100%;
   }
 }
 
@@ -379,14 +382,13 @@ header {
   margin-top: 2%;
   margin-bottom: 2%;
 }
-@media(max-width:1000px){
+@media (max-width: 1000px) {
   .configurator,
-.img-container{
-  display: flex;
-  flex-direction: column;
-  padding:0%;
-  
-}
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+  }
 }
 
 .confGallery,
@@ -394,33 +396,31 @@ header {
   width: 60%;
   position: relative;
 }
-@media(max-width:1000px){
+@media (max-width: 1000px) {
   .confGallery,
-.img-inner-container{
-  width: 100%;
-}
+  .img-inner-container {
+    width: 100%;
+  }
 }
 /* iFRAME */
 
-#colorFrame{
- 
+#colorFrame {
   width: 100%;
   height: 60vh;
   border: solid 2px white;
   background-color: #63d9fd;
   border-radius: 20px;
-
-
 }
-#colorFrame1{
+#colorFrame1 {
   width: 60%;
-      height: 60vh;
-      border: solid 2px white;
-      background-color: #63d9fd;
-      border-radius: 20px;
+  height: 60vh;
+  border: solid 2px white;
+  background-color: #63d9fd;
+  border-radius: 20px;
 }
-@media(max-width:1000px){
-  #colorFrame, #colorFrame1 {
+@media (max-width: 1000px) {
+  #colorFrame,
+  #colorFrame1 {
     width: 100%;
   }
 }
@@ -444,8 +444,8 @@ header {
 .confSelector {
   width: 35%;
 }
-@media (max-width:1000px){
-  .confSelector{
+@media (max-width: 1000px) {
+  .confSelector {
     width: 100%;
   }
 }
@@ -495,6 +495,42 @@ header {
   margin: 0;
   gap: 10px;
 }
+@media (max-width: 1000px) {
+  .adHighlight {
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .twoByTwo {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.5rem; 
+    justify-items: center; 
+    margin: 0 auto; 
+    width: 100%; 
+  
+  }
+
+  .twoByTwo ul {
+    display: contents;
+    padding: 0;
+    margin: 0;
+  }
+
+  .twoByTwo li {
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
+  }
+
+  .twoByTwo img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 .twoByTwo li {
   background-color: #f4f4f4;
@@ -503,7 +539,7 @@ header {
   padding: 10px;
   text-align: center;
   box-sizing: border-box;
-  width: 50%;
+  width: 80%;
   height: auto;
 }
 
@@ -613,6 +649,7 @@ header {
   width: 0px;
   height: 50px;
   margin: auto;
+  overflow: visible;
 }
 
 /* Cube styling */
@@ -622,6 +659,7 @@ header {
   position: relative;
   transform-style: preserve-3d;
   transform: rotateX(-15deg) rotateY(15deg);
+  overflow: visible;
 }
 
 /* Face styling */
@@ -638,7 +676,6 @@ header {
   background-image: url("Assets/pattern1.avif");
   background-size: cover;
   transform: translateZ(40px);
- 
 }
 
 /* Positioning other faces */
@@ -664,6 +701,7 @@ header {
   width: 0px;
   height: 50px;
   margin: auto;
+  overflow: visible;
 }
 
 /* Cube styling */
@@ -673,6 +711,7 @@ header {
   position: relative;
   transform-style: preserve-3d;
   transform: rotateX(-15deg) rotateY(15deg);
+  overflow: visible;
 }
 
 /* Face styling */
@@ -691,8 +730,6 @@ header {
   transform: translateZ(40px);
 }
 
-
-
 /*WHEEL3*/
 /* Cube container for perspective */
 .cube-container2 {
@@ -700,6 +737,7 @@ header {
   width: 0px;
   height: 50px;
   margin: auto;
+  overflow: visible;
 }
 
 /* Cube styling */
@@ -709,6 +747,7 @@ header {
   position: relative;
   transform-style: preserve-3d;
   transform: rotateX(-15deg) rotateY(15deg);
+  overflow: visible;
 }
 
 /* Face styling */
@@ -726,7 +765,6 @@ header {
   background-size: cover;
   transform: translateZ(40px);
 }
-
 
 /*INTERIOR*/
 .interior1 {
@@ -858,7 +896,7 @@ header {
 
 .carousel-item {
   flex: 0 0 auto;
-  width: auto;
+  width: 28rem;
   height: auto;
   scroll-snap-align: center;
   background-color: #e0e0e0;
@@ -866,6 +904,7 @@ header {
   border-radius: 8px;
   padding: 20px;
   text-align: center;
+
 }
 
 /*LEARN MORE BUTTON*/
@@ -929,18 +968,24 @@ header {
 }
 
 /* SEAT IFRAME*/
-#seatFrame{
+#seatFrame {
   width: 94%;
-      height: 60vh;
-      border: solid 2px white;
-      background-color: #ffffff;
-      border-radius: 20px;
-      margin: 0 auto;
+  height: 60vh;
+  border: solid 2px white;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
-@media (max-width: 1000px){
-  #seatFrame{
-    width: 100%;
+@media (max-width: 1300px) {
+  #seatFrame {
+    width: 43%;
+    transform: translateX(0%);
+  }
+}
+@media (max-width: 1000px) {
+  #seatFrame {
+    width: 55%;
     transform: translateX(0%);
   }
 }
@@ -955,8 +1000,8 @@ header {
   align-items: start;
   justify-content: center;
 }
-@media (max-width: 1000px){
-  .kit{
+@media (max-width: 1000px) {
+  .kit {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -1016,6 +1061,14 @@ header {
   align-items: start;
   justify-content: center;
 }
+@media(max-width:900px){
+  .adsModes-table{
+    display:flex;
+    flex-direction:column;
+    
+  }
+}
+
 
 .adsModes-column {
   display: flex;
@@ -1290,7 +1343,7 @@ header {
 }
 /* ADS: ARROW BUTTONS */
 .arrow-button {
-  padding: 0.5rem 20rem;
+  padding: 0.5rem 10rem;
   background-color: #ffae00;
   color: white;
   font-size: 1.3rem;
@@ -1299,6 +1352,12 @@ header {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+@media(max-width:1200px){
+
+  .arrow-button{
+    padding: 0.5rem 5rem;
+  }
 }
 
 .arrow-button:hover {
