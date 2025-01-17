@@ -863,7 +863,7 @@ max-height:80vh}
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 10px;
-
+  border: 1px solid #ffffff;
   border-radius: 8px;
   background-color: #f9f9f9;
   width: 90%;
@@ -974,7 +974,7 @@ text-align: center;
   height: auto;
   padding-top: 20%;
   padding-left: 23%;
-  gap: 2%;
+  gap: 35%;
   margin-top: 20%;}
 
 
