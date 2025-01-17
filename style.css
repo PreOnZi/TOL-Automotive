@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 a {
   color: inherit;
@@ -12,6 +13,7 @@ body {
   font-weight: 50;
   background-color: #f4f4f4;
   align-items: center;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -83,19 +85,25 @@ header {
 }
 @media(max-width:768px){
   .hero-image{
-    margin-bottom:-30%;
+    margin-bottom:-10%;
     height: 40rem;
   }
 }
 .hero-image img {
-  width: 190%;
+  width: 100%;
   height: auto;
-  height: 30rem;
+}
+@media(max-width:1000px){
+  .hero-image img{
+    
+  width: auto;
+  height: 45rem;
   transform: translateX(-20%);
+  }
 }
 .hero-text {
   position: relative;
-  top: -20rem;
+  top: -25rem;
   left: 5rem;
 
   text-align: left;
@@ -184,6 +192,26 @@ header {
   text-align: center;
   background-color: #f4f4f4;
   border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .info1 {
+    width: 100%; 
+    max-width: 80rem; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+  }
+}
+.info-text{
+  width: 100%;
+}
+
+@media (max-width:768px){
+  .info-text{
+    padding: 2rem;
+  }
 }
 
 .info1 h2 {
@@ -610,6 +638,7 @@ header {
   background-image: url("Assets/pattern1.avif");
   background-size: cover;
   transform: translateZ(40px);
+ 
 }
 
 /* Positioning other faces */
@@ -662,22 +691,7 @@ header {
   transform: translateZ(40px);
 }
 
-/* Positioning other faces */
-.back {
-  transform: rotateY(180deg) translateZ(40px);
-}
-.left {
-  transform: rotateY(-90deg) translateZ(40px);
-}
-.right {
-  transform: rotateY(90deg) translateZ(40px);
-}
-.top {
-  transform: rotateX(90deg) translateZ(40px);
-}
-.bottom {
-  transform: rotateX(-90deg) translateZ(40px);
-}
+
 
 /*WHEEL3*/
 /* Cube container for perspective */
@@ -713,22 +727,6 @@ header {
   transform: translateZ(40px);
 }
 
-/* Positioning other faces */
-.back {
-  transform: rotateY(180deg) translateZ(40px);
-}
-.left {
-  transform: rotateY(-90deg) translateZ(40px);
-}
-.right {
-  transform: rotateY(90deg) translateZ(40px);
-}
-.top {
-  transform: rotateX(90deg) translateZ(40px);
-}
-.bottom {
-  transform: rotateX(-90deg) translateZ(40px);
-}
 
 /*INTERIOR*/
 .interior1 {
