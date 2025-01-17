@@ -850,6 +850,7 @@ max-height:80vh}
   @media(max-width:768px){
     .adPopup{
       width: 90%;
+      max-width:91vh;
       max-height:80vh;
     }
   }
