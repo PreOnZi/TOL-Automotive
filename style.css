@@ -213,15 +213,11 @@ header {
     justify-content: center;
   }
 }
-.info-text1 {
+.info-text1 p{
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .info-text1 {
-    padding: 2rem;
-  }
-}
+
 
 .info1 h2 {
   font-size: 2rem;
