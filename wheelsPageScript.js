@@ -1,107 +1,84 @@
 function changeWheelOnClick(e) {
   const target = e.target.closest("li");
-  if (!target) return;
+  if (!target) {
+    console.error("No <li> element was clicked.");
+    return;
+  }
 
   let wheelType = "Diamond";
   let priceChange = 0;
   let itemName = "Diamond on the rise";
 
-  if (target.querySelector("h3")?.textContent.includes("Square")) {
+  // Determine the wheel type based on <h3> content
+  const h3Text = target.querySelector("h3")?.textContent || "";
+  console.log("Clicked item text:", h3Text);
+
+  if (h3Text.includes("Square")) {
     wheelType = "Square";
     priceChange = 670;
     itemName = "Square targets";
-  } else if (target.querySelector("h3")?.textContent.includes("Dark")) {
+  } else if (h3Text.includes("Dark")) {
     wheelType = "Dark";
     priceChange = 870;
     itemName = "Dark circular";
   }
 
+  // Update styles for the clicked item
   const configItems = document.querySelectorAll(".confSelector ul li");
   configItems.forEach((item) => {
     item.style.backgroundColor = "";
   });
-
   target.style.backgroundColor = "#ddd";
 
+  // Get the selected colour from localStorage (default to "Red")
   const selectedColor = localStorage.getItem("selectedColor") || "Red";
+  console.log("Selected colour from localStorage:", selectedColor);
+
+  // Combine the selected colour and wheel type to form the image key
   const imageKey = `${selectedColor}${wheelType}`;
+  console.log("Generated image key:", imageKey);
+
+  // Define the mapping of image keys to file names (all lowercase keys)
   const imageOptions = {
-    RedDiamond: "1RedDiamond.png",
-    RedSquare: "2RedSquare.png",
-    RedDark: "3RedDark.png",
-    SilverDiamond: "4SilverDiamond.png",
-    SilverSquare: "6SilverSquare.png",
-    SilverDark: "5SilverDark.png",
-    GreenDiamond: "7GreenDiamond.png",
-    GreenSquare: "8GreenSquare.png",
-    GreenDark: "9GreenDark.png",
+    reddiamond: "1RedDiamond.png",
+    redsquare: "2RedSquare.png",
+    reddark: "3RedDark.png",
+    silverdiamond: "4SilverDiamond.png",
+    silversquare: "6SilverSquare.png",
+    silverdark: "5SilverDark.png",
+    greendiamond: "7GreenDiamond.png",
+    greensquare: "8GreenSquare.png",
+    greendark: "9GreenDark.png",
   };
-  const selectedImage = imageOptions[imageKey];
+
+  // Convert imageKey to lowercase to match the object keys
+  const selectedImage = imageOptions[imageKey.toLowerCase()];
+  console.log("Selected image file:", selectedImage);
 
   if (selectedImage) {
     const carWheelsImage = document.getElementById("car-wheels-image");
-    carWheelsImage.setAttribute(
-      "src",
-      `assets/carImageSelection/${selectedImage}`
+    if (carWheelsImage) {
+      carWheelsImage.setAttribute(
+        "src",
+        `Assets/carImageSelection/${selectedImage}`
+      );
+      console.log("Image src updated to:", carWheelsImage.src);
+    } else {
+      console.error("No <img> element found with ID 'car-wheels-image'.");
+    }
+  } else {
+    console.error(
+      `No image found for the key "${imageKey}". Check the 'imageOptions' object.`
     );
   }
 
+  // Save the selected wheel type in localStorage
   localStorage.setItem("selectedWheels", wheelType);
 
+  // Update the price if the function exists
   if (window.updatePrice) {
     updatePrice(priceChange, itemName);
   } else {
     console.error("updatePrice function is not available");
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  let savedWheelType = localStorage.getItem("selectedWheels") || "Diamond";
-  const selectedColor = localStorage.getItem("selectedColor") || "Red";
-
-  if (!localStorage.getItem("selectedWheels")) {
-    savedWheelType = "Diamond";
-    localStorage.setItem("selectedWheels", "Diamond");
-  }
-
-  const configItems = document.querySelectorAll(".confSelector ul li");
-
-  configItems.forEach((item) => {
-    const wheelText = item.querySelector("h3")?.textContent || "";
-
-    if (
-      (savedWheelType === "Diamond" && wheelText.includes("Diamond")) ||
-      (savedWheelType === "Square" && wheelText.includes("Square")) ||
-      (savedWheelType === "Dark" && wheelText.includes("Dark"))
-    ) {
-      item.style.backgroundColor = "#ddd";
-
-      const imageKey = `${selectedColor}${savedWheelType}`;
-      const imageOptions = {
-        RedDiamond: "1RedDiamond.png",
-        RedSquare: "2RedSquare.png",
-        RedDark: "3RedDark.png",
-        SilverDiamond: "4SilverDiamond.png",
-        SilverSquare: "6SilverSquare.png",
-        SilverDark: "5SilverDark.png",
-        GreenDiamond: "7GreenDiamond.png",
-        GreenSquare: "8GreenSquare.png",
-        GreenDark: "9GreenDark.png",
-      };
-      const selectedImage = imageOptions[imageKey];
-
-      if (selectedImage) {
-        const carWheelsImage = document.getElementById("car-wheels-image");
-        carWheelsImage.setAttribute(
-          "src",
-          `assets/carImageSelection/${selectedImage}`
-        );
-      }
-    }
-  });
-});
-
-const configItems = document.querySelectorAll(".confSelector ul li");
-configItems.forEach((item) =>
-  item.addEventListener("click", changeWheelOnClick)
-);

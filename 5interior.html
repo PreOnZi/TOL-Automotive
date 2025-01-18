@@ -47,12 +47,12 @@
         <img src="Assets/lot1.jpg" alt="Image 3" class="gallery-img" />
       </div>
       <!-- ACTUAL IFRAME SHOWN -->
+      <iframe id="colorFrame1" src="carProjection.html" loading="lazy"></iframe>
       <iframe
-      id="colorFrame1"
-      src="carProjection.html"
-      loading="lazy"
-    
-    ></iframe>
+        id="seatFrameTop"
+        src="3Dseat/chairPlace.html"
+        loading="lazy"
+      ></iframe>
       <div class="confSelector">
         <ul onclick="reloadIframe()">
           <li
@@ -88,15 +88,13 @@
         </ul>
       </div>
     </div>
-    <div style="display: flex; justify-content: center; align-items: center;">
-    <iframe
-    id="seatFrame"
-    src="3Dseat/chairPlace.html"
-    loading="lazy"
-    
-      
-  ></iframe>
-</div>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <iframe
+        id="seatFrame"
+        src="3Dseat/chairPlace.html"
+        loading="lazy"
+      ></iframe>
+    </div>
     <div class="button-container">
       <a href="6ads.html" class="next-button"
         >Extras <i class="fas fa-arrow-right"></i
@@ -156,6 +154,16 @@
       function reloadIframe() {
         const iframe = document.getElementById("colorFrame1");
         iframe.contentWindow.location.reload();
+      }
+
+      // SEAT FRAME TOP
+      function changeIframe(src) {
+        const iframe = document.getElementById("seatFrameTop");
+        if (iframe) {
+          iframe.src = src;
+        } else {
+          console.error("Iframe with id 'colorFrame' not found.");
+        }
       }
     </script>
     <footer class="footer">

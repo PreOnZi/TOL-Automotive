@@ -404,7 +404,7 @@ header {
     width: 100%;
   }
 }
-/* iFRAME */
+/* iFRAME & REPLACEMENT IMAGES*/
 
 #colorFrame {
   width: 100%;
@@ -426,7 +426,19 @@ header {
     width: 100%;
   }
 }
-
+@media (max-width: 600px) {
+  #colorFrame,
+  #colorFrame1 {
+    display: none;
+  }
+  .configurator-img{
+    width:100%;}
+}
+@media (min-width: 601px) {
+  .configurator-img {
+    display: none;
+  }
+}
 .confGallery img {
   width: 100%;
   height: auto;
@@ -434,12 +446,6 @@ header {
 }
 
 .confGallery img.active {
-  display: block;
-}
-
-.configurator-img {
-  width: 100%;
-  height: auto;
   display: block;
 }
 
@@ -1082,6 +1088,27 @@ text-align: center;
   #seatFrame {
     width: 55%;
     transform: translateX(0%);
+  }
+}
+@media (max-width: 600px) {
+  #seatFrame {
+  display:none;
+  }
+}
+@media (min-width: 601px) {
+  #seatFrameTop {
+  display:none;
+ 
+  }
+}
+@media (max-width: 600px) {
+  #seatFrameTop {
+    width: 94%;
+    height: 60vh;
+    border: solid 2px white;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 0 auto;
   }
 }
 
