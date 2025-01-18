@@ -31,7 +31,7 @@ function changeWheelOnClick(e) {
   target.style.backgroundColor = "#ddd";
 
   // Get the selected colour from localStorage (default to "Red")
-  const selectedColor = localStorage.getItem("selectedColor") || "Red";
+  const selectedColor = localStorage.getItem("selectedColor") || "red"; // Default to "red"
   console.log("Selected colour from localStorage:", selectedColor);
 
   // Combine the selected colour and wheel type to form the image key
@@ -82,3 +82,39 @@ function changeWheelOnClick(e) {
     console.error("updatePrice function is not available");
   }
 }
+
+// Load the saved wheel selection on page load
+const savedWheels = localStorage.getItem("selectedWheels");
+if (savedWheels) {
+  console.log("Retrieved saved wheel selection from localStorage:", savedWheels);
+
+  // Find the correct <li> element using the data-wheel attribute
+  const savedWheelItem = document.querySelector(`#wheelsList li[data-wheel="${savedWheels}"]`);
+  if (savedWheelItem) {
+    savedWheelItem.style.backgroundColor = "#ddd";
+
+    // Update the image and other related data
+    const wheelImageOptions = {
+      Diamond: "1RedDiamond.png",
+      Square: "2RedSquare.png",
+      Dark: "3RedDark.png",
+    };
+    const savedWheelImage = wheelImageOptions[savedWheels];
+    if (savedWheelImage) {
+      const carWheelsImage = document.getElementById("car-wheels-image");
+      if (carWheelsImage) {
+        carWheelsImage.setAttribute("src", `Assets/carImageSelection/${savedWheelImage}`);
+      }
+    }
+  } else {
+    console.error("No wheel item found for the saved wheel type:", savedWheels);
+  }
+} else {
+  console.log("No saved wheel selection found in localStorage.");
+}
+
+// Attach the click event listeners
+const wheelItems = document.querySelectorAll(".confSelector ul li");
+wheelItems.forEach((item) =>
+  item.addEventListener("click", changeWheelOnClick)
+);
