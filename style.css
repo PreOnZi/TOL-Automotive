@@ -413,7 +413,8 @@ header {
   background-color: #63d9fd;
   border-radius: 20px;
 }
-#colorFrame1 {
+#colorFrame1,
+#colorFrame2 {
   width: 60%;
   height: 60vh;
   border: solid 2px white;
@@ -422,7 +423,8 @@ header {
 }
 @media (max-width: 1000px) {
   #colorFrame,
-  #colorFrame1 {
+  #colorFrame1,
+  #colorFrame2 {
     width: 100%;
   }
 }
@@ -430,6 +432,9 @@ header {
   #colorFrame,
   #colorFrame1 {
     display: none;
+  }
+  #colorFrame2{
+    width:98%
   }
   .configurator-img{
     width:100%;}
@@ -1112,6 +1117,7 @@ text-align: center;
   }
 }
 
+
 /*POWERTRAIN - KIT COLUMNS*/
 .kit {
   display: grid;
@@ -1224,7 +1230,7 @@ text-align: center;
 /* FINANCES DIV */
 .finance-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 @media(max-width: 1000px) {
   .finance-section{
