@@ -1479,7 +1479,9 @@ text-align: center;
   text-align: left;
 }
 .brandTextVisual{
-  display: flex
+  display: flex;
+  display:flex;
+    flex-direction: column;
 }
 @media(max-width:1200px){
   .brandTextVisual{
@@ -1487,6 +1489,7 @@ text-align: center;
     flex-direction: column;
   }
 }
+
 /* BRANDING PAGE - TABLE OF CONTENTS */
 .toc {
   position: fixed;
