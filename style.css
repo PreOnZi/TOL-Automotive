@@ -130,6 +130,13 @@ header {
     left: 2rem;
   }
 }
+@media (max-width: 588px) {
+  .hero-text {
+    max-width: 80%;
+    margin-top: 10%;
+    left: 2rem;
+  }
+}
 
 .hero-text h1 {
   font-weight: 700;
@@ -237,6 +244,11 @@ header {
   padding: 3rem 1rem;
   text-align: center;
   background-color: #fff;
+}
+@media(max-width:770px){
+  .info{
+    margin-top:10%;
+  }
 }
 
 .info h2 {
