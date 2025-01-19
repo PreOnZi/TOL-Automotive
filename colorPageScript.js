@@ -20,7 +20,7 @@ if (carColorImage) {
     switch (targetId) {
       case "red":
         newSrc = "Assets/carImageSelection/1RedDiamond.png";
-        priceChange = 370;
+        priceChange = 0;
         itemName = "Solar Red";
         localStorage.setItem("selectedColor", "red");
         break;
