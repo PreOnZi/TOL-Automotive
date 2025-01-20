@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (carWheelsImage) {
       carWheelsImage.setAttribute(
         "src",
-        `assets/carImageSelection/${selectedImage}`
+        `Assets/carImageSelection/${selectedImage}`
       );
       console.log(
         `Image src updated on page load based on selected color (${selectedColor}) and wheels (${selectedWheels}):`,

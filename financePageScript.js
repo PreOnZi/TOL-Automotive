@@ -70,7 +70,7 @@ function getImageSrc(selections) {
 
   const fileName = imageMap[mapKey] || "1RedDiamond.png";
 
-  return `assets/carImageSelection/${fileName}`;
+  return `Assets/carImageSelection/${fileName}`;
 }
 
 const newSrc = getImageSrc(selections);
