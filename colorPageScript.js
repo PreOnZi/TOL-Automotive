@@ -48,6 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
       `No image found for the key "${imageKey}". Check the 'imageOptions' object.`
     );
   }
+
+  const nextButton = document.querySelector(".next-button");
+
+  function checkColourSelection() {
+    const selections = JSON.parse(localStorage.getItem("selections")) || [];
+
+    const hasColour = selections.some((item) => item.category === "Colour");
+
+    if (hasColour) {
+      nextButton.style.pointerEvents = "auto";
+      nextButton.style.opacity = "1";
+    } else {
+      nextButton.style.pointerEvents = "none";
+      nextButton.style.opacity = "0.5";
+    }
+  }
+
+  checkColourSelection();
+
+  //TIMER for checking if there is selected option or not
+  setInterval(() => {
+    checkColourSelection();
+  }, 500);
 });
 
 if (carColorImage) {

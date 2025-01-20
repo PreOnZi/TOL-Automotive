@@ -48,6 +48,28 @@ document.addEventListener("DOMContentLoaded", () => {
       `No image found for the key "${imageKey}". Check the 'imageOptions' object.`
     );
   }
+
+  const nextButton = document.querySelector(".next-button");
+
+  function checkWheelsSelection() {
+    const selections = JSON.parse(localStorage.getItem("selections")) || [];
+
+    const hasWheels = selections.some((item) => item.category === "Wheels");
+
+    if (hasWheels) {
+      nextButton.style.pointerEvents = "auto";
+      nextButton.style.opacity = "1";
+    } else {
+      nextButton.style.pointerEvents = "none";
+      nextButton.style.opacity = "0.5";
+    }
+  }
+
+  checkWheelsSelection();
+  //TIMER for checking if there is selected option or not
+  setInterval(() => {
+    checkWheelsSelection();
+  }, 500);
 });
 
 function changeWheelOnClick(e) {

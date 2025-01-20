@@ -148,6 +148,32 @@
             localStorage.setItem("selectedSeatOption", selectedId);
           });
         });
+
+        const nextButton = document.querySelector(".next-button");
+
+        function checkInteriorSelection() {
+          const selections =
+            JSON.parse(localStorage.getItem("selections")) || [];
+
+          const hasInterior = selections.some(
+            (item) => item.category === "Interior"
+          );
+
+          if (hasInterior) {
+            nextButton.style.pointerEvents = "auto";
+            nextButton.style.opacity = "1";
+          } else {
+            nextButton.style.pointerEvents = "none";
+            nextButton.style.opacity = "0.5";
+          }
+        }
+
+        checkInteriorSelection();
+
+        //TIMER for checking if there is selected option or not
+        setInterval(() => {
+          checkInteriorSelection();
+        }, 500);
       });
 
       // RELOAD IFRAME

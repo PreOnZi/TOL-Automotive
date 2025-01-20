@@ -88,4 +88,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updatePriceDisplay();
+
+  const nextButton = document.querySelector(".next-button");
+
+  function checkAddonsSelection() {
+    const selections = JSON.parse(localStorage.getItem("selections")) || [];
+
+    const hasAddons = selections.some((item) => item.category === "Addons");
+
+    if (hasAddons) {
+      nextButton.style.pointerEvents = "auto";
+      nextButton.style.opacity = "1";
+    } else {
+      nextButton.style.pointerEvents = "none";
+      nextButton.style.opacity = "0.5";
+    }
+  }
+
+  checkAddonsSelection();
+
+  //TIMER for checking if there is selected option or not
+  setInterval(() => {
+    checkAddonsSelection();
+  }, 500);
 });

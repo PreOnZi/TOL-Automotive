@@ -180,11 +180,7 @@
       </div>
     </div>
     <div class="explainAds">
-      <div
-        id="popup"
-        class="adPopup"
-    
-      >
+      <div id="popup" class="adPopup">
         <h1>Infotainment Advertising</h1>
         <br />
         <h3>Terms & Conditions</h3>
@@ -331,16 +327,11 @@
               </p>
               <div class="driveIframe-container">
                 <iframe
-                  
                   src="3Dcar/3DSeparatedCar/dashboardViewDrive.html"
                   loading="lazy"
                 ></iframe>
               </div>
-              <button
-                style="margin-top: 1%"
-                class="next-button"
-                onclick="launchFile()"
-              >
+              <button style="margin-top: 1%" onclick="launchFile()">
                 Launch in full screen
               </button>
             </div>
@@ -367,9 +358,7 @@
             </p>
           </div>
           <div class="carousel-item">
-            <div class="carousel-item-icons"
-            
-            >
+            <div class="carousel-item-icons">
               <img
                 src="Assets/convIcon.png"
                 style="max-width: 100px; grid-row: 1; grid-column: 1"
@@ -396,7 +385,14 @@
           </div>
 
           <div class="carousel-item">
-            <div style="overflow-y: scroll; padding: 2%; max-height:70vh; margin-top:5%;">
+            <div
+              style="
+                overflow-y: scroll;
+                padding: 2%;
+                max-height: 70vh;
+                margin-top: 5%;
+              "
+            >
               <h3>The long print</h3>
               <br />
               <p>
@@ -475,16 +471,11 @@
               </p>
               <div class="driveIframe-container">
                 <iframe
-                
                   src="3Dcar/3DSeparatedCar/dashboardViewParked.html"
                   loading="lazy"
                 ></iframe>
               </div>
-              <button
-                style="margin-top: 1%"
-                class="next-button"
-                onclick="launchFile1()"
-              >
+              <button style="margin-top: 1%" onclick="launchFile1()">
                 Launch in full screen
               </button>
             </div>
@@ -504,7 +495,7 @@
           </div>
 
           <div class="carousel-item">
-            <div style="overflow-y: scroll; margin-top: 30%; padding: 2%;">
+            <div style="overflow-y: scroll; margin-top: 30%; padding: 2%">
               <h3>The long print</h3>
               <br />
               <p>
@@ -621,7 +612,14 @@
             </div>
           </div>
           <div class="carousel-item">
-            <div style="height: 600px; overflow-y: scroll; margin-top: 10%; padding: 2%;">
+            <div
+              style="
+                height: 600px;
+                overflow-y: scroll;
+                margin-top: 10%;
+                padding: 2%;
+              "
+            >
               <h3>The long print</h3>
               <br />
               <p>
@@ -736,6 +734,32 @@
             localStorage.setItem("selectedAdOption", selectedId);
           });
         });
+
+        const nextButton = document.querySelector(".next-button");
+
+        function checkExtrasSelection() {
+          const selections =
+            JSON.parse(localStorage.getItem("selections")) || [];
+
+          const hasExtras = selections.some(
+            (item) => item.category === "Advertising"
+          );
+
+          if (hasExtras) {
+            nextButton.style.pointerEvents = "auto";
+            nextButton.style.opacity = "1";
+          } else {
+            nextButton.style.pointerEvents = "none";
+            nextButton.style.opacity = "0.5";
+          }
+        }
+
+        checkExtrasSelection();
+
+        //TIMER for checking if there is selected option or not
+        setInterval(() => {
+          checkExtrasSelection();
+        }, 500);
       });
 
       // HOW IT WORKS MENU SCROLL
