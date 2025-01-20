@@ -10,9 +10,9 @@
       rel="stylesheet"
     />
     <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    rel="stylesheet"
-  />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="icon" href="Assets/logoFav.png" type="image/png" />
   </head>
   <body>
@@ -43,17 +43,15 @@
         <!-- IMAGE IS HIDDEN -->
         <img
           id="car-color-image"
-          src="Assets/carImageSelection/1RedDiamond.png"
+          src=""
           alt="Selected car"
           class="configurator-img"
-        
         />
         <!-- ACTUAL IFRAME SHOWN -->
         <iframe
           id="colorFrame"
           src="carProjection.html"
           loading="lazy"
-       
         ></iframe>
       </div>
 
@@ -90,9 +88,13 @@
       </div>
     </div>
     <div class="button-container">
-      <a href="4wheels.html" class="next-button">Wheel design <i class="fas fa-arrow-right"></i></a>
+      <a href="4wheels.html" class="next-button"
+        >Wheel design <i class="fas fa-arrow-right"></i
+      ></a>
       <div class="price-button" id="priceDisplay" style="display: none">
-        <a href="3powertrain.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <a href="3powertrain.html" class="back-button"
+          ><i class="fas fa-arrow-left"></i
+        ></a>
         <span>Subtotal: £<span id="priceValue">0</span></span>
       </div>
     </div>
@@ -103,7 +105,6 @@
         const iframe = document.getElementById("colorFrame");
         iframe.contentWindow.location.reload();
       }
-
     </script>
 
     <footer class="footer">
