@@ -1,3 +1,60 @@
+const carWheelsImage = document.getElementById("car-wheels-image");
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve selected color and wheel type from localStorage or apply defaults
+  let selectedColor = localStorage.getItem("selectedColor") || "red";
+  let selectedWheels = localStorage.getItem("selectedWheels") || "Diamond";
+
+  // If no selectedColor or selectedWheels in localStorage, save the defaults
+  if (!localStorage.getItem("selectedColor")) {
+    localStorage.setItem("selectedColor", "red");
+    console.log("No selectedColor in localStorage. Defaulting to 'red'.");
+  }
+  if (!localStorage.getItem("selectedWheels")) {
+    localStorage.setItem("selectedWheels", "Diamond");
+    console.log("No selectedWheels in localStorage. Defaulting to 'Diamond'.");
+  }
+
+  // Define the mapping of color + wheel type to image files
+  const imageOptions = {
+    reddiamond: "1RedDiamond.png",
+    redsquare: "2RedSquare.png",
+    reddark: "3RedDark.png",
+    silverdiamond: "4SilverDiamond.png",
+    silversquare: "6SilverSquare.png",
+    silverdark: "5SilverDark.png",
+    greendiamond: "7GreenDiamond.png",
+    greensquare: "8GreenSquare.png",
+    greendark: "9GreenDark.png",
+  };
+
+  // Combine selectedColor and selectedWheels to form the image key
+  const imageKey = `${selectedColor.toLowerCase()}${selectedWheels.toLowerCase()}`;
+  const selectedImage = imageOptions[imageKey];
+
+  // Update the image src based on the selected color and wheel type
+  if (selectedImage) {
+    if (carWheelsImage) {
+      carWheelsImage.setAttribute(
+        "src",
+        `assets/carImageSelection/${selectedImage}`
+      );
+      console.log(
+        `Image src updated on page load based on selected color (${selectedColor}) and wheels (${selectedWheels}):`,
+        carWheelsImage.src
+      );
+    } else {
+      console.error(
+        "No <img> element found with ID 'car-color-image' on page load."
+      );
+    }
+  } else {
+    console.error(
+      `No image found for the key "${imageKey}". Check the 'imageOptions' object.`
+    );
+  }
+});
+
 function changeWheelOnClick(e) {
   const target = e.target.closest("li");
   if (!target) {
@@ -86,10 +143,15 @@ function changeWheelOnClick(e) {
 // Load the saved wheel selection on page load
 const savedWheels = localStorage.getItem("selectedWheels");
 if (savedWheels) {
-  console.log("Retrieved saved wheel selection from localStorage:", savedWheels);
+  console.log(
+    "Retrieved saved wheel selection from localStorage:",
+    savedWheels
+  );
 
   // Find the correct <li> element using the data-wheel attribute
-  const savedWheelItem = document.querySelector(`#wheelsList li[data-wheel="${savedWheels}"]`);
+  const savedWheelItem = document.querySelector(
+    `#wheelsList li[data-wheel="${savedWheels}"]`
+  );
   if (savedWheelItem) {
     savedWheelItem.style.backgroundColor = "#ddd";
 
@@ -103,7 +165,10 @@ if (savedWheels) {
     if (savedWheelImage) {
       const carWheelsImage = document.getElementById("car-wheels-image");
       if (carWheelsImage) {
-        carWheelsImage.setAttribute("src", `Assets/carImageSelection/${savedWheelImage}`);
+        carWheelsImage.setAttribute(
+          "src",
+          `Assets/carImageSelection/${savedWheelImage}`
+        );
       }
     }
   } else {
