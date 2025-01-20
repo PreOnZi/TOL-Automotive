@@ -110,6 +110,30 @@ header {
     transform: translateX(-30%);
   }
 }
+@media(min-width:893px) and (max-width:1000px){
+  .hero-image img{
+    width: auto;
+    height: 50rem;
+    transform: translateX(-30%);
+  }
+}
+.hero-imageConfTop{
+  margin-bottom: -5%;
+}
+.hero-imageConfTop img{
+  width: 100%;
+  height: auto;
+}
+.hero-imageConfBottom{
+  margin-bottom: -5%;
+}
+.hero-imageConfBottom img{
+  width: 100%;
+  height: auto;
+}
+@media(max-width:1000px){
+
+}
 .hero-text {
   position: relative;
   top: -25rem;
@@ -268,14 +292,20 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 25rem;
-  height: 100%;
+  width: 40rem;
+  height: 20rem;
   margin: 0 auto;
   padding: 10px;
   border: solid 0.2rem white;
   border-radius: 5px;
   margin-bottom: 5%;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+@media(max-width:768px){
+  .specTable-container{
+    width: 25rem;
+    height: 15rem;
+  }
 }
 
 .specTable-row {
@@ -295,7 +325,9 @@ header {
 }
 
 .icon {
-  max-width: 5.5rem;
+
+  width:100%;
+  max-width: 8rem;
   height: auto;
 }
 
@@ -620,6 +652,17 @@ header {
   background-color: #ffae00;
   transform: translateY(-2px);
 }
+.launchButton{
+  padding: 12px 24px;
+  background-color: #00bfd8;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
 .confSelector ul li.selected {
   background-color: #ddd;
@@ -642,8 +685,8 @@ header {
 /*COLOUR SELECTION*/
 .swatch1 {
   background-color: #8e0000;
-  width: 300px;
-  height: 40px;
+  width: 30%;
+  height: 4rem;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -651,8 +694,8 @@ header {
 
 .swatch2 {
   background-color: #949494;
-  width: 350px;
-  height: 40px;
+  width: 35%;
+  height: 4rem;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -660,8 +703,8 @@ header {
 
 .swatch3 {
   background-color: #aeffc0;
-  width: 400px;
-  height: 40px;
+  width: 40%;
+  height: 4rem;
   border-radius: 50px;
 
   border: 3px solid white;
@@ -1079,6 +1122,8 @@ text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top:5%;
+  justify-self: baseline;
 }
 
 .column-button:hover {
@@ -1195,7 +1240,7 @@ text-align: center;
 .adsModes-table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 1rem;
   width: 80%;
   margin: 3% auto;
   align-items: start;
@@ -1215,6 +1260,7 @@ text-align: center;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   border: solid 2px white;
   border-radius: 20px;
