@@ -57,7 +57,7 @@
         <ul onclick="reloadIframe()">
           <li
             data-id="blackText"
-            onclick="changeIframe('3Dseat/blackText.html')"
+            onclick="changeIframe('3Dseat/blackText.html'); changeIframeTop('3Dseat/blackText.html')"
           >
             <b><h3>Recycled textiles | black</h3></b>
             <br />
@@ -67,7 +67,7 @@
           </li>
           <li
             data-id="blackLead"
-            onclick="changeIframe('3Dseat/blackLead.html')"
+            onclick="changeIframe('3Dseat/blackLead.html'); changeIframeTop('3Dseat/blackLead.html')"
           >
             <b><h3>Vegan leather | black</h3></b>
             <br />
@@ -77,7 +77,7 @@
           </li>
           <li
             data-id="creamLead"
-            onclick="changeIframe('3Dseat/creamLead.html')"
+            onclick="changeIframe('3Dseat/creamLead.html'); changeIframeTop('3Dseat/creamLead.html')"
           >
             <b><h3>Vegan leather | cream</h3></b>
             <br />
@@ -114,7 +114,7 @@
         if (iframe) {
           iframe.src = src;
         } else {
-          console.error("Iframe with id 'colorFrame' not found.");
+          console.error("Iframe with id 'seatFrame' not found.");
         }
       }
       //SELECTION MEMORY
@@ -183,12 +183,12 @@
       }
 
       // SEAT FRAME TOP
-      function changeIframe(src) {
+      function changeIframeTop(src) {
         const iframe = document.getElementById("seatFrameTop");
         if (iframe) {
           iframe.src = src;
         } else {
-          console.error("Iframe with id 'colorFrame' not found.");
+          console.error("Iframe with id 'seatFrameTop' not found.");
         }
       }
     </script>
